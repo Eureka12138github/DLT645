@@ -11,7 +11,7 @@ int show_ruler_info(unsigned long inRulerID);
 void pack_d07_frame(unsigned long inRulerID);
 void unpack_d07_frame_test(int argc, char*argv[]);
 int show_all_valid_ruler_info();
-void test_all_ruler_d07_meter(); // Êµ¼Ê²âÊÔDlt645 2007 ¹ú±ê±í
+void test_all_ruler_d07_meter(); // å®é™…æµ‹è¯•Dlt645 2007 å›½æ ‡è¡¨
 	
 
 
@@ -33,7 +33,7 @@ char helpinfo[] =
 		"--all, show all valid ruler infor\n"
 	};
 
-/* Ö÷º¯Êı */
+/* ä¸»å‡½æ•° */
 int main(int argc, char *argv[])
 {
 
@@ -75,16 +75,16 @@ int main(int argc, char *argv[])
 					
 				
 			case 'i':
-				ulRulerID = (unsigned long)strtol(optarg,NULL,16); // ½«×Ö·û´®Ê®Áù½øÖÆÊı×ª»»ÎªÕûÊı
+				ulRulerID = (unsigned long)strtol(optarg,NULL,16); // å°†å­—ç¬¦ä¸²åå…­è¿›åˆ¶æ•°è½¬æ¢ä¸ºæ•´æ•°
 				ret = show_ruler_info(ulRulerID);
 				if(ret != E_D07_OK)
 				{
-					printf("²»´æÔÚµÄ¹æÔ¼ÀàĞÍ\n\n");
+					printf("ä¸å­˜åœ¨çš„è§„çº¦ç±»å‹\n\n");
 				}
 				break;
 
 			case 'p':
-				ulRulerID = (unsigned long)strtol(optarg,NULL,16); // ½«×Ö·û´®Ê®Áù½øÖÆÊı×ª»»ÎªÕûÊı
+				ulRulerID = (unsigned long)strtol(optarg,NULL,16); // å°†å­—ç¬¦ä¸²åå…­è¿›åˆ¶æ•°è½¬æ¢ä¸ºæ•´æ•°
 				pack_d07_frame(ulRulerID);
 				break;
 	
@@ -99,7 +99,7 @@ int main(int argc, char *argv[])
 				if(!strcmp("all", longOpts[longIndex].name))
 				{	
 					num = show_all_valid_ruler_info();
-					printf("Ò»¹²%dÌõÓĞĞ§µÄ¹æÔ¼\n", num);
+					printf("ä¸€å…±%dæ¡æœ‰æ•ˆçš„è§„çº¦\n", num);
 				}
 				break;
 				
@@ -162,23 +162,23 @@ void unpack_d07_frame_test(int argc, char*argv[])
 	debug_switch(D07_OFF);
 	if(ret != E_D07_OK)
 	{
-		printf("\n  ½âÎö³ö´í! (error = %d : ",ret);
+		printf("\n  è§£æå‡ºé”™! (error = %d : ",ret);
 		switch(ret)
 		{
 			case E_D07_ERRO_FRAME_UNCOMP:
-				printf("²»ÍêÕûµÄÖ¡Êı¾İ)\n");
+				printf("ä¸å®Œæ•´çš„å¸§æ•°æ®)\n");
 				break;
 
 			case E_D07_ERRO_FRAME_0x68:
-				printf("ÆğÊ¼·û 0x68 µÄÎ»ÖÃ²»¶Ô)\n");
+				printf("èµ·å§‹ç¬¦ 0x68 çš„ä½ç½®ä¸å¯¹)\n");
 				break;
 				
 			case E_D07_ERRO_FRAME_CHECK_SUM:
-				printf("²âÊÔÖ¡¼ìÑéºÍ²»¶Ô)\n");
+				printf("æµ‹è¯•å¸§æ£€éªŒå’Œä¸å¯¹)\n");
 				break;
 				
 			case E_D07_ERRO_FRAME_END_0x16:
-				printf("²âÊÔÖ¡½áÊø·û 0x16 ²»¶Ô)\n");
+				printf("æµ‹è¯•å¸§ç»“æŸç¬¦ 0x16 ä¸å¯¹)\n");
 				break;
 			default:
 				break;
@@ -188,7 +188,7 @@ void unpack_d07_frame_test(int argc, char*argv[])
 		return;
 	}
 	
-	// ÏÔÊ¾½á¹û
+	// æ˜¾ç¤ºç»“æœ
 	printf("/------------------unpack result-------------------\\\n");
 	printf("\n<1> - ruler info:\n");
 	show_ruler_info(stUnPack.ruler_id);
@@ -201,39 +201,41 @@ void unpack_d07_frame_test(int argc, char*argv[])
 	printf(" address\t=  %s\n", stUnPack.address);
 	printf("\n<3> - data fields \n");
 	if(stUnPack.flag == E_D07_UNPD_FLG_OK)
-	{
-		printf("ÕıÈ·µÄ»Ø´ğ:\n");
+	{
+
+		printf("æ­£ç¡®çš„å›ç­”:\n");
 	}
 	else if(stUnPack.flag == E_D07_UNPD_FLG_ERROR_OK)
-	{
-		printf("Òì³£µÄ»Ø´ğ:\n");
+	{
+
+		printf("å¼‚å¸¸çš„å›ç­”:\n");
 	}
 	printf("%s\n", g_out_data_07);
 
 	printf("\n<4> - remark:\n\n\t");
 	if(stUnPack.ctrl_s.direct == E_D07_CTRL_DIR_M2S)
 	{
-		printf("Ö÷Õ¾µ½´ÓÕ¾µÄ");
+		printf("ä¸»ç«™åˆ°ä»ç«™çš„");
 		if(E_D07_CTRL_READ_DATA == stUnPack.ctrl_s.funcode)
 		{
-			printf("¶ÁÊı¾İ");
+			printf("è¯»æ•°æ®");
 		}
 		else if(E_D07_CTRL_WRITE_DATA == stUnPack.ctrl_s.funcode)
 		{
-			printf("Ğ´Êı¾İ");
+			printf("å†™æ•°æ®");
 		}
-		printf("ÇëÇó\n\n");
+		printf("è¯·æ±‚\n\n");
 	}
 	else
 	{		
-		printf("´ÓÕ¾µ½Ö÷Õ¾µÄ");
+		printf("ä»ç«™åˆ°ä¸»ç«™çš„");
 		if(E_D07_CTRL_READ_DATA == stUnPack.ctrl_s.funcode)
 		{
-			printf("¶Ô¶ÁÊı¾İÇëÇóµÄÏìÓ¦");
+			printf("å¯¹è¯»æ•°æ®è¯·æ±‚çš„å“åº”");
 		}
 		else if(E_D07_CTRL_WRITE_DATA == stUnPack.ctrl_s.funcode)
 		{
-			printf("¶ÔĞ´Êı¾İ³É¹¦µÄÏìÓ¦");
+			printf("å¯¹å†™æ•°æ®æˆåŠŸçš„å“åº”");
 		}
 		printf("\n\n");
 	}
@@ -255,7 +257,7 @@ void pack_d07_frame(unsigned long inRulerID)
 	int ret = get_d07_ruler_info(inRulerID, &info);
 	if(ret != E_D07_OK)	
 	{
-		printf("²»´æÔÚµÄ¹æ¹æÔ¼ÀàĞÍ\n\n");
+		printf("ä¸å­˜åœ¨çš„è§„è§„çº¦ç±»å‹\n\n");
 		return ;
 	}
 
@@ -263,7 +265,7 @@ void pack_d07_frame(unsigned long inRulerID)
 	S_D07_CTRL_CODE stCtrl = {0};
 	int dir = 0;
 	
-	char addr[64] = {0}; // µØÖ·
+	char addr[64] = {0}; // åœ°å€
 	S_D07_PACK_FRAME pack_frame = {0};
 	int length = 0;
 	char buffer[256] = {0};
@@ -271,21 +273,21 @@ void pack_d07_frame(unsigned long inRulerID)
 	char user[256] = {0};
 	F_D07_RULER_TRANS func = NULL;
 	printf("\n-------------------------------------------------------------------");
-	printf("\n%d - ÊäÈëµØÖ·(Ğ¡ÓÚµÈÓÚ12Î»):\n\n\taddress <<  ", num++);
+	printf("\n%d - è¾“å…¥åœ°å€(å°äºç­‰äº12ä½):\n\n\taddress <<  ", num++);
 	scanf("%s",addr);
 
-	// ·½Ïò
-	printf("\n%d - ´«Êä·½Ïò:   Ö÷Õ¾µ½´ÓÕ¾(0)  ´ÓÕ¾µ½Ö÷Õ¾(1)\n\n\tdirect << ", num++);
+	// æ–¹å‘
+	printf("\n%d - ä¼ è¾“æ–¹å‘:   ä¸»ç«™åˆ°ä»ç«™(0)  ä»ç«™åˆ°ä¸»ç«™(1)\n\n\tdirect << ", num++);
 	scanf("%d", &dir);
 	if(dir != 0 && dir != 1)
 	{
-		printf("\nÊäÈë´íÎó\n");
+		printf("\nè¾“å…¥é”™è¯¯\n");
 		return;
 	}
 
 	stCtrl.direct = (E_D07_CTRL_DIR)dir;
 
-	// Ö÷Õ¾µ½´ÓÕ¾
+	// ä¸»ç«™åˆ°ä»ç«™
 	if(E_D07_CTRL_DIR_M2S == dir)
 	{
 		if(info.rdwr == E_D07_RDWR_READ_ONLY)
@@ -296,8 +298,8 @@ void pack_d07_frame(unsigned long inRulerID)
 		}
 		else if(info.rdwr == E_D07_RDWR_READ_WRITE)
 		{
-			//¹¦ÄÜÂë
-			printf("\n%d - ¹¦ÄÜÂë:  ¶ÁÊı¾İ(0) Ğ´Êı¾İ(1)\n operate << ",num++);
+			//åŠŸèƒ½ç 
+			printf("\n%d - åŠŸèƒ½ç :  è¯»æ•°æ®(0) å†™æ•°æ®(1)\n operate << ",num++);
 			scanf("%d", &dir);
 			if(dir == 0)
 			{
@@ -317,15 +319,15 @@ void pack_d07_frame(unsigned long inRulerID)
 			}
 			else
 			{
-				printf("\nÊäÈë´íÎó\n");
+				printf("\nè¾“å…¥é”™è¯¯\n");
 				return;
 			}
 		}
 	}
-	else	// ´ÓÕ¾µ½Ö÷Õ¾
+	else	// ä»ç«™åˆ°ä¸»ç«™
 	{
-		printf("\n%d - Êı¾İÓòÄÚÈİ:\n\n",num++);
-		// ÕıÈ·µÄÓ¦´ğ
+		printf("\n%d - æ•°æ®åŸŸå†…å®¹:\n\n",num++);
+		// æ­£ç¡®çš„åº”ç­”
 		func = info.func;
 		debug_switch(D07_ON);
 		func(E_D07_TRANS_U2F, user, data);
@@ -333,10 +335,10 @@ void pack_d07_frame(unsigned long inRulerID)
 		stCtrl.funcode = E_D07_CTRL_READ_DATA;
 		pack_frame.data = data;
 		pack_frame.data_len = info.len + 4;
-		// Òì³£µÄÓ¦´ğ
+		// å¼‚å¸¸çš„åº”ç­”
 	}
 
-	ret = trans_d07ctrl_struct2char(&ucCtrl, &stCtrl); //½«½á¹¹·â×°³É×Ö½Ú
+	ret = trans_d07ctrl_struct2char(&ucCtrl, &stCtrl); //å°†ç»“æ„å°è£…æˆå­—èŠ‚
 	
 	if(ret != E_D07_OK)
 	{
@@ -361,7 +363,7 @@ void pack_d07_frame(unsigned long inRulerID)
 	printf(" addr\t=  %s\n", addr);
 
 	
-	//ÏÔÊ¾Ö¡ÄÚÈİ
+	//æ˜¾ç¤ºå¸§å†…å®¹
 	printf("\n%d - frame:\n\n\t", num++);
 	show_packet(length, buffer);
 	printf("\n\n-------------------------------------------------------------------\n");
@@ -605,7 +607,8 @@ void show_packet(int buflen, char* buf)
 
 
 void test_all_ruler_d07_meter()
-{
+{
+
 
 
 }

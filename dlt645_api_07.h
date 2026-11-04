@@ -1,10 +1,10 @@
 /*******************************************************************************
     File name:         dlt645_api_07.h
-    Author:         ÀîÃ÷
+    Author:         æŽæ˜Ž
     Version:          1.0
-    Date:            2012Äê10ÔÂ22ÈÕ
-    Description:     dlt645 2007°æ¹æÔ¼½âÎöÍ·ÎÄ¼þ£¬ÓÃÓÚÖÇÄÜ²É¼¯ÖÕ¶ËÓë¼¯ÖÐÆ÷¡¢¼¯ÖÐ
-                    Æ÷ÓëÖÇÄÜµç±íÍ¨ÐÅµÄ¹æÔ¼´¦Àí                 
+    Date:            2012å¹´10æœˆ22æ—¥
+    Description:     dlt645 2007ç‰ˆè§„çº¦è§£æžå¤´æ–‡ä»¶ï¼Œç”¨äºŽæ™ºèƒ½é‡‡é›†ç»ˆç«¯ä¸Žé›†ä¸­å™¨ã€é›†ä¸­
+                    å™¨ä¸Žæ™ºèƒ½ç”µè¡¨é€šä¿¡çš„è§„çº¦å¤„ç†                 
     Others:       
     Function List: 
     1. History: 
@@ -18,12 +18,12 @@
 #define _DLT645_API_2007_H_
 
 
-#pragma pack(push)  // ²ÉÓÃÒ»×Ö½Ú¶ÔÆë
+#pragma pack(push)  // é‡‡ç”¨ä¸€å­—èŠ‚å¯¹é½
 #pragma pack(1)
 
-/* µ÷ÊÔ¿ª¹Ø */
+/* è°ƒè¯•å¼€å…³ */
 #define D07_DEBUG_ON
-#undef D07_DEBUG_ON   // ÕýÊ½°æ×¢ÊÍµô
+#undef D07_DEBUG_ON   // æ­£å¼ç‰ˆæ³¨é‡ŠæŽ‰
 
 
 #ifdef D07_DEBUG_ON
@@ -83,51 +83,51 @@ typedef void*  FRWK_HANDLE;
 
 
 
-/* ºê¶¨Òå **/
+/* å®å®šä¹‰ **/
 #define NAME_LEN              128   
 #define UNKNOWN_RULER_ID     0XFFFFFFFF
-#define D07_ADDR_LEN         12                      /* µØÖ·³¤ */
-#define D07_DATA_MAX_NR      240                       /* dlt645 2007 ×î´óÊý¾ÝÓò×Ö½ÚÊýËã¹æÔ¼ID */
-#define D07_DATA_MAX         (D07_DATA_MAX_NR + 4)   /* dlt645 2007 ×î´óÊý¾ÝÓò×Ö½ÚÊý */
-#define D07_FRAME_LEN_MIN    12                        /* DLT645 2007 ×îÐ¡Ö¡×Ö½ÚÊý */  
+#define D07_ADDR_LEN         12                      /* åœ°å€é•¿ */
+#define D07_DATA_MAX_NR      240                       /* dlt645 2007 æœ€å¤§æ•°æ®åŸŸå­—èŠ‚æ•°ç®—è§„çº¦ID */
+#define D07_DATA_MAX         (D07_DATA_MAX_NR + 4)   /* dlt645 2007 æœ€å¤§æ•°æ®åŸŸå­—èŠ‚æ•° */
+#define D07_FRAME_LEN_MIN    12                        /* DLT645 2007 æœ€å°å¸§å­—èŠ‚æ•° */  
 
-/*¹¦ÄÜÂë 2007*/
-#define D07_CTRL_RESV                                0x00     // ±£Áô
-#define D07_CTRL_SYNC_TIME                            0x08     // ¹ã²¥Ð£Ê±
-#define D07_CTRL_READ_DATA                            0x11    // ¶ÁÊý¾Ý
-#define D07_CTRL_READ_AFTERDATA                        0x12    // ¶ÁºóÐøÊý¾Ý
-#define D07_CTRL_READ_ADDR                            0x13    // ¶ÁÍ¨ÐÅµØÖ·
-#define D07_CTRL_WRITE_DATA                            0x14    // Ð´Êý¾Ý
-#define D07_CTRL_WRITE_ADDR                            0x15    // Ð´Í¨ÐÅµØÖ·
-#define D07_CTRL_FREEZ_COMM                            0x16    // ¶³½áÃüÁî
-#define D07_CTRL_MODIFY_BAUD                        0x17    // ÐÞ¸ÄÍ¨ÐÅËÙÂÊ
-#define D07_CTRL_MODIFY_PASSWORD                    0x18    // ÐÞ¸ÄÃÜÂë
-#define D07_CTRL_CLEAR_MAXDEMAND                    0x19    // ×î´óÐèÁ¿ÇåÁã
-#define D07_CTRL_CLEAR_METER                        0x1A    // µç±íÇåÁã
-#define D07_CTRL_CLEAR_EVENT                        0x1B    // ÊÂ¼þÇåÁã
-#define D07_CTRL_COMM                                0x1C    // ¿ØÖÆÃüÁî
-
-
+/*åŠŸèƒ½ç  2007*/
+#define D07_CTRL_RESV                                0x00     // ä¿ç•™
+#define D07_CTRL_SYNC_TIME                            0x08     // å¹¿æ’­æ ¡æ—¶
+#define D07_CTRL_READ_DATA                            0x11    // è¯»æ•°æ®
+#define D07_CTRL_READ_AFTERDATA                        0x12    // è¯»åŽç»­æ•°æ®
+#define D07_CTRL_READ_ADDR                            0x13    // è¯»é€šä¿¡åœ°å€
+#define D07_CTRL_WRITE_DATA                            0x14    // å†™æ•°æ®
+#define D07_CTRL_WRITE_ADDR                            0x15    // å†™é€šä¿¡åœ°å€
+#define D07_CTRL_FREEZ_COMM                            0x16    // å†»ç»“å‘½ä»¤
+#define D07_CTRL_MODIFY_BAUD                        0x17    // ä¿®æ”¹é€šä¿¡é€ŸçŽ‡
+#define D07_CTRL_MODIFY_PASSWORD                    0x18    // ä¿®æ”¹å¯†ç 
+#define D07_CTRL_CLEAR_MAXDEMAND                    0x19    // æœ€å¤§éœ€é‡æ¸…é›¶
+#define D07_CTRL_CLEAR_METER                        0x1A    // ç”µè¡¨æ¸…é›¶
+#define D07_CTRL_CLEAR_EVENT                        0x1B    // äº‹ä»¶æ¸…é›¶
+#define D07_CTRL_COMM                                0x1C    // æŽ§åˆ¶å‘½ä»¤
 
 
-/** ºê¶¨Òå */
 
 
-/* ·µ»ØÖµÀàÐÍ ÁÐ±í*/
+/** å®å®šä¹‰ */
+
+
+/* è¿”å›žå€¼ç±»åž‹ åˆ—è¡¨*/
 typedef enum
 {
-    E_D07_OK = 0,            /* ·µ»ØOK */
-    E_D07_ERRO_NULL,        /* Ö¸ÕëÎª¿Õ */
-    E_D07_ERRO_UNKOWN_ID,    // Î´Öª¹æÔ¼ID
-    E_D07_ERRO_PARA_NONE,   /* ²»´æÔÚ */
+    E_D07_OK = 0,            /* è¿”å›žOK */
+    E_D07_ERRO_NULL,        /* æŒ‡é’ˆä¸ºç©º */
+    E_D07_ERRO_UNKOWN_ID,    // æœªçŸ¥è§„çº¦ID
+    E_D07_ERRO_PARA_NONE,   /* ä¸å­˜åœ¨ */
     E_D07_ERRO_PARA_OUT_RANGE,
     
     //check frame
-    E_D07_ERRO_FRAME_UNCOMP,        /* ²»ÍêÕûµÄÖ¡Êý¾Ý */
-    E_D07_ERRO_FRAME_0x68,          /* ²âÊÔÖ¡Ö¡ÆðÊ¼·û 0x68 µÄÎ»ÖÃ²»¶Ô */
-    E_D07_ERRO_FRAME_CHECK_SUM,     /* ²âÊÔÖ¡¼ìÑéºÍ²»¶Ô */
-    E_D07_ERRO_FRAME_END_0x16,      /* ²âÊÔÖ¡½áÊø·û 0x16 ²»¶Ô */
-    E_D07_ERRO_NONE_FRAME,          // Ã»ÓÐÕÒµ½Ö¡
+    E_D07_ERRO_FRAME_UNCOMP,        /* ä¸å®Œæ•´çš„å¸§æ•°æ® */
+    E_D07_ERRO_FRAME_0x68,          /* æµ‹è¯•å¸§å¸§èµ·å§‹ç¬¦ 0x68 çš„ä½ç½®ä¸å¯¹ */
+    E_D07_ERRO_FRAME_CHECK_SUM,     /* æµ‹è¯•å¸§æ£€éªŒå’Œä¸å¯¹ */
+    E_D07_ERRO_FRAME_END_0x16,      /* æµ‹è¯•å¸§ç»“æŸç¬¦ 0x16 ä¸å¯¹ */
+    E_D07_ERRO_NONE_FRAME,          // æ²¡æœ‰æ‰¾åˆ°å¸§
 
 }eD07Err;
 
@@ -139,673 +139,673 @@ typedef enum
 
 
 
-/* dlt645 2007¹æÔ¼ÀàÐÍ **/
+/* dlt645 2007è§„çº¦ç±»åž‹ **/
 typedef enum
 {
-    E_D07_RULER_TYPE_UNKNOWN  =  0,                         // Î´ÖªµÄ¹æÔ¼ÀàÐÍ
+    E_D07_RULER_TYPE_UNKNOWN  =  0,                         // æœªçŸ¥çš„è§„çº¦ç±»åž‹
 
-    /* ±ê×¼Ð­Òé */
+    /* æ ‡å‡†åè®® */
     E_D07_RULER_TYPE_A1_MIN,
     
     /* [00] [00] [(00~FF)] [00] */
-    E_D07_RULER_TYPE_COMB_HAVE_POWER_TOTAL = E_D07_RULER_TYPE_A1_MIN,// ×éºÏÓÐ¹¦×ÜµçÄÜ
-    E_D07_RULER_TYPE_COMB_HAVE_POWER_RATE,            // ×éºÏÓÐ¹¦·ÑÂÊµçÄÜ
-    E_D07_RULER_TYPE_COMB_HAVE_POWER_BLOCK,            // ×éºÏÓÐµçÄÜÊý¾Ý¿é
+    E_D07_RULER_TYPE_COMB_HAVE_POWER_TOTAL = E_D07_RULER_TYPE_A1_MIN,// ç»„åˆæœ‰åŠŸæ€»ç”µèƒ½
+    E_D07_RULER_TYPE_COMB_HAVE_POWER_RATE,            // ç»„åˆæœ‰åŠŸè´¹çŽ‡ç”µèƒ½
+    E_D07_RULER_TYPE_COMB_HAVE_POWER_BLOCK,            // ç»„åˆæœ‰ç”µèƒ½æ•°æ®å—
 
     /* [00] [01] [(00~FF)] [00] */
-    E_D07_RULER_TYPE_FORTH_HAVE_POWER_TOTAL,        // ÕýÏòÓÐ¹¦×ÜµçÄÜ
-    E_D07_RULER_TYPE_FORTH_HAVE_POWER_RATE,            // ÕýÏòÓÐ¹¦·ÑÂÊµçÄÜ
-    E_D07_RULER_TYPE_FORTH_HAVE_POWER_BLOCK,        // ÕýÏòÓÐ¹¦µçÄÜÊý¾Ý¿é
+    E_D07_RULER_TYPE_FORTH_HAVE_POWER_TOTAL,        // æ­£å‘æœ‰åŠŸæ€»ç”µèƒ½
+    E_D07_RULER_TYPE_FORTH_HAVE_POWER_RATE,            // æ­£å‘æœ‰åŠŸè´¹çŽ‡ç”µèƒ½
+    E_D07_RULER_TYPE_FORTH_HAVE_POWER_BLOCK,        // æ­£å‘æœ‰åŠŸç”µèƒ½æ•°æ®å—
 
     /* [00] [02] [(00~FF)] [00] */
-    E_D07_RULER_TYPE_BACK_HAVE_POWER_TOTAL,            // ·´ÏòÓÐ¹¦×ÜµçÄÜ
-    E_D07_RULER_TYPE_BACK_HAVE_POWER_RATE,            // ·´ÏòÓÐ¹¦·ÑÂÊµçÄÜ
-    E_D07_RULER_TYPE_BACK_HAVE_POWER_BLOCK,            // ·´ÏòÓÐ¹¦µçÄÜÊý¾Ý¿é
+    E_D07_RULER_TYPE_BACK_HAVE_POWER_TOTAL,            // åå‘æœ‰åŠŸæ€»ç”µèƒ½
+    E_D07_RULER_TYPE_BACK_HAVE_POWER_RATE,            // åå‘æœ‰åŠŸè´¹çŽ‡ç”µèƒ½
+    E_D07_RULER_TYPE_BACK_HAVE_POWER_BLOCK,            // åå‘æœ‰åŠŸç”µèƒ½æ•°æ®å—
 
     /* [00] [03] [(00~FF)] [00] */
-    E_D07_RULER_TYPE_COMB_NONE_1_POWER_TOTAL,        // ×éºÏÎÞ¹¦1×ÜµçÄÜ
-    E_D07_RULER_TYPE_COMB_NONE_1_POWER_RATE,        // ×éºÏÎÞ¹¦1·ÑÂÊµçÄÜ
-    E_D07_RULER_TYPE_COMB_NONE_1_POWER_BLOCK,        // ×éºÏÎÞ¹¦1µçÄÜÊý¾Ý¿é
+    E_D07_RULER_TYPE_COMB_NONE_1_POWER_TOTAL,        // ç»„åˆæ— åŠŸ1æ€»ç”µèƒ½
+    E_D07_RULER_TYPE_COMB_NONE_1_POWER_RATE,        // ç»„åˆæ— åŠŸ1è´¹çŽ‡ç”µèƒ½
+    E_D07_RULER_TYPE_COMB_NONE_1_POWER_BLOCK,        // ç»„åˆæ— åŠŸ1ç”µèƒ½æ•°æ®å—
 
     /* [00] [04] [(00~FF)] [00] */
-    E_D07_RULER_TYPE_COMB_NONE_2_POWER_TOTAL,        // ×éºÏÎÞ¹¦2×ÜµçÄÜ
-    E_D07_RULER_TYPE_COMB_NONE_2_POWER_RATE,        // ×éºÏÎÞ¹¦2·ÑÂÊµçÄÜ
-    E_D07_RULER_TYPE_COMB_NONE_2_POWER_BLOCK,        // ×éºÏÎÞ¹¦2µçÄÜÊý¾Ý¿é
+    E_D07_RULER_TYPE_COMB_NONE_2_POWER_TOTAL,        // ç»„åˆæ— åŠŸ2æ€»ç”µèƒ½
+    E_D07_RULER_TYPE_COMB_NONE_2_POWER_RATE,        // ç»„åˆæ— åŠŸ2è´¹çŽ‡ç”µèƒ½
+    E_D07_RULER_TYPE_COMB_NONE_2_POWER_BLOCK,        // ç»„åˆæ— åŠŸ2ç”µèƒ½æ•°æ®å—
 
     /* [00] [05] [(00~FF)] [00] */
-    E_D07_RULER_TYPE_QUAD_1_NONE_POWER_TOTAL,        // µÚÒ»ÏóÏÞÎÞ¹¦×ÜµçÄÜ
-    E_D07_RULER_TYPE_QUAD_1_NONE_POWER_RATE,        // µÚÒ»ÏóÏÞÎÞ¹¦·ÑÂÊµçÄÜ
-    E_D07_RULER_TYPE_QUAD_1_NONE_POWER_BLOCK,        // µÚÒ»ÏóÏÞÎÞ¹¦µçÄÜÊý¾Ý¿é
+    E_D07_RULER_TYPE_QUAD_1_NONE_POWER_TOTAL,        // ç¬¬ä¸€è±¡é™æ— åŠŸæ€»ç”µèƒ½
+    E_D07_RULER_TYPE_QUAD_1_NONE_POWER_RATE,        // ç¬¬ä¸€è±¡é™æ— åŠŸè´¹çŽ‡ç”µèƒ½
+    E_D07_RULER_TYPE_QUAD_1_NONE_POWER_BLOCK,        // ç¬¬ä¸€è±¡é™æ— åŠŸç”µèƒ½æ•°æ®å—
 
     /* [00] [06] [(00~FF)] [00] */
-    E_D07_RULER_TYPE_QUAD_2_NONE_POWER_TOTAL,        // µÚ¶þÏóÏÞÎÞ¹¦×ÜµçÄÜ
-    E_D07_RULER_TYPE_QUAD_2_NONE_POWER_RATE,        // µÚ¶þÏóÏÞÎÞ¹¦·ÑÂÊµçÄÜ
-    E_D07_RULER_TYPE_QUAD_2_NONE_POWER_BLOCK,        // µÚ¶þÏóÏÞÎÞ¹¦µçÄÜÊý¾Ý¿é
+    E_D07_RULER_TYPE_QUAD_2_NONE_POWER_TOTAL,        // ç¬¬äºŒè±¡é™æ— åŠŸæ€»ç”µèƒ½
+    E_D07_RULER_TYPE_QUAD_2_NONE_POWER_RATE,        // ç¬¬äºŒè±¡é™æ— åŠŸè´¹çŽ‡ç”µèƒ½
+    E_D07_RULER_TYPE_QUAD_2_NONE_POWER_BLOCK,        // ç¬¬äºŒè±¡é™æ— åŠŸç”µèƒ½æ•°æ®å—
 
     /* [00] [07] [(00~FF)] [00] */
-    E_D07_RULER_TYPE_QUAD_3_NONE_POWER_TOTAL,        // µÚÈýÏóÏÞÎÞ¹¦×ÜµçÄÜ
-    E_D07_RULER_TYPE_QUAD_3_NONE_POWER_RATE,        // µÚÈýÏóÏÞÎÞ¹¦·ÑÂÊµçÄÜ
-    E_D07_RULER_TYPE_QUAD_3_NONE_POWER_BLOCK,        // µÚÈýÏóÏÞÎÞ¹¦µçÄÜÊý¾Ý¿é
+    E_D07_RULER_TYPE_QUAD_3_NONE_POWER_TOTAL,        // ç¬¬ä¸‰è±¡é™æ— åŠŸæ€»ç”µèƒ½
+    E_D07_RULER_TYPE_QUAD_3_NONE_POWER_RATE,        // ç¬¬ä¸‰è±¡é™æ— åŠŸè´¹çŽ‡ç”µèƒ½
+    E_D07_RULER_TYPE_QUAD_3_NONE_POWER_BLOCK,        // ç¬¬ä¸‰è±¡é™æ— åŠŸç”µèƒ½æ•°æ®å—
 
     /* [00] [08] [(00~FF)] [00] */
-    E_D07_RULER_TYPE_QUAD_4_NONE_POWER_TOTAL,        // µÚËÄÏóÏÞÎÞ¹¦×ÜµçÄÜ
-    E_D07_RULER_TYPE_QUAD_4_NONE_POWER_RATE,        // µÚËÄÏóÏÞÎÞ¹¦·ÑÂÊµçÄÜ
-    E_D07_RULER_TYPE_QUAD_4_NONE_POWER_BLOCK,        // µÚËÄÏóÏÞÎÞ¹¦µçÄÜÊý¾Ý¿é
+    E_D07_RULER_TYPE_QUAD_4_NONE_POWER_TOTAL,        // ç¬¬å››è±¡é™æ— åŠŸæ€»ç”µèƒ½
+    E_D07_RULER_TYPE_QUAD_4_NONE_POWER_RATE,        // ç¬¬å››è±¡é™æ— åŠŸè´¹çŽ‡ç”µèƒ½
+    E_D07_RULER_TYPE_QUAD_4_NONE_POWER_BLOCK,        // ç¬¬å››è±¡é™æ— åŠŸç”µèƒ½æ•°æ®å—
 
     /* [00] [09] [(00~FF)] [00] */
-    E_D07_RULER_TYPE_FORTH_APPARENT_POWER_TOTAL,    // ÕýÏòÊÓÔÚ×ÜµçÄÜ
-    E_D07_RULER_TYPE_FORTH_APPARENT_POWER_RATE,        // ÕýÏòÊÓÔÚ·ÑÂÊµçÄÜ
-    E_D07_RULER_TYPE_FORTH_APPARENT_POWER_BLOCK,    // ÕýÏòÊÓÔÚµçÄÜÊý¾Ý¿é
+    E_D07_RULER_TYPE_FORTH_APPARENT_POWER_TOTAL,    // æ­£å‘è§†åœ¨æ€»ç”µèƒ½
+    E_D07_RULER_TYPE_FORTH_APPARENT_POWER_RATE,        // æ­£å‘è§†åœ¨è´¹çŽ‡ç”µèƒ½
+    E_D07_RULER_TYPE_FORTH_APPARENT_POWER_BLOCK,    // æ­£å‘è§†åœ¨ç”µèƒ½æ•°æ®å—
 
     /* [00] [0A] [(00~FF)] [00] */
-    E_D07_RULER_TYPE_BACK_APPARENT_POWER_TOTAL,        // ·´ÏòÊÓÔÚ×ÜµçÄÜ
-    E_D07_RULER_TYPE_BACK_APPARENT_POWER_RATE,        // ·´ÏòÊÓÔÚ·ÑÂÊµçÄÜ
-    E_D07_RULER_TYPE_BACK_APPARENT_POWER_BLOCK,        // ·´ÏòÊÓÔÚµçÄÜÊý¾Ý¿é
+    E_D07_RULER_TYPE_BACK_APPARENT_POWER_TOTAL,        // åå‘è§†åœ¨æ€»ç”µèƒ½
+    E_D07_RULER_TYPE_BACK_APPARENT_POWER_RATE,        // åå‘è§†åœ¨è´¹çŽ‡ç”µèƒ½
+    E_D07_RULER_TYPE_BACK_APPARENT_POWER_BLOCK,        // åå‘è§†åœ¨ç”µèƒ½æ•°æ®å—
 
     /* [00] [80][00] [00] */
-    E_D07_RULER_TYPE_ASSO_POWER_TOTAL,                // ¹ØÁª×ÜµçÄÜ
+    E_D07_RULER_TYPE_ASSO_POWER_TOTAL,                // å…³è”æ€»ç”µèƒ½
 
     /* [00] [81][00] [00] */
-    E_D07_RULER_TYPE_FORTH_FUND_HAVE_POWER_TOTAL,    // ÕýÏòÓÐ¹¦»ù²¨×ÜµçÄÜ
+    E_D07_RULER_TYPE_FORTH_FUND_HAVE_POWER_TOTAL,    // æ­£å‘æœ‰åŠŸåŸºæ³¢æ€»ç”µèƒ½
 
     /* [00] [82][00] [00] */
-    E_D07_RULER_TYPE_BACK_FUND_HAVE_POWER_TOTAL,    // ·´ÏòÓÐ¹¦»ù²¨×ÜµçÄÜ
+    E_D07_RULER_TYPE_BACK_FUND_HAVE_POWER_TOTAL,    // åå‘æœ‰åŠŸåŸºæ³¢æ€»ç”µèƒ½
 
     /* [00] [83][00] [00] */
-    E_D07_RULER_TYPE_FORTH_HARM_HAVE_POWER_TOTAL,    // ÕýÏòÓÐ¹¦Ð³²¨×ÜµçÄÜ
+    E_D07_RULER_TYPE_FORTH_HARM_HAVE_POWER_TOTAL,    // æ­£å‘æœ‰åŠŸè°æ³¢æ€»ç”µèƒ½
 
     /* [00] [84][00] [00] */
-    E_D07_RULER_TYPE_BACK_HARM_HAVE_POWER_TOTAL,    // ·´ÏòÓÐ¹¦Ð³²¨×ÜµçÄÜ
+    E_D07_RULER_TYPE_BACK_HARM_HAVE_POWER_TOTAL,    // åå‘æœ‰åŠŸè°æ³¢æ€»ç”µèƒ½
 
     /* [00] [85][00] [00] */
-    E_D07_RULER_TYPE_COPR_LOSS_HAVE_POWER_COMP_TOTAL,       // Í­ËðÓÐ¹¦×ÜµçÄÜ²¹³¥Á¿
+    E_D07_RULER_TYPE_COPR_LOSS_HAVE_POWER_COMP_TOTAL,       // é“œæŸæœ‰åŠŸæ€»ç”µèƒ½è¡¥å¿é‡
 
     /* [00] [86][00] [00] */
-    E_D07_RULER_TYPE_CORE_LOSS_HAVE_POWER_COMP_TOTAL,        // ÌúËðÓÐ¹¦×ÜµçÄÜ²¹³¥Á¿
+    E_D07_RULER_TYPE_CORE_LOSS_HAVE_POWER_COMP_TOTAL,        // é“æŸæœ‰åŠŸæ€»ç”µèƒ½è¡¥å¿é‡
 
     /* [00] [(15~9A)][00] [00] */
-    E_D07_RULER_TYPE_PHASE_A_FORTH_HAVE_POWER,                // AÏàÕýÏòÓÐ¹¦µçÄÜ
-    E_D07_RULER_TYPE_PHASE_A_BACK_HAVE_POWER,                // AÏà·´ÏòÓÐ¹¦µçÄÜ
-    E_D07_RULER_TYPE_PHASE_A_COMB_NONE_1_POWER,              // AÏà×éºÏÎÞ¹¦1µçÄÜ
-    E_D07_RULER_TYPE_PHASE_A_COMB_NONE_2_POWER,                // AÏà×éºÏÎÞ¹¦2µçÄÜ
-    E_D07_RULER_TYPE_PHASE_A_QUAD_1_NONE_POWER,              // AÏàµÚÒ»ÏóÏÞÎÞ¹¦µçÄÜ
-    E_D07_RULER_TYPE_PHASE_A_QUAD_2_NONE_POWER,                // AÏàµÚ¶þÏóÏÞÎÞ¹¦µçÄÜ
-    E_D07_RULER_TYPE_PHASE_A_QUAD_3_NONE_POWER,                // AÏàµÚÈýÏóÏÞÎÞ¹¦µçÄÜ
-    E_D07_RULER_TYPE_PHASE_A_QUAD_4_NONE_POWER,                // AÏàµÚËÄÏóÏÞÎÞ¹¦µçÄÜ
-    E_D07_RULER_TYPE_PHASE_A_FORTH_APPARENT_POWER,            // AÏàÕýÏòÊÓÔÚµçÄÜ
-    E_D07_RULER_TYPE_PHASE_A_BACK_APPARENT_POWER,            // AÏà·´ÏòÊÓÔÚµçÄÜ
-    E_D07_RULER_TYPE_PHASE_A_ASSO_POWER,                    // AÏà¹ØÁªµçÄÜ
-    E_D07_RULER_TYPE_PHASE_A_FORTH_FUND_HAVE_POWER,            // AÏàÕýÏòÓÐ¹¦»ù²¨µçÄÜ
-    E_D07_RULER_TYPE_PHASE_A_BACK_FUND_HAVE_POWER,            // AÏà·´ÏòÓÐ¹¦»ù²¨µçÄÜ
-    E_D07_RULER_TYPE_PHASE_A_FORTH_HARM_HAVE_POWER,            // AÏàÕýÏòÓÐ¹¦Ð³²¨µçÄÜ
-    E_D07_RULER_TYPE_PHASE_A_BACK_HARM_HAVE_POWER,            // AÏà·´ÏòÓÐ¹¦Ð³²¨µçÄÜ
-    E_D07_RULER_TYPE_PHASE_A_COPR_LOSS_HAVE_POWER_COMP,       // AÏàÍ­ËðÓÐ¹¦µçÄÜ²¹³¥Á¿
-    E_D07_RULER_TYPE_PHASE_A_CORE_LOSS_HAVE_POWER_COMP,        // AÏàÌúËðÓÐ¹¦µçÄÜ²¹³¥Á¿
+    E_D07_RULER_TYPE_PHASE_A_FORTH_HAVE_POWER,                // Aç›¸æ­£å‘æœ‰åŠŸç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_A_BACK_HAVE_POWER,                // Aç›¸åå‘æœ‰åŠŸç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_A_COMB_NONE_1_POWER,              // Aç›¸ç»„åˆæ— åŠŸ1ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_A_COMB_NONE_2_POWER,                // Aç›¸ç»„åˆæ— åŠŸ2ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_A_QUAD_1_NONE_POWER,              // Aç›¸ç¬¬ä¸€è±¡é™æ— åŠŸç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_A_QUAD_2_NONE_POWER,                // Aç›¸ç¬¬äºŒè±¡é™æ— åŠŸç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_A_QUAD_3_NONE_POWER,                // Aç›¸ç¬¬ä¸‰è±¡é™æ— åŠŸç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_A_QUAD_4_NONE_POWER,                // Aç›¸ç¬¬å››è±¡é™æ— åŠŸç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_A_FORTH_APPARENT_POWER,            // Aç›¸æ­£å‘è§†åœ¨ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_A_BACK_APPARENT_POWER,            // Aç›¸åå‘è§†åœ¨ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_A_ASSO_POWER,                    // Aç›¸å…³è”ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_A_FORTH_FUND_HAVE_POWER,            // Aç›¸æ­£å‘æœ‰åŠŸåŸºæ³¢ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_A_BACK_FUND_HAVE_POWER,            // Aç›¸åå‘æœ‰åŠŸåŸºæ³¢ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_A_FORTH_HARM_HAVE_POWER,            // Aç›¸æ­£å‘æœ‰åŠŸè°æ³¢ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_A_BACK_HARM_HAVE_POWER,            // Aç›¸åå‘æœ‰åŠŸè°æ³¢ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_A_COPR_LOSS_HAVE_POWER_COMP,       // Aç›¸é“œæŸæœ‰åŠŸç”µèƒ½è¡¥å¿é‡
+    E_D07_RULER_TYPE_PHASE_A_CORE_LOSS_HAVE_POWER_COMP,        // Aç›¸é“æŸæœ‰åŠŸç”µèƒ½è¡¥å¿é‡
 
 
     /* [00] [(29~AE)][00] [00] */
-    E_D07_RULER_TYPE_PHASE_B_FORTH_HAVE_POWER,                // BÏàÕýÏòÓÐ¹¦µçÄÜ
-    E_D07_RULER_TYPE_PHASE_B_BACK_HAVE_POWER,                // BÏà·´ÏòÓÐ¹¦µçÄÜ
-    E_D07_RULER_TYPE_PHASE_B_COMB_NONE_1_POWER,              // BÏà×éºÏÎÞ¹¦1µçÄÜ
-    E_D07_RULER_TYPE_PHASE_B_COMB_NONE_2_POWER,                // BÏà×éºÏÎÞ¹¦2µçÄÜ
-    E_D07_RULER_TYPE_PHASE_B_QUAD_1_NONE_POWER,              // BÏàµÚÒ»ÏóÏÞÎÞ¹¦µçÄÜ
-    E_D07_RULER_TYPE_PHASE_B_QUAD_2_NONE_POWER,                // BÏàµÚ¶þÏóÏÞÎÞ¹¦µçÄÜ
-    E_D07_RULER_TYPE_PHASE_B_QUAD_3_NONE_POWER,                // BÏàµÚÈýÏóÏÞÎÞ¹¦µçÄÜ
-    E_D07_RULER_TYPE_PHASE_B_QUAD_4_NONE_POWER,                // BÏàµÚËÄÏóÏÞÎÞ¹¦µçÄÜ
-    E_D07_RULER_TYPE_PHASE_B_FORTH_APPARENT_POWER,            // BÏàÕýÏòÊÓÔÚµçÄÜ
-    E_D07_RULER_TYPE_PHASE_B_BACK_APPARENT_POWER,            // BÏà·´ÏòÊÓÔÚµçÄÜ
-    E_D07_RULER_TYPE_PHASE_B_ASSO_POWER,                    // BÏà¹ØÁªµçÄÜ
-    E_D07_RULER_TYPE_PHASE_B_FORTH_FUND_HAVE_POWER,            // BÏàÕýÏòÓÐ¹¦»ù²¨µçÄÜ
-    E_D07_RULER_TYPE_PHASE_B_BACK_FUND_HAVE_POWER,            // BÏà·´ÏòÓÐ¹¦»ù²¨µçÄÜ
-    E_D07_RULER_TYPE_PHASE_B_FORTH_HARM_HAVE_POWER,            // BÏàÕýÏòÓÐ¹¦Ð³²¨µçÄÜ
-    E_D07_RULER_TYPE_PHASE_B_BACK_HARM_HAVE_POWER,            // BÏà·´ÏòÓÐ¹¦Ð³²¨µçÄÜ
-    E_D07_RULER_TYPE_PHASE_B_COPR_LOSS_HAVE_POWER_COMP,       // BÏàÍ­ËðÓÐ¹¦µçÄÜ²¹³¥Á¿
-    E_D07_RULER_TYPE_PHASE_B_CORE_LOSS_HAVE_POWER_COMP,        // BÏàÌúËðÓÐ¹¦µçÄÜ²¹³¥Á¿
+    E_D07_RULER_TYPE_PHASE_B_FORTH_HAVE_POWER,                // Bç›¸æ­£å‘æœ‰åŠŸç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_B_BACK_HAVE_POWER,                // Bç›¸åå‘æœ‰åŠŸç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_B_COMB_NONE_1_POWER,              // Bç›¸ç»„åˆæ— åŠŸ1ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_B_COMB_NONE_2_POWER,                // Bç›¸ç»„åˆæ— åŠŸ2ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_B_QUAD_1_NONE_POWER,              // Bç›¸ç¬¬ä¸€è±¡é™æ— åŠŸç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_B_QUAD_2_NONE_POWER,                // Bç›¸ç¬¬äºŒè±¡é™æ— åŠŸç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_B_QUAD_3_NONE_POWER,                // Bç›¸ç¬¬ä¸‰è±¡é™æ— åŠŸç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_B_QUAD_4_NONE_POWER,                // Bç›¸ç¬¬å››è±¡é™æ— åŠŸç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_B_FORTH_APPARENT_POWER,            // Bç›¸æ­£å‘è§†åœ¨ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_B_BACK_APPARENT_POWER,            // Bç›¸åå‘è§†åœ¨ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_B_ASSO_POWER,                    // Bç›¸å…³è”ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_B_FORTH_FUND_HAVE_POWER,            // Bç›¸æ­£å‘æœ‰åŠŸåŸºæ³¢ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_B_BACK_FUND_HAVE_POWER,            // Bç›¸åå‘æœ‰åŠŸåŸºæ³¢ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_B_FORTH_HARM_HAVE_POWER,            // Bç›¸æ­£å‘æœ‰åŠŸè°æ³¢ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_B_BACK_HARM_HAVE_POWER,            // Bç›¸åå‘æœ‰åŠŸè°æ³¢ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_B_COPR_LOSS_HAVE_POWER_COMP,       // Bç›¸é“œæŸæœ‰åŠŸç”µèƒ½è¡¥å¿é‡
+    E_D07_RULER_TYPE_PHASE_B_CORE_LOSS_HAVE_POWER_COMP,        // Bç›¸é“æŸæœ‰åŠŸç”µèƒ½è¡¥å¿é‡
 
 
     /* [00] [(3D~C2)][00] [00] */
-    E_D07_RULER_TYPE_PHASE_C_FORTH_HAVE_POWER,                // CÏàÕýÏòÓÐ¹¦µçÄÜ
-    E_D07_RULER_TYPE_PHASE_C_BACK_HAVE_POWER,                // CÏà·´ÏòÓÐ¹¦µçÄÜ
-    E_D07_RULER_TYPE_PHASE_C_COMB_NONE_1_POWER,              // CÏà×éºÏÎÞ¹¦1µçÄÜ
-    E_D07_RULER_TYPE_PHASE_C_COMB_NONE_2_POWER,                // CÏà×éºÏÎÞ¹¦2µçÄÜ
-    E_D07_RULER_TYPE_PHASE_C_QUAD_1_NONE_POWER,              // CÏàµÚÒ»ÏóÏÞÎÞ¹¦µçÄÜ
-    E_D07_RULER_TYPE_PHASE_C_QUAD_2_NONE_POWER,                // CÏàµÚ¶þÏóÏÞÎÞ¹¦µçÄÜ
-    E_D07_RULER_TYPE_PHASE_C_QUAD_3_NONE_POWER,                // CÏàµÚÈýÏóÏÞÎÞ¹¦µçÄÜ
-    E_D07_RULER_TYPE_PHASE_C_QUAD_4_NONE_POWER,                // CÏàµÚËÄÏóÏÞÎÞ¹¦µçÄÜ
-    E_D07_RULER_TYPE_PHASE_C_FORTH_APPARENT_POWER,            // CÏàÕýÏòÊÓÔÚµçÄÜ
-    E_D07_RULER_TYPE_PHASE_C_BACK_APPARENT_POWER,            // CÏà·´ÏòÊÓÔÚµçÄÜ
-    E_D07_RULER_TYPE_PHASE_C_ASSO_POWER,                    // CÏà¹ØÁªµçÄÜ
-    E_D07_RULER_TYPE_PHASE_C_FORTH_FUND_HAVE_POWER,            // CÏàÕýÏòÓÐ¹¦»ù²¨µçÄÜ
-    E_D07_RULER_TYPE_PHASE_C_BACK_FUND_HAVE_POWER,            // CÏà·´ÏòÓÐ¹¦»ù²¨µçÄÜ
-    E_D07_RULER_TYPE_PHASE_C_FORTH_HARM_HAVE_POWER,            // CÏàÕýÏòÓÐ¹¦Ð³²¨µçÄÜ
-    E_D07_RULER_TYPE_PHASE_C_BACK_HARM_HAVE_POWER,            // CÏà·´ÏòÓÐ¹¦Ð³²¨µçÄÜ
-    E_D07_RULER_TYPE_PHASE_C_COPR_LOSS_HAVE_POWER_COMP,       // CÏàÍ­ËðÓÐ¹¦µçÄÜ²¹³¥Á¿
-    E_D07_RULER_TYPE_PHASE_C_CORE_LOSS_HAVE_POWER_COMP,        // CÏàÌúËðÓÐ¹¦µçÄÜ²¹³¥Á¿
+    E_D07_RULER_TYPE_PHASE_C_FORTH_HAVE_POWER,                // Cç›¸æ­£å‘æœ‰åŠŸç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_C_BACK_HAVE_POWER,                // Cç›¸åå‘æœ‰åŠŸç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_C_COMB_NONE_1_POWER,              // Cç›¸ç»„åˆæ— åŠŸ1ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_C_COMB_NONE_2_POWER,                // Cç›¸ç»„åˆæ— åŠŸ2ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_C_QUAD_1_NONE_POWER,              // Cç›¸ç¬¬ä¸€è±¡é™æ— åŠŸç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_C_QUAD_2_NONE_POWER,                // Cç›¸ç¬¬äºŒè±¡é™æ— åŠŸç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_C_QUAD_3_NONE_POWER,                // Cç›¸ç¬¬ä¸‰è±¡é™æ— åŠŸç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_C_QUAD_4_NONE_POWER,                // Cç›¸ç¬¬å››è±¡é™æ— åŠŸç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_C_FORTH_APPARENT_POWER,            // Cç›¸æ­£å‘è§†åœ¨ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_C_BACK_APPARENT_POWER,            // Cç›¸åå‘è§†åœ¨ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_C_ASSO_POWER,                    // Cç›¸å…³è”ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_C_FORTH_FUND_HAVE_POWER,            // Cç›¸æ­£å‘æœ‰åŠŸåŸºæ³¢ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_C_BACK_FUND_HAVE_POWER,            // Cç›¸åå‘æœ‰åŠŸåŸºæ³¢ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_C_FORTH_HARM_HAVE_POWER,            // Cç›¸æ­£å‘æœ‰åŠŸè°æ³¢ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_C_BACK_HARM_HAVE_POWER,            // Cç›¸åå‘æœ‰åŠŸè°æ³¢ç”µèƒ½
+    E_D07_RULER_TYPE_PHASE_C_COPR_LOSS_HAVE_POWER_COMP,       // Cç›¸é“œæŸæœ‰åŠŸç”µèƒ½è¡¥å¿é‡
+    E_D07_RULER_TYPE_PHASE_C_CORE_LOSS_HAVE_POWER_COMP,        // Cç›¸é“æŸæœ‰åŠŸç”µèƒ½è¡¥å¿é‡
 
 
-    // ¶ÔÓ¦±íA.1µçÄÜÊý¾Ý±êÊ¶±àÂë±í×î´ó±êÊ¶ */
+    // å¯¹åº”è¡¨A.1ç”µèƒ½æ•°æ®æ ‡è¯†ç¼–ç è¡¨æœ€å¤§æ ‡è¯† */
     E_D07_RULER_TYPE_A1_MAX = E_D07_RULER_TYPE_PHASE_C_CORE_LOSS_HAVE_POWER_COMP,        
 
-    /* ¶ÔÓ¦±íA.2 */
+    /* å¯¹åº”è¡¨A.2 */
     E_D07_RULER_TYPE_A2_MIN,
     
     /* [01] [00] [(00~FF)] [00] */
 
     /* [01] [01] [(00~FF)] [00] */
-    E_D07_RULER_TYPE_FORTH_HAVE_DEMAND_TOTAL = E_D07_RULER_TYPE_A2_MIN,        // ÕýÏòÓÐ¹¦×Ü×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_FORTH_HAVE_DEMAND_RATE,                // ÕýÏòÓÐ¹¦·ÑÂÊ×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_FORTH_HAVE_DEMAND_BLOCK,                // ÕýÏòÓÐ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼äÊý¾Ý¿é
+    E_D07_RULER_TYPE_FORTH_HAVE_DEMAND_TOTAL = E_D07_RULER_TYPE_A2_MIN,        // æ­£å‘æœ‰åŠŸæ€»æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_FORTH_HAVE_DEMAND_RATE,                // æ­£å‘æœ‰åŠŸè´¹çŽ‡æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_FORTH_HAVE_DEMAND_BLOCK,                // æ­£å‘æœ‰åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´æ•°æ®å—
 
     /* [01] [02] [(00~FF)] [00] */
-    E_D07_RULER_TYPE_BACK_HAVE_DEMAND_TOTAL,                // ·´ÏòÓÐ¹¦×Ü×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_BACK_HAVE_DEMAND_RATE,                    // ·´ÏòÓÐ¹¦·ÑÂÊ×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_BACK_HAVE_DEMAND_BLOCK,                // ·´ÏòÓÐ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼äÊý¾Ý¿é
+    E_D07_RULER_TYPE_BACK_HAVE_DEMAND_TOTAL,                // åå‘æœ‰åŠŸæ€»æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_BACK_HAVE_DEMAND_RATE,                    // åå‘æœ‰åŠŸè´¹çŽ‡æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_BACK_HAVE_DEMAND_BLOCK,                // åå‘æœ‰åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´æ•°æ®å—
 
     /* [01] [03] [(00~FF)] [00] */
-    E_D07_RULER_TYPE_COMB_NONE_1_DEMAND_TOTAL,                // ×éºÏÎÞ¹¦1×Ü×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_COMB_NONE_1_DEMAND_RATE,                // ×éºÏÎÞ¹¦1·ÑÂÊ×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_COMB_NONE_1_DEMAND_BLOCK,                // ×éºÏÎÞ¹¦1×î´óÐèÁ¿¼°·¢ÉúÊ±¼äÊý¾Ý¿é
+    E_D07_RULER_TYPE_COMB_NONE_1_DEMAND_TOTAL,                // ç»„åˆæ— åŠŸ1æ€»æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_COMB_NONE_1_DEMAND_RATE,                // ç»„åˆæ— åŠŸ1è´¹çŽ‡æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_COMB_NONE_1_DEMAND_BLOCK,                // ç»„åˆæ— åŠŸ1æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´æ•°æ®å—
 
     /* [01] [04] [(00~FF)] [00] */
-    E_D07_RULER_TYPE_COMB_NONE_2_DEMAND_TOTAL,                // ×éºÏÎÞ¹¦2×Ü×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_COMB_NONE_2_DEMAND_RATE,                // ×éºÏÎÞ¹¦2·ÑÂÊ×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_COMB_NONE_2_DEMAND_BLOCK,                // ×éºÏÎÞ¹¦2×î´óÐèÁ¿¼°·¢ÉúÊ±¼äÊý¾Ý¿é
+    E_D07_RULER_TYPE_COMB_NONE_2_DEMAND_TOTAL,                // ç»„åˆæ— åŠŸ2æ€»æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_COMB_NONE_2_DEMAND_RATE,                // ç»„åˆæ— åŠŸ2è´¹çŽ‡æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_COMB_NONE_2_DEMAND_BLOCK,                // ç»„åˆæ— åŠŸ2æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´æ•°æ®å—
 
     /* [01] [05] [(00~FF)] [00] */
-    E_D07_RULER_TYPE_QUAD_1_NONE_DEMAND_TOTAL,                // µÚÒ»ÏóÏÞÎÞ¹¦×Ü×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_QUAD_1_NONE_DEMAND_RATE,                // µÚÒ»ÏóÏÞÎÞ¹¦·ÑÂÊ×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_QUAD_1_NONE_DEMAND_BLOCK,                // µÚÒ»ÏóÏÞÎÞ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼äÊý¾Ý¿é
+    E_D07_RULER_TYPE_QUAD_1_NONE_DEMAND_TOTAL,                // ç¬¬ä¸€è±¡é™æ— åŠŸæ€»æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_QUAD_1_NONE_DEMAND_RATE,                // ç¬¬ä¸€è±¡é™æ— åŠŸè´¹çŽ‡æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_QUAD_1_NONE_DEMAND_BLOCK,                // ç¬¬ä¸€è±¡é™æ— åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´æ•°æ®å—
 
     /* [01] [06] [(00~FF)] [00] */
-    E_D07_RULER_TYPE_QUAD_2_NONE_DEMAND_TOTAL,                // µÚ¶þÏóÏÞÎÞ¹¦×Ü×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_QUAD_2_NONE_DEMAND_RATE,                // µÚ¶þÏóÏÞÎÞ¹¦·ÑÂÊ×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_QUAD_2_NONE_DEMAND_BLOCK,                // µÚ¶þÏóÏÞÎÞ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼äÊý¾Ý¿é
+    E_D07_RULER_TYPE_QUAD_2_NONE_DEMAND_TOTAL,                // ç¬¬äºŒè±¡é™æ— åŠŸæ€»æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_QUAD_2_NONE_DEMAND_RATE,                // ç¬¬äºŒè±¡é™æ— åŠŸè´¹çŽ‡æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_QUAD_2_NONE_DEMAND_BLOCK,                // ç¬¬äºŒè±¡é™æ— åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´æ•°æ®å—
 
     /* [01] [07] [(00~FF)] [00] */
-    E_D07_RULER_TYPE_QUAD_3_NONE_DEMAND_TOTAL,                // µÚÈýÏóÏÞÎÞ¹¦×Ü×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_QUAD_3_NONE_DEMAND_RATE,                // µÚÈýÏóÏÞÎÞ¹¦·ÑÂÊ×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_QUAD_3_NONE_DEMAND_BLOCK,                // µÚÈýÏóÏÞÎÞ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼äÊý¾Ý¿é
+    E_D07_RULER_TYPE_QUAD_3_NONE_DEMAND_TOTAL,                // ç¬¬ä¸‰è±¡é™æ— åŠŸæ€»æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_QUAD_3_NONE_DEMAND_RATE,                // ç¬¬ä¸‰è±¡é™æ— åŠŸè´¹çŽ‡æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_QUAD_3_NONE_DEMAND_BLOCK,                // ç¬¬ä¸‰è±¡é™æ— åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´æ•°æ®å—
 
     /* [01] [08] [(00~FF)] [00] */
-    E_D07_RULER_TYPE_QUAD_4_NONE_DEMAND_TOTAL,                // µÚËÄÏóÏÞÎÞ¹¦×Ü×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_QUAD_4_NONE_DEMAND_RATE,                // µÚËÄÏóÏÞÎÞ¹¦·ÑÂÊ×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_QUAD_4_NONE_DEMAND_BLOCK,                // µÚËÄÏóÏÞÎÞ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼äÊý¾Ý¿é
+    E_D07_RULER_TYPE_QUAD_4_NONE_DEMAND_TOTAL,                // ç¬¬å››è±¡é™æ— åŠŸæ€»æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_QUAD_4_NONE_DEMAND_RATE,                // ç¬¬å››è±¡é™æ— åŠŸè´¹çŽ‡æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_QUAD_4_NONE_DEMAND_BLOCK,                // ç¬¬å››è±¡é™æ— åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´æ•°æ®å—
 
     /* [01] [09] [(00~FF)] [00] */
-    E_D07_RULER_TYPE_FORTH_APPARENT_DEMAND_TOTAL,            // ÕýÏòÊÓÔÚ×Ü×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_FORTH_APPARENT_DEMAND_RATE,            // ÕýÏòÊÓÔÚ·ÑÂÊ×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_FORTH_APPARENT_DEMAND_BLOCK,            // ÕýÏòÊÓÔÚ×î´óÐèÁ¿¼°·¢ÉúÊ±¼äÊý¾Ý¿é
+    E_D07_RULER_TYPE_FORTH_APPARENT_DEMAND_TOTAL,            // æ­£å‘è§†åœ¨æ€»æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_FORTH_APPARENT_DEMAND_RATE,            // æ­£å‘è§†åœ¨è´¹çŽ‡æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_FORTH_APPARENT_DEMAND_BLOCK,            // æ­£å‘è§†åœ¨æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´æ•°æ®å—
 
     /* [01] [0A] [(00~FF)] [00] */
-    E_D07_RULER_TYPE_BACK_APPARENT_DEMAND_TOTAL,            // ·´ÏòÊÓÔÚ×Ü×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_BACK_APPARENT_DEMAND_RATE,                // ·´ÏòÊÓÔÚ·ÑÂÊ×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_BACK_APPARENT_DEMAND_BLOCK,            // ·´ÏòÊÓÔÚ×î´óÐèÁ¿¼°·¢ÉúÊ±¼äÊý¾Ý¿é
+    E_D07_RULER_TYPE_BACK_APPARENT_DEMAND_TOTAL,            // åå‘è§†åœ¨æ€»æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_BACK_APPARENT_DEMAND_RATE,                // åå‘è§†åœ¨è´¹çŽ‡æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_BACK_APPARENT_DEMAND_BLOCK,            // åå‘è§†åœ¨æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´æ•°æ®å—
 
     /* [01] [(15~9A)][00] [00] */
-    E_D07_RULER_TYPE_PHASE_A_FORTH_HAVE_DEMAND,                // AÏàÕýÏòÓÐ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_A_BACK_HAVE_DEMAND,                // AÏà·´ÏòÓÐ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_A_COMB_NONE_1_DEMAND,              // AÏà×éºÏÎÞ¹¦1×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_A_COMB_NONE_2_DEMAND,            // AÏà×éºÏÎÞ¹¦2×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_A_QUAD_1_NONE_DEMAND,              // AÏàµÚÒ»ÏóÏÞÎÞ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_A_QUAD_2_NONE_DEMAND,            // AÏàµÚ¶þÏóÏÞÎÞ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_A_QUAD_3_NONE_DEMAND,            // AÏàµÚÈýÏóÏÞÎÞ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_A_QUAD_4_NONE_DEMAND,            // AÏàµÚËÄÏóÏÞÎÞ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_A_FORTH_APPARENT_DEMAND,            // AÏàÕýÏòÊÓÔÚ×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_A_BACK_APPARENT_DEMAND,            // AÏà·´ÏòÊÓÔÚ×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
+    E_D07_RULER_TYPE_PHASE_A_FORTH_HAVE_DEMAND,                // Aç›¸æ­£å‘æœ‰åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_A_BACK_HAVE_DEMAND,                // Aç›¸åå‘æœ‰åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_A_COMB_NONE_1_DEMAND,              // Aç›¸ç»„åˆæ— åŠŸ1æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_A_COMB_NONE_2_DEMAND,            // Aç›¸ç»„åˆæ— åŠŸ2æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_A_QUAD_1_NONE_DEMAND,              // Aç›¸ç¬¬ä¸€è±¡é™æ— åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_A_QUAD_2_NONE_DEMAND,            // Aç›¸ç¬¬äºŒè±¡é™æ— åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_A_QUAD_3_NONE_DEMAND,            // Aç›¸ç¬¬ä¸‰è±¡é™æ— åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_A_QUAD_4_NONE_DEMAND,            // Aç›¸ç¬¬å››è±¡é™æ— åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_A_FORTH_APPARENT_DEMAND,            // Aç›¸æ­£å‘è§†åœ¨æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_A_BACK_APPARENT_DEMAND,            // Aç›¸åå‘è§†åœ¨æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
 
 
     /* [01] [(29~AE)][00] [00] */
-    E_D07_RULER_TYPE_PHASE_B_FORTH_HAVE_DEMAND,                // BÏàÕýÏòÓÐ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_B_BACK_HAVE_DEMAND,                // BÏà·´ÏòÓÐ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_B_COMB_NONE_1_DEMAND,              // BÏà×éºÏÎÞ¹¦1×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_B_COMB_NONE_2_DEMAND,            // BÏà×éºÏÎÞ¹¦2×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_B_QUAD_1_NONE_DEMAND,              // BÏàµÚÒ»ÏóÏÞÎÞ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_B_QUAD_2_NONE_DEMAND,            // BÏàµÚ¶þÏóÏÞÎÞ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_B_QUAD_3_NONE_DEMAND,            // BÏàµÚÈýÏóÏÞÎÞ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_B_QUAD_4_NONE_DEMAND,            // BÏàµÚËÄÏóÏÞÎÞ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_B_FORTH_APPARENT_DEMAND,            // BÏàÕýÏòÊÓÔÚ×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_B_BACK_APPARENT_DEMAND,            // BÏà·´ÏòÊÓÔÚ×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
+    E_D07_RULER_TYPE_PHASE_B_FORTH_HAVE_DEMAND,                // Bç›¸æ­£å‘æœ‰åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_B_BACK_HAVE_DEMAND,                // Bç›¸åå‘æœ‰åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_B_COMB_NONE_1_DEMAND,              // Bç›¸ç»„åˆæ— åŠŸ1æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_B_COMB_NONE_2_DEMAND,            // Bç›¸ç»„åˆæ— åŠŸ2æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_B_QUAD_1_NONE_DEMAND,              // Bç›¸ç¬¬ä¸€è±¡é™æ— åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_B_QUAD_2_NONE_DEMAND,            // Bç›¸ç¬¬äºŒè±¡é™æ— åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_B_QUAD_3_NONE_DEMAND,            // Bç›¸ç¬¬ä¸‰è±¡é™æ— åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_B_QUAD_4_NONE_DEMAND,            // Bç›¸ç¬¬å››è±¡é™æ— åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_B_FORTH_APPARENT_DEMAND,            // Bç›¸æ­£å‘è§†åœ¨æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_B_BACK_APPARENT_DEMAND,            // Bç›¸åå‘è§†åœ¨æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
 
     /* [01] [(3D~C2)][00] [00] */
-    E_D07_RULER_TYPE_PHASE_C_FORTH_HAVE_DEMAND,                // CÏàÕýÏòÓÐ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_C_BACK_HAVE_DEMAND,                // CÏà·´ÏòÓÐ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_C_COMB_NONE_1_DEMAND,              // CÏà×éºÏÎÞ¹¦1×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_C_COMB_NONE_2_DEMAND,            // CÏà×éºÏÎÞ¹¦2×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_C_QUAD_1_NONE_DEMAND,              // CÏàµÚÒ»ÏóÏÞÎÞ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_C_QUAD_2_NONE_DEMAND,            // CÏàµÚ¶þÏóÏÞÎÞ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_C_QUAD_3_NONE_DEMAND,            // CÏàµÚÈýÏóÏÞÎÞ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_C_QUAD_4_NONE_DEMAND,            // CÏàµÚËÄÏóÏÞÎÞ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_C_FORTH_APPARENT_DEMAND,            // CÏàÕýÏòÊÓÔÚ×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_C_BACK_APPARENT_DEMAND,            // CÏà·´ÏòÊÓÔÚ×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
+    E_D07_RULER_TYPE_PHASE_C_FORTH_HAVE_DEMAND,                // Cç›¸æ­£å‘æœ‰åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_C_BACK_HAVE_DEMAND,                // Cç›¸åå‘æœ‰åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_C_COMB_NONE_1_DEMAND,              // Cç›¸ç»„åˆæ— åŠŸ1æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_C_COMB_NONE_2_DEMAND,            // Cç›¸ç»„åˆæ— åŠŸ2æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_C_QUAD_1_NONE_DEMAND,              // Cç›¸ç¬¬ä¸€è±¡é™æ— åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_C_QUAD_2_NONE_DEMAND,            // Cç›¸ç¬¬äºŒè±¡é™æ— åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_C_QUAD_3_NONE_DEMAND,            // Cç›¸ç¬¬ä¸‰è±¡é™æ— åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_C_QUAD_4_NONE_DEMAND,            // Cç›¸ç¬¬å››è±¡é™æ— åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_C_FORTH_APPARENT_DEMAND,            // Cç›¸æ­£å‘è§†åœ¨æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
+    E_D07_RULER_TYPE_PHASE_C_BACK_APPARENT_DEMAND,            // Cç›¸åå‘è§†åœ¨æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
     
 
-    /* ¶ÔÓ¦±íA.2×î´óÐèÁ¿¼°·¢ÉúÊ±¼äÊý¾Ý±êÊ¶±àÂë±í */
+    /* å¯¹åº”è¡¨A.2æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´æ•°æ®æ ‡è¯†ç¼–ç è¡¨ */
     E_D07_RULER_TYPE_A2_MAX = E_D07_RULER_TYPE_PHASE_C_BACK_APPARENT_DEMAND,    
 
-    /* ¶ÔÓ¦±íA.3 ±äÁ¿Êý¾Ý±êÊ¶±àÂë±í */
+    /* å¯¹åº”è¡¨A.3 å˜é‡æ•°æ®æ ‡è¯†ç¼–ç è¡¨ */
     E_D07_RULER_TYPE_A3_MIN,
-    E_D07_RULER_TYPE_PHASE_A_VOLT = E_D07_RULER_TYPE_A3_MIN,// AÏàµçÑ¹
-    E_D07_RULER_TYPE_PHASE_B_VOLT,                            // BÏàµçÑ¹
-    E_D07_RULER_TYPE_PHASE_C_VOLT,                            // CÏàµçÑ¹
-    E_D07_RULER_TYPE_VOLT_BLOCK,                            // µçÑ¹Êý¾Ý¿é
+    E_D07_RULER_TYPE_PHASE_A_VOLT = E_D07_RULER_TYPE_A3_MIN,// Aç›¸ç”µåŽ‹
+    E_D07_RULER_TYPE_PHASE_B_VOLT,                            // Bç›¸ç”µåŽ‹
+    E_D07_RULER_TYPE_PHASE_C_VOLT,                            // Cç›¸ç”µåŽ‹
+    E_D07_RULER_TYPE_VOLT_BLOCK,                            // ç”µåŽ‹æ•°æ®å—
     
-    E_D07_RULER_TYPE_PHASE_A_ELEC,                            // AÏàµçÁ÷
-    E_D07_RULER_TYPE_PHASE_B_ELEC,                            // BÏàµçÁ÷
-    E_D07_RULER_TYPE_PHASE_C_ELEC,                            // CÏàµçÁ÷
-    E_D07_RULER_TYPE_ELEC_BLOCK,                            // µçÁ÷Êý¾Ý¿é
+    E_D07_RULER_TYPE_PHASE_A_ELEC,                            // Aç›¸ç”µæµ
+    E_D07_RULER_TYPE_PHASE_B_ELEC,                            // Bç›¸ç”µæµ
+    E_D07_RULER_TYPE_PHASE_C_ELEC,                            // Cç›¸ç”µæµ
+    E_D07_RULER_TYPE_ELEC_BLOCK,                            // ç”µæµæ•°æ®å—
 
-    E_D07_RULER_TYPE_INSTANT_HAVE_POWER_RATE_TOTAL,            // Ë²Ê±×ÜÓÐ¹¦¹¦ÂÊ    
-    E_D07_RULER_TYPE_INSTANT_PHASE_A_HAVE_POWER_RATE,        // Ë²Ê±AÏàÓÐ¹¦¹¦ÂÊ
-    E_D07_RULER_TYPE_INSTANT_PHASE_B_HAVE_POWER_RATE,        // Ë²Ê±BÏàÓÐ¹¦¹¦ÂÊ
-    E_D07_RULER_TYPE_INSTANT_PHASE_C_HAVE_POWER_RATE,        // Ë²Ê±CÏàÓÐ¹¦¹¦ÂÊ
-    E_D07_RULER_TYPE_INSTANT_HAVE_POWER_RATE_BLOCK,            // Ë²Ê±ÓÐ¹¦¹¦ÂÊÊý¾Ý¿é
+    E_D07_RULER_TYPE_INSTANT_HAVE_POWER_RATE_TOTAL,            // çž¬æ—¶æ€»æœ‰åŠŸåŠŸçŽ‡    
+    E_D07_RULER_TYPE_INSTANT_PHASE_A_HAVE_POWER_RATE,        // çž¬æ—¶Aç›¸æœ‰åŠŸåŠŸçŽ‡
+    E_D07_RULER_TYPE_INSTANT_PHASE_B_HAVE_POWER_RATE,        // çž¬æ—¶Bç›¸æœ‰åŠŸåŠŸçŽ‡
+    E_D07_RULER_TYPE_INSTANT_PHASE_C_HAVE_POWER_RATE,        // çž¬æ—¶Cç›¸æœ‰åŠŸåŠŸçŽ‡
+    E_D07_RULER_TYPE_INSTANT_HAVE_POWER_RATE_BLOCK,            // çž¬æ—¶æœ‰åŠŸåŠŸçŽ‡æ•°æ®å—
     
-    E_D07_RULER_TYPE_INSTANT_NONE_POWER_RATE_TOTAL,            // Ë²Ê±×ÜÎÞ¹¦¹¦ÂÊ    
-    E_D07_RULER_TYPE_INSTANT_PHASE_A_NONE_POWER_RATE,        // Ë²Ê±AÏàÎÞ¹¦¹¦ÂÊ
-    E_D07_RULER_TYPE_INSTANT_PHASE_B_NONE_POWER_RATE,        // Ë²Ê±BÏàÎÞ¹¦¹¦ÂÊ
-    E_D07_RULER_TYPE_INSTANT_PHASE_C_NONE_POWER_RATE,        // Ë²Ê±CÏàÎÞ¹¦¹¦ÂÊ
-    E_D07_RULER_TYPE_INSTANT_NONE_POWER_RATE_BLOCK,            // Ë²Ê±ÎÞ¹¦¹¦ÂÊÊý¾Ý¿é
+    E_D07_RULER_TYPE_INSTANT_NONE_POWER_RATE_TOTAL,            // çž¬æ—¶æ€»æ— åŠŸåŠŸçŽ‡    
+    E_D07_RULER_TYPE_INSTANT_PHASE_A_NONE_POWER_RATE,        // çž¬æ—¶Aç›¸æ— åŠŸåŠŸçŽ‡
+    E_D07_RULER_TYPE_INSTANT_PHASE_B_NONE_POWER_RATE,        // çž¬æ—¶Bç›¸æ— åŠŸåŠŸçŽ‡
+    E_D07_RULER_TYPE_INSTANT_PHASE_C_NONE_POWER_RATE,        // çž¬æ—¶Cç›¸æ— åŠŸåŠŸçŽ‡
+    E_D07_RULER_TYPE_INSTANT_NONE_POWER_RATE_BLOCK,            // çž¬æ—¶æ— åŠŸåŠŸçŽ‡æ•°æ®å—
 
-    E_D07_RULER_TYPE_INSTANT_APPARENT_POWER_RATE_TOTAL,        // Ë²Ê±×ÜÊÓÔÚ¹¦ÂÊ    
-    E_D07_RULER_TYPE_INSTANT_PHASE_A_APPARENT_POWER_RATE,    // Ë²Ê±AÏàÊÓÔÚ¹¦ÂÊ
-    E_D07_RULER_TYPE_INSTANT_PHASE_B_APPARENT_POWER_RATE,    // Ë²Ê±BÏàÊÓÔÚ¹¦ÂÊ
-    E_D07_RULER_TYPE_INSTANT_PHASE_C_APPARENT_POWER_RATE,    // Ë²Ê±CÏàÊÓÔÚ¹¦ÂÊ
-    E_D07_RULER_TYPE_INSTANT_APPARENT_POWER_RATE_BLOCK,        // Ë²Ê±ÊÓÔÚ¹¦ÂÊÊý¾Ý¿é
+    E_D07_RULER_TYPE_INSTANT_APPARENT_POWER_RATE_TOTAL,        // çž¬æ—¶æ€»è§†åœ¨åŠŸçŽ‡    
+    E_D07_RULER_TYPE_INSTANT_PHASE_A_APPARENT_POWER_RATE,    // çž¬æ—¶Aç›¸è§†åœ¨åŠŸçŽ‡
+    E_D07_RULER_TYPE_INSTANT_PHASE_B_APPARENT_POWER_RATE,    // çž¬æ—¶Bç›¸è§†åœ¨åŠŸçŽ‡
+    E_D07_RULER_TYPE_INSTANT_PHASE_C_APPARENT_POWER_RATE,    // çž¬æ—¶Cç›¸è§†åœ¨åŠŸçŽ‡
+    E_D07_RULER_TYPE_INSTANT_APPARENT_POWER_RATE_BLOCK,        // çž¬æ—¶è§†åœ¨åŠŸçŽ‡æ•°æ®å—
 
-    E_D07_RULER_TYPE_POWER_RATE_FACTOR_TOTAL,                // ×Ü¹¦ÂÊÒòÊý
-    E_D07_RULER_TYPE_PHASE_A_POWER_RATE_FACTOR,                // AÏà¹¦ÂÊÒòÊý
-    E_D07_RULER_TYPE_PHASE_B_POWER_RATE_FACTOR,                // BÏà¹¦ÂÊÒòÊý
-    E_D07_RULER_TYPE_PHASE_C_POWER_RATE_FACTOR,                // CÏà¹¦ÂÊÒòÊý
-    E_D07_RULER_TYPE_POWER_RATE_FACTOR_BLOCK,                // ¹¦ÂÊÒòÊýÊý¾Ý¿é
+    E_D07_RULER_TYPE_POWER_RATE_FACTOR_TOTAL,                // æ€»åŠŸçŽ‡å› æ•°
+    E_D07_RULER_TYPE_PHASE_A_POWER_RATE_FACTOR,                // Aç›¸åŠŸçŽ‡å› æ•°
+    E_D07_RULER_TYPE_PHASE_B_POWER_RATE_FACTOR,                // Bç›¸åŠŸçŽ‡å› æ•°
+    E_D07_RULER_TYPE_PHASE_C_POWER_RATE_FACTOR,                // Cç›¸åŠŸçŽ‡å› æ•°
+    E_D07_RULER_TYPE_POWER_RATE_FACTOR_BLOCK,                // åŠŸçŽ‡å› æ•°æ•°æ®å—
     
-    E_D07_RULER_TYPE_PHASE_A_ANGLE,                            // AÏàÏà½Ç
-    E_D07_RULER_TYPE_PHASE_B_ANGLE,                            // BÏàÏà½Ç
-    E_D07_RULER_TYPE_PHASE_C_ANGLE,                            // CÏàÏà½Ç
-    E_D07_RULER_TYPE_ANGLE_BLOCK,                            // Ïà½ÇÊý¾Ý¿é
+    E_D07_RULER_TYPE_PHASE_A_ANGLE,                            // Aç›¸ç›¸è§’
+    E_D07_RULER_TYPE_PHASE_B_ANGLE,                            // Bç›¸ç›¸è§’
+    E_D07_RULER_TYPE_PHASE_C_ANGLE,                            // Cç›¸ç›¸è§’
+    E_D07_RULER_TYPE_ANGLE_BLOCK,                            // ç›¸è§’æ•°æ®å—
     
-    E_D07_RULER_TYPE_PHASE_A_VOLT_WAVEFORM_DISTORTION,        // AÏàµçÑ¹²¨ÐÎÊ§Õæ¶È
-    E_D07_RULER_TYPE_PHASE_B_VOLT_WAVEFORM_DISTORTION,        // BÏàµçÑ¹²¨ÐÎÊ§Õæ¶È
-    E_D07_RULER_TYPE_PHASE_C_VOLT_WAVEFORM_DISTORTION,        // CÏàµçÑ¹²¨ÐÎÊ§Õæ¶È
-    E_D07_RULER_TYPE_VOLT_WAVEFORM_DISTORTION_BLOCK,        // µçÑ¹²¨ÐÎÊ§Õæ¶ÈÊý¾Ý¿é
+    E_D07_RULER_TYPE_PHASE_A_VOLT_WAVEFORM_DISTORTION,        // Aç›¸ç”µåŽ‹æ³¢å½¢å¤±çœŸåº¦
+    E_D07_RULER_TYPE_PHASE_B_VOLT_WAVEFORM_DISTORTION,        // Bç›¸ç”µåŽ‹æ³¢å½¢å¤±çœŸåº¦
+    E_D07_RULER_TYPE_PHASE_C_VOLT_WAVEFORM_DISTORTION,        // Cç›¸ç”µåŽ‹æ³¢å½¢å¤±çœŸåº¦
+    E_D07_RULER_TYPE_VOLT_WAVEFORM_DISTORTION_BLOCK,        // ç”µåŽ‹æ³¢å½¢å¤±çœŸåº¦æ•°æ®å—
     
-    E_D07_RULER_TYPE_PHASE_A_ELEC_WAVEFORM_DISTORTION,        // AÏàµçÁ÷²¨ÐÎÊ§Õæ¶È
-    E_D07_RULER_TYPE_PHASE_B_ELEC_WAVEFORM_DISTORTION,        // BÏàµçÁ÷²¨ÐÎÊ§Õæ¶È
-    E_D07_RULER_TYPE_PHASE_C_ELEC_WAVEFORM_DISTORTION,        // CÏàµçÁ÷²¨ÐÎÊ§Õæ¶È
-    E_D07_RULER_TYPE_ELEC_WAVEFORM_DISTORTION_BLOCK,        // µçÁ÷²¨ÐÎÊ§Õæ¶ÈÊý¾Ý¿é
+    E_D07_RULER_TYPE_PHASE_A_ELEC_WAVEFORM_DISTORTION,        // Aç›¸ç”µæµæ³¢å½¢å¤±çœŸåº¦
+    E_D07_RULER_TYPE_PHASE_B_ELEC_WAVEFORM_DISTORTION,        // Bç›¸ç”µæµæ³¢å½¢å¤±çœŸåº¦
+    E_D07_RULER_TYPE_PHASE_C_ELEC_WAVEFORM_DISTORTION,        // Cç›¸ç”µæµæ³¢å½¢å¤±çœŸåº¦
+    E_D07_RULER_TYPE_ELEC_WAVEFORM_DISTORTION_BLOCK,        // ç”µæµæ³¢å½¢å¤±çœŸåº¦æ•°æ®å—
     
-    E_D07_RULER_TYPE_PHASE_A_VOLT_HARMONIC_CONTENT_T,        // AÏàµçÑ¹(t)´ÎÐ³²¨º¬Á¿
-    E_D07_RULER_TYPE_PHASE_A_VOLT_HARMONIC_CONTENT_BLOCK,    // AÏàµçÑ¹´ÎÐ³²¨º¬Á¿Êý¾Ý¿é
+    E_D07_RULER_TYPE_PHASE_A_VOLT_HARMONIC_CONTENT_T,        // Aç›¸ç”µåŽ‹(t)æ¬¡è°æ³¢å«é‡
+    E_D07_RULER_TYPE_PHASE_A_VOLT_HARMONIC_CONTENT_BLOCK,    // Aç›¸ç”µåŽ‹æ¬¡è°æ³¢å«é‡æ•°æ®å—
     
-    E_D07_RULER_TYPE_PHASE_B_VOLT_HARMONIC_CONTENT_T,        // BÏàµçÑ¹(t)´ÎÐ³²¨º¬Á¿
-    E_D07_RULER_TYPE_PHASE_B_VOLT_HARMONIC_CONTENT_BLOCK,   // BÏàµçÑ¹Ð³²¨º¬Á¿Êý¾Ý¿é
+    E_D07_RULER_TYPE_PHASE_B_VOLT_HARMONIC_CONTENT_T,        // Bç›¸ç”µåŽ‹(t)æ¬¡è°æ³¢å«é‡
+    E_D07_RULER_TYPE_PHASE_B_VOLT_HARMONIC_CONTENT_BLOCK,   // Bç›¸ç”µåŽ‹è°æ³¢å«é‡æ•°æ®å—
     
-    E_D07_RULER_TYPE_PHASE_C_VOLT_HARMONIC_CONTENT_T,        // CÏàµçÑ¹(t)´ÎÐ³²¨º¬Á¿
-    E_D07_RULER_TYPE_PHASE_C_VOLT_HARMONIC_CONTENT_BLOCK,   // CÏàµçÑ¹Ð³²¨º¬Á¿Êý¾Ý¿é
+    E_D07_RULER_TYPE_PHASE_C_VOLT_HARMONIC_CONTENT_T,        // Cç›¸ç”µåŽ‹(t)æ¬¡è°æ³¢å«é‡
+    E_D07_RULER_TYPE_PHASE_C_VOLT_HARMONIC_CONTENT_BLOCK,   // Cç›¸ç”µåŽ‹è°æ³¢å«é‡æ•°æ®å—
 
-    E_D07_RULER_TYPE_PHASE_A_ELEC_HARMONIC_CONTENT_T,        // AÏàµçÁ÷(t)´ÎÐ³²¨º¬Á¿
-    E_D07_RULER_TYPE_PHASE_A_ELEC_HARMONIC_CONTENT_BLOCK,    // AÏàµçÁ÷Ð³²¨º¬Á¿Êý¾Ý¿é
+    E_D07_RULER_TYPE_PHASE_A_ELEC_HARMONIC_CONTENT_T,        // Aç›¸ç”µæµ(t)æ¬¡è°æ³¢å«é‡
+    E_D07_RULER_TYPE_PHASE_A_ELEC_HARMONIC_CONTENT_BLOCK,    // Aç›¸ç”µæµè°æ³¢å«é‡æ•°æ®å—
     
-    E_D07_RULER_TYPE_PHASE_B_ELEC_HARMONIC_CONTENT_T,        // CÏàµçÁ÷(t)´ÎÐ³²¨º¬Á¿
-    E_D07_RULER_TYPE_PHASE_B_ELEC_HARMONIC_CONTENT_BLOCK,    // CÏàµçÁ÷Ð³²¨º¬Á¿Êý¾Ý¿é
+    E_D07_RULER_TYPE_PHASE_B_ELEC_HARMONIC_CONTENT_T,        // Cç›¸ç”µæµ(t)æ¬¡è°æ³¢å«é‡
+    E_D07_RULER_TYPE_PHASE_B_ELEC_HARMONIC_CONTENT_BLOCK,    // Cç›¸ç”µæµè°æ³¢å«é‡æ•°æ®å—
     
-    E_D07_RULER_TYPE_PHASE_C_ELEC_HARMONIC_CONTENT_T,        // CÏàµçÁ÷(t)´ÎÐ³²¨º¬Á¿
-    E_D07_RULER_TYPE_PHASE_C_ELEC_HARMONIC_CONTENT_BLOCK,    // CÏàµçÁ÷Ð³²¨º¬Á¿Êý¾Ý¿é
+    E_D07_RULER_TYPE_PHASE_C_ELEC_HARMONIC_CONTENT_T,        // Cç›¸ç”µæµ(t)æ¬¡è°æ³¢å«é‡
+    E_D07_RULER_TYPE_PHASE_C_ELEC_HARMONIC_CONTENT_BLOCK,    // Cç›¸ç”µæµè°æ³¢å«é‡æ•°æ®å—
     
-    E_D07_RULER_TYPE_ZERO_LINE_ELEC,                        // ÁãÏßµçÁ÷
-    E_D07_RULER_TYPE_POWER_GRID_HZ,                            // µçÍøÆµÂÊ
-    E_D07_RULER_TYPE_1M_AVER_HAVE_POWER_RATE_TOTAL,            // Ò»·ÖÖÓÓÐ¹¦×ÜÆ½¾ù¹¦ÂÊ
+    E_D07_RULER_TYPE_ZERO_LINE_ELEC,                        // é›¶çº¿ç”µæµ
+    E_D07_RULER_TYPE_POWER_GRID_HZ,                            // ç”µç½‘é¢‘çŽ‡
+    E_D07_RULER_TYPE_1M_AVER_HAVE_POWER_RATE_TOTAL,            // ä¸€åˆ†é’Ÿæœ‰åŠŸæ€»å¹³å‡åŠŸçŽ‡
     
-    E_D07_RULER_TYPE_CURRENT_HAVE_POWER_DEMAND,                // µ±Ç°ÓÐ¹¦ÐèÁ¿
-    E_D07_RULER_TYPE_CURRENT_NONE_POWER_DEMAND,                // µ±Ç°ÎÞ¹¦ÐèÁ¿
-    E_D07_RULER_TYPE_CURRENT_APPARENT_POWER_DEMAND,            // µ±Ç°ÊÓÔÚÐèÁ¿
+    E_D07_RULER_TYPE_CURRENT_HAVE_POWER_DEMAND,                // å½“å‰æœ‰åŠŸéœ€é‡
+    E_D07_RULER_TYPE_CURRENT_NONE_POWER_DEMAND,                // å½“å‰æ— åŠŸéœ€é‡
+    E_D07_RULER_TYPE_CURRENT_APPARENT_POWER_DEMAND,            // å½“å‰è§†åœ¨éœ€é‡
     
-    E_D07_RULER_TYPE_METER_TEMP,                            // ±íÄÚÎÂ¶È
-    E_D07_RULER_TYPE_INTER_CLOCK_CELL_VOLT,                    // Ê±ÖÓµç³ØµçÑ¹(ÄÚ²¿)
-    E_D07_RULER_TYPE_READ_METER_CELL_VOLT,                    // Í£µç³­±íµç³ØµçÑ¹(Íâ²¿)
-    E_D07_RULER_TYPE_INTER_CLOCK_WORK_TIME,                    // ÄÚ²¿µç³Ø¹¤×÷Ê±¼ä
+    E_D07_RULER_TYPE_METER_TEMP,                            // è¡¨å†…æ¸©åº¦
+    E_D07_RULER_TYPE_INTER_CLOCK_CELL_VOLT,                    // æ—¶é’Ÿç”µæ± ç”µåŽ‹(å†…éƒ¨)
+    E_D07_RULER_TYPE_READ_METER_CELL_VOLT,                    // åœç”µæŠ„è¡¨ç”µæ± ç”µåŽ‹(å¤–éƒ¨)
+    E_D07_RULER_TYPE_INTER_CLOCK_WORK_TIME,                    // å†…éƒ¨ç”µæ± å·¥ä½œæ—¶é—´
     
     E_D07_RULER_TYPE_A3_MAX = E_D07_RULER_TYPE_INTER_CLOCK_WORK_TIME,
     
-    /* ¶ÔÓ¦±í A.4 ÊÂ¼þ¼ÇÂ¼Êý¾Ý±êÊ¶±àÂë±í */
-    E_D07_RULER_TYPE_A4_MIN,                                /* ±íA.4¹æÔ¼×îÐ¡Öµ */
-    E_D07_RULER_TYPE_PHASE_ABC_LOSS_VOLT_TIMES = E_D07_RULER_TYPE_A4_MIN,// ABCÏàÊ§Ñ¹´ÎÊý£¬×ÜÀÛ¼ÆÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_A_LOSS_VOLT_RECORD,                // ÉÏ(n)´ÎAÏàÊ§Ñ¹¼ÇÂ¼
-    E_D07_RULER_TYPE_PHASE_B_LOSS_VOLT_RECORD,                // ÉÏ(n)´ÎBÏàÊ§Ñ¹¼ÇÂ¼
-    E_D07_RULER_TYPE_PHASE_C_LOSS_VOLT_RECORD,                // ÉÏ(n)´ÎCÏàÊ§Ñ¹¼ÇÂ¼
+    /* å¯¹åº”è¡¨ A.4 äº‹ä»¶è®°å½•æ•°æ®æ ‡è¯†ç¼–ç è¡¨ */
+    E_D07_RULER_TYPE_A4_MIN,                                /* è¡¨A.4è§„çº¦æœ€å°å€¼ */
+    E_D07_RULER_TYPE_PHASE_ABC_LOSS_VOLT_TIMES = E_D07_RULER_TYPE_A4_MIN,// ABCç›¸å¤±åŽ‹æ¬¡æ•°ï¼Œæ€»ç´¯è®¡æ—¶é—´
+    E_D07_RULER_TYPE_PHASE_A_LOSS_VOLT_RECORD,                // ä¸Š(n)æ¬¡Aç›¸å¤±åŽ‹è®°å½•
+    E_D07_RULER_TYPE_PHASE_B_LOSS_VOLT_RECORD,                // ä¸Š(n)æ¬¡Bç›¸å¤±åŽ‹è®°å½•
+    E_D07_RULER_TYPE_PHASE_C_LOSS_VOLT_RECORD,                // ä¸Š(n)æ¬¡Cç›¸å¤±åŽ‹è®°å½•
         
-    E_D07_RULER_TYPE_PHASE_ABC_LESS_VOLT_TIMES,                // ABCÏàÇ·Ñ¹´ÎÊý£¬×ÜÀÛ¼ÆÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_A_LESS_VOLT_RECORD,                // ÉÏ(n)´ÎAÏàÇ·Ñ¹¼ÇÂ¼
-    E_D07_RULER_TYPE_PHASE_B_LESS_VOLT_RECORD,                // ÉÏ(n)´ÎBÏàÇ·Ñ¹¼ÇÂ¼
-    E_D07_RULER_TYPE_PHASE_C_LESS_VOLT_RECORD,                // ÉÏ(n)´ÎCÏàÇ·Ñ¹¼ÇÂ¼
+    E_D07_RULER_TYPE_PHASE_ABC_LESS_VOLT_TIMES,                // ABCç›¸æ¬ åŽ‹æ¬¡æ•°ï¼Œæ€»ç´¯è®¡æ—¶é—´
+    E_D07_RULER_TYPE_PHASE_A_LESS_VOLT_RECORD,                // ä¸Š(n)æ¬¡Aç›¸æ¬ åŽ‹è®°å½•
+    E_D07_RULER_TYPE_PHASE_B_LESS_VOLT_RECORD,                // ä¸Š(n)æ¬¡Bç›¸æ¬ åŽ‹è®°å½•
+    E_D07_RULER_TYPE_PHASE_C_LESS_VOLT_RECORD,                // ä¸Š(n)æ¬¡Cç›¸æ¬ åŽ‹è®°å½•
     
-    E_D07_RULER_TYPE_PHASE_ABC_MORE_VOLT_TIMES,                // ABCÏà¹ýÑ¹´ÎÊý£¬×ÜÀÛ¼ÆÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_A_MORE_VOLT_RECORD,                // ÉÏ(n)´ÎAÏà¹ýÑ¹¼ÇÂ¼
-    E_D07_RULER_TYPE_PHASE_B_MORE_VOLT_RECORD,                // ÉÏ(n)´ÎBÏà¹ýÑ¹¼ÇÂ¼
-    E_D07_RULER_TYPE_PHASE_C_MORE_VOLT_RECORD,                // ÉÏ(n)´ÎCÏà¹ýÑ¹¼ÇÂ¼
+    E_D07_RULER_TYPE_PHASE_ABC_MORE_VOLT_TIMES,                // ABCç›¸è¿‡åŽ‹æ¬¡æ•°ï¼Œæ€»ç´¯è®¡æ—¶é—´
+    E_D07_RULER_TYPE_PHASE_A_MORE_VOLT_RECORD,                // ä¸Š(n)æ¬¡Aç›¸è¿‡åŽ‹è®°å½•
+    E_D07_RULER_TYPE_PHASE_B_MORE_VOLT_RECORD,                // ä¸Š(n)æ¬¡Bç›¸è¿‡åŽ‹è®°å½•
+    E_D07_RULER_TYPE_PHASE_C_MORE_VOLT_RECORD,                // ä¸Š(n)æ¬¡Cç›¸è¿‡åŽ‹è®°å½•
     
-    E_D07_RULER_TYPE_PHASE_ABC_DROP_TIMES,                    // ABCÏà¶ÏÏà´ÎÊý£¬×ÜÀÛ¼ÆÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_A_DROP_RECORD,                    // ÉÏ(n)´ÎAÏà¶ÏÏà¼ÇÂ¼
-    E_D07_RULER_TYPE_PHASE_B_DROP_RECORD,                    // ÉÏ(n)´ÎBÏà¶ÏÏà¼ÇÂ¼
-    E_D07_RULER_TYPE_PHASE_C_DROP_RECORD,                    // ÉÏ(n)´ÎCÏà¶ÏÏà¼ÇÂ¼
+    E_D07_RULER_TYPE_PHASE_ABC_DROP_TIMES,                    // ABCç›¸æ–­ç›¸æ¬¡æ•°ï¼Œæ€»ç´¯è®¡æ—¶é—´
+    E_D07_RULER_TYPE_PHASE_A_DROP_RECORD,                    // ä¸Š(n)æ¬¡Aç›¸æ–­ç›¸è®°å½•
+    E_D07_RULER_TYPE_PHASE_B_DROP_RECORD,                    // ä¸Š(n)æ¬¡Bç›¸æ–­ç›¸è®°å½•
+    E_D07_RULER_TYPE_PHASE_C_DROP_RECORD,                    // ä¸Š(n)æ¬¡Cç›¸æ–­ç›¸è®°å½•
     
-    E_D07_RULER_TYPE_LOSS_VOLT_TIMES_TOTAL,                    // È«Ê§Ñ¹´ÎÊý£¬×ÜÀÛ¼ÆÊ±¼ä
-    E_D07_RULER_TYPE_LOSS_ALL_VOLT_TIME_N,                    // ÉÏ(n)´ÎÈ«Ê§Ñ¹·¢ÉúÊ±¿Ì£¬µçÁ÷Öµ£¬½áÊøÊ±¿Ì
-    E_D07_RULER_TYPE_APS_LOSS_ELEC_TIMES_TOTAL,                // ¸¨ÖúµçÔ´Ê§µç·¢Éú´ÎÊý£¬×ÜÀÛ¼ÆÊ±¼ä
-    E_D07_RULER_TYPE_APS_LOSS_ELEC_TIME_N,                    // ÉÏ(n)´Î¸¨ÖúµçÔ´Ê§µç·¢ÉúÊ±¿Ì£¬½áÊøÊ±¿Ì
+    E_D07_RULER_TYPE_LOSS_VOLT_TIMES_TOTAL,                    // å…¨å¤±åŽ‹æ¬¡æ•°ï¼Œæ€»ç´¯è®¡æ—¶é—´
+    E_D07_RULER_TYPE_LOSS_ALL_VOLT_TIME_N,                    // ä¸Š(n)æ¬¡å…¨å¤±åŽ‹å‘ç”Ÿæ—¶åˆ»ï¼Œç”µæµå€¼ï¼Œç»“æŸæ—¶åˆ»
+    E_D07_RULER_TYPE_APS_LOSS_ELEC_TIMES_TOTAL,                // è¾…åŠ©ç”µæºå¤±ç”µå‘ç”Ÿæ¬¡æ•°ï¼Œæ€»ç´¯è®¡æ—¶é—´
+    E_D07_RULER_TYPE_APS_LOSS_ELEC_TIME_N,                    // ä¸Š(n)æ¬¡è¾…åŠ©ç”µæºå¤±ç”µå‘ç”Ÿæ—¶åˆ»ï¼Œç»“æŸæ—¶åˆ»
     
-    E_D07_RULER_TYPE_VOLT_ANTI_PHASE_TIMES_TOTAL,            // µçÑ¹ÄæÏàÐò×Ü´ÎÊý£¬×ÜÀÛ¼ÆÊ±¼ä
-    E_D07_RULER_TYPE_VOLT_ANTI_PHASE_RECORD_N,                // ÉÏ(n)´ÎµçÑ¹ÄæÏàÐò¼ÇÂ¼
+    E_D07_RULER_TYPE_VOLT_ANTI_PHASE_TIMES_TOTAL,            // ç”µåŽ‹é€†ç›¸åºæ€»æ¬¡æ•°ï¼Œæ€»ç´¯è®¡æ—¶é—´
+    E_D07_RULER_TYPE_VOLT_ANTI_PHASE_RECORD_N,                // ä¸Š(n)æ¬¡ç”µåŽ‹é€†ç›¸åºè®°å½•
 
-    E_D07_RULER_TYPE_ELEC_ANTI_PHASE_TIMES_TOTAL,            // µçÁ÷ÄæÏàÐò×Ü´ÎÊý£¬×ÜÀÛ¼ÆÊ±¼ä
-    E_D07_RULER_TYPE_ELEC_ANTI_PHASE_RECORD_N,                // ÉÏ(n)´ÎµçÁ÷ÄæÏàÐò¼ÇÂ¼
+    E_D07_RULER_TYPE_ELEC_ANTI_PHASE_TIMES_TOTAL,            // ç”µæµé€†ç›¸åºæ€»æ¬¡æ•°ï¼Œæ€»ç´¯è®¡æ—¶é—´
+    E_D07_RULER_TYPE_ELEC_ANTI_PHASE_RECORD_N,                // ä¸Š(n)æ¬¡ç”µæµé€†ç›¸åºè®°å½•
     
-    E_D07_RULER_TYPE_VOLT_UNBALANCE_TIMES_TOTAL,            // µçÑ¹²»Æ½ºâ×Ü´ÎÊý£¬×ÜÀÛ¼ÆÊ±¼ä
-    E_D07_RULER_TYPE_VOLT_UNBALANCE_RECORD_N,                // ÉÏ(n)´ÎµçÑ¹²»Æ½ºâ¼ÇÂ¼
+    E_D07_RULER_TYPE_VOLT_UNBALANCE_TIMES_TOTAL,            // ç”µåŽ‹ä¸å¹³è¡¡æ€»æ¬¡æ•°ï¼Œæ€»ç´¯è®¡æ—¶é—´
+    E_D07_RULER_TYPE_VOLT_UNBALANCE_RECORD_N,                // ä¸Š(n)æ¬¡ç”µåŽ‹ä¸å¹³è¡¡è®°å½•
     
-    E_D07_RULER_TYPE_ELEC_UNBALANCE_TIMES_TOTAL,            // µçÁ÷²»Æ½ºâ×Ü´ÎÊý£¬×ÜÀÛ¼ÆÊ±¼ä
-    E_D07_RULER_TYPE_ELEC_UNBALANCE_RECORD_N,                // ÉÏ(n)´ÎµçÁ÷²»Æ½ºâ¼ÇÂ¼
+    E_D07_RULER_TYPE_ELEC_UNBALANCE_TIMES_TOTAL,            // ç”µæµä¸å¹³è¡¡æ€»æ¬¡æ•°ï¼Œæ€»ç´¯è®¡æ—¶é—´
+    E_D07_RULER_TYPE_ELEC_UNBALANCE_RECORD_N,                // ä¸Š(n)æ¬¡ç”µæµä¸å¹³è¡¡è®°å½•
     
-    E_D07_RULER_TYPE_PHASE_ABC_LOSS_ELEC_TIMES,                // ABCÏàÊ§Á÷´ÎÊý£¬×ÜÀÛ¼ÆÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_A_LOSS_ELEC_RECORD,                // ÉÏ(n)´ÎAÏàÊ§Á÷¼ÇÂ¼
-    E_D07_RULER_TYPE_PHASE_B_LOSS_ELEC_RECORD,                // ÉÏ(n)´ÎBÏàÊ§Á÷¼ÇÂ¼
-    E_D07_RULER_TYPE_PHASE_C_LOSS_ELEC_RECORD,                // ÉÏ(n)´ÎCÏàÊ§Á÷¼ÇÂ¼
+    E_D07_RULER_TYPE_PHASE_ABC_LOSS_ELEC_TIMES,                // ABCç›¸å¤±æµæ¬¡æ•°ï¼Œæ€»ç´¯è®¡æ—¶é—´
+    E_D07_RULER_TYPE_PHASE_A_LOSS_ELEC_RECORD,                // ä¸Š(n)æ¬¡Aç›¸å¤±æµè®°å½•
+    E_D07_RULER_TYPE_PHASE_B_LOSS_ELEC_RECORD,                // ä¸Š(n)æ¬¡Bç›¸å¤±æµè®°å½•
+    E_D07_RULER_TYPE_PHASE_C_LOSS_ELEC_RECORD,                // ä¸Š(n)æ¬¡Cç›¸å¤±æµè®°å½•
     
-    E_D07_RULER_TYPE_PHASE_ABC_MORE_ELEC_TIMES,                // ABCÏà¹ýÁ÷´ÎÊý£¬×ÜÀÛ¼ÆÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_A_MORE_ELEC_RECORD,                // ÉÏ(n)´ÎAÏà¹ýÁ÷¼ÇÂ¼
-    E_D07_RULER_TYPE_PHASE_B_MORE_ELEC_RECORD,                // ÉÏ(n)´ÎBÏà¹ýÁ÷¼ÇÂ¼
-    E_D07_RULER_TYPE_PHASE_C_MORE_ELEC_RECORD,                // ÉÏ(n)´ÎCÏà¹ýÁ÷¼ÇÂ¼
+    E_D07_RULER_TYPE_PHASE_ABC_MORE_ELEC_TIMES,                // ABCç›¸è¿‡æµæ¬¡æ•°ï¼Œæ€»ç´¯è®¡æ—¶é—´
+    E_D07_RULER_TYPE_PHASE_A_MORE_ELEC_RECORD,                // ä¸Š(n)æ¬¡Aç›¸è¿‡æµè®°å½•
+    E_D07_RULER_TYPE_PHASE_B_MORE_ELEC_RECORD,                // ä¸Š(n)æ¬¡Bç›¸è¿‡æµè®°å½•
+    E_D07_RULER_TYPE_PHASE_C_MORE_ELEC_RECORD,                // ä¸Š(n)æ¬¡Cç›¸è¿‡æµè®°å½•
     
-    E_D07_RULER_TYPE_PHASE_ABC_DROP_ELEC_TIMES,                // ABCÏà¶ÏÁ÷´ÎÊý£¬×ÜÀÛ¼ÆÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_A_DROP_ELEC_RECORD,                // ÉÏ(n)´ÎAÏà¶ÏÁ÷¼ÇÂ¼
-    E_D07_RULER_TYPE_PHASE_B_DROP_ELEC_RECORD,                // ÉÏ(n)´ÎBÏà¶ÏÁ÷¼ÇÂ¼
-    E_D07_RULER_TYPE_PHASE_C_DROP_ELEC_RECORD,                // ÉÏ(n)´ÎCÏà¶ÏÁ÷¼ÇÂ¼
+    E_D07_RULER_TYPE_PHASE_ABC_DROP_ELEC_TIMES,                // ABCç›¸æ–­æµæ¬¡æ•°ï¼Œæ€»ç´¯è®¡æ—¶é—´
+    E_D07_RULER_TYPE_PHASE_A_DROP_ELEC_RECORD,                // ä¸Š(n)æ¬¡Aç›¸æ–­æµè®°å½•
+    E_D07_RULER_TYPE_PHASE_B_DROP_ELEC_RECORD,                // ä¸Š(n)æ¬¡Bç›¸æ–­æµè®°å½•
+    E_D07_RULER_TYPE_PHASE_C_DROP_ELEC_RECORD,                // ä¸Š(n)æ¬¡Cç›¸æ–­æµè®°å½•
     
-    E_D07_RULER_TYPE_PHASE_ABC_BACKWARD_ELEC_TIMES,            // ABCÏà³±Á÷·´Ïò´ÎÊý£¬×ÜÀÛ¼ÆÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_A_BACKWARD_ELEC_RECORD,            // ÉÏ(n)´ÎAÏà³±Á÷·´Ïò¼ÇÂ¼
-    E_D07_RULER_TYPE_PHASE_B_BACKWARD_ELEC_RECORD,            // ÉÏ(n)´ÎBÏà³±Á÷·´Ïò¼ÇÂ¼
-    E_D07_RULER_TYPE_PHASE_C_BACKWARD_ELEC_RECORD,            // ÉÏ(n)´ÎCÏà³±Á÷·´Ïò¼ÇÂ¼
+    E_D07_RULER_TYPE_PHASE_ABC_BACKWARD_ELEC_TIMES,            // ABCç›¸æ½®æµåå‘æ¬¡æ•°ï¼Œæ€»ç´¯è®¡æ—¶é—´
+    E_D07_RULER_TYPE_PHASE_A_BACKWARD_ELEC_RECORD,            // ä¸Š(n)æ¬¡Aç›¸æ½®æµåå‘è®°å½•
+    E_D07_RULER_TYPE_PHASE_B_BACKWARD_ELEC_RECORD,            // ä¸Š(n)æ¬¡Bç›¸æ½®æµåå‘è®°å½•
+    E_D07_RULER_TYPE_PHASE_C_BACKWARD_ELEC_RECORD,            // ä¸Š(n)æ¬¡Cç›¸æ½®æµåå‘è®°å½•
     
-    E_D07_RULER_TYPE_PHASE_ABC_OVERLOAD_TIMES,                // ABCÏà¹ýÔØ´ÎÊý£¬×ÜÀÛ¼ÆÊ±¼ä
-    E_D07_RULER_TYPE_PHASE_A_OVERLOAD_RECORD,                // ÉÏ(n)´ÎAÏà¹ýÔØ¼ÇÂ¼
-    E_D07_RULER_TYPE_PHASE_B_OVERLOAD_RECORD,                // ÉÏ(n)´ÎBÏà¹ýÔØ¼ÇÂ¼
-    E_D07_RULER_TYPE_PHASE_C_OVERLOAD_RECORD,                // ÉÏ(n)´ÎCÏà¹ýÔØ¼ÇÂ¼
+    E_D07_RULER_TYPE_PHASE_ABC_OVERLOAD_TIMES,                // ABCç›¸è¿‡è½½æ¬¡æ•°ï¼Œæ€»ç´¯è®¡æ—¶é—´
+    E_D07_RULER_TYPE_PHASE_A_OVERLOAD_RECORD,                // ä¸Š(n)æ¬¡Aç›¸è¿‡è½½è®°å½•
+    E_D07_RULER_TYPE_PHASE_B_OVERLOAD_RECORD,                // ä¸Š(n)æ¬¡Bç›¸è¿‡è½½è®°å½•
+    E_D07_RULER_TYPE_PHASE_C_OVERLOAD_RECORD,                // ä¸Š(n)æ¬¡Cç›¸è¿‡è½½è®°å½•
     
-    E_D07_RULER_TYPE_VOLT_PASS_PERCENT_M,                    // ÉÏ(n)ÔÂµçÑ¹ºÏ¸ñÂÊÍ³¼ÆÊý¾Ý
-    E_D07_RULER_TYPE_PHASE_A_VOLT_PASS_PERCENT_M,            // ÉÏ(n)ÔÂAÏàµçÑ¹ºÏ¸ñÂÊÍ³¼ÆÊý¾Ý
-    E_D07_RULER_TYPE_PHASE_B_VOLT_PASS_PERCENT_M,            // ÉÏ(n)ÔÂBÏàµçÑ¹ºÏ¸ñÂÊÍ³¼ÆÊý¾Ý
-    E_D07_RULER_TYPE_PHASE_C_VOLT_PASS_PERCENT_M,            // ÉÏ(n)ÔÂCÏàµçÑ¹ºÏ¸ñÂÊÍ³¼ÆÊý¾Ý
+    E_D07_RULER_TYPE_VOLT_PASS_PERCENT_M,                    // ä¸Š(n)æœˆç”µåŽ‹åˆæ ¼çŽ‡ç»Ÿè®¡æ•°æ®
+    E_D07_RULER_TYPE_PHASE_A_VOLT_PASS_PERCENT_M,            // ä¸Š(n)æœˆAç›¸ç”µåŽ‹åˆæ ¼çŽ‡ç»Ÿè®¡æ•°æ®
+    E_D07_RULER_TYPE_PHASE_B_VOLT_PASS_PERCENT_M,            // ä¸Š(n)æœˆBç›¸ç”µåŽ‹åˆæ ¼çŽ‡ç»Ÿè®¡æ•°æ®
+    E_D07_RULER_TYPE_PHASE_C_VOLT_PASS_PERCENT_M,            // ä¸Š(n)æœˆCç›¸ç”µåŽ‹åˆæ ¼çŽ‡ç»Ÿè®¡æ•°æ®
     
-    E_D07_RULER_TYPE_POWER_DOWN_TIMES,                        // µôµç×Ü´ÎÊý
-    E_D07_RULER_TYPE_POWER_DOWN_TIME_T,                        // ÉÏ(t)´Îµôµç·¢ÉúÊ±¿Ì£¬½áÊøÊ±¿Ì
+    E_D07_RULER_TYPE_POWER_DOWN_TIMES,                        // æŽ‰ç”µæ€»æ¬¡æ•°
+    E_D07_RULER_TYPE_POWER_DOWN_TIME_T,                        // ä¸Š(t)æ¬¡æŽ‰ç”µå‘ç”Ÿæ—¶åˆ»ï¼Œç»“æŸæ—¶åˆ»
     
-    E_D07_RULER_TYPE_OVER_LIMIT_MEMAND_TIMES,                // ÐèÁ¿³¬ÏÞ×Ü´ÎÊý¼ÇÂ¼
-    E_D07_RULER_TYPE_FORTH_OVER_LIMIT_MEMAND_TIME_T,        // ÉÏ(t)´ÎÕýÏòÓÐ¹¦ÐèÁ¿³¬ÏÞ¼ÇÂ¼    
-    E_D07_RULER_TYPE_BACK_OVER_LIMIT_MEMAND_TIME_T,            // ÉÏ(t)´Î·´ÏòÓÐ¹¦ÐèÁ¿³¬ÏÞ¼ÇÂ¼
+    E_D07_RULER_TYPE_OVER_LIMIT_MEMAND_TIMES,                // éœ€é‡è¶…é™æ€»æ¬¡æ•°è®°å½•
+    E_D07_RULER_TYPE_FORTH_OVER_LIMIT_MEMAND_TIME_T,        // ä¸Š(t)æ¬¡æ­£å‘æœ‰åŠŸéœ€é‡è¶…é™è®°å½•    
+    E_D07_RULER_TYPE_BACK_OVER_LIMIT_MEMAND_TIME_T,            // ä¸Š(t)æ¬¡åå‘æœ‰åŠŸéœ€é‡è¶…é™è®°å½•
     
-    E_D07_RULER_TYPE_QUAD_1_OVER_LIMIT_MEMAND_TIME_T,        // ÉÏ(t)´ÎµÚ1ÏóÏÞÎÞ¹¦ÐèÁ¿³¬ÏÞ¼ÇÂ¼    
-    E_D07_RULER_TYPE_QUAD_2_OVER_LIMIT_MEMAND_TIME_T,        // ÉÏ(t)´ÎµÚ2ÏóÏÞÎÞ¹¦ÐèÁ¿³¬ÏÞ¼ÇÂ¼
-    E_D07_RULER_TYPE_QUAD_3_OVER_LIMIT_MEMAND_TIME_T,        // ÉÏ(t)´ÎµÚ3ÏóÏÞÎÞ¹¦ÐèÁ¿³¬ÏÞ¼ÇÂ¼
-    E_D07_RULER_TYPE_QUAD_4_OVER_LIMIT_MEMAND_TIME_T,        // ÉÏ(t)´ÎµÚ4ÏóÏÞÎÞ¹¦ÐèÁ¿³¬ÏÞ¼ÇÂ¼
+    E_D07_RULER_TYPE_QUAD_1_OVER_LIMIT_MEMAND_TIME_T,        // ä¸Š(t)æ¬¡ç¬¬1è±¡é™æ— åŠŸéœ€é‡è¶…é™è®°å½•    
+    E_D07_RULER_TYPE_QUAD_2_OVER_LIMIT_MEMAND_TIME_T,        // ä¸Š(t)æ¬¡ç¬¬2è±¡é™æ— åŠŸéœ€é‡è¶…é™è®°å½•
+    E_D07_RULER_TYPE_QUAD_3_OVER_LIMIT_MEMAND_TIME_T,        // ä¸Š(t)æ¬¡ç¬¬3è±¡é™æ— åŠŸéœ€é‡è¶…é™è®°å½•
+    E_D07_RULER_TYPE_QUAD_4_OVER_LIMIT_MEMAND_TIME_T,        // ä¸Š(t)æ¬¡ç¬¬4è±¡é™æ— åŠŸéœ€é‡è¶…é™è®°å½•
     
-    E_D07_RULER_TYPE_METER_PROG_TIMES_TOTAL,                // ±à³Ì×Ü´ÎÊý    
-    E_D07_RULER_TYPE_METER_PROG_RECORD_T,                    // ÉÏ(t)´Î±à³Ì¼ÇÂ¼
+    E_D07_RULER_TYPE_METER_PROG_TIMES_TOTAL,                // ç¼–ç¨‹æ€»æ¬¡æ•°    
+    E_D07_RULER_TYPE_METER_PROG_RECORD_T,                    // ä¸Š(t)æ¬¡ç¼–ç¨‹è®°å½•
     
-    E_D07_RULER_TYPE_METER_CLEAR_TIMES_TOTAL,                // µç±íÇåÁã×Ü´ÎÊý    
-    E_D07_RULER_TYPE_METER_CLEAR_RECORD_T,                    // ÉÏ(t)´Îµç±íÇåÁã¼ÇÂ¼
+    E_D07_RULER_TYPE_METER_CLEAR_TIMES_TOTAL,                // ç”µè¡¨æ¸…é›¶æ€»æ¬¡æ•°    
+    E_D07_RULER_TYPE_METER_CLEAR_RECORD_T,                    // ä¸Š(t)æ¬¡ç”µè¡¨æ¸…é›¶è®°å½•
     
-    E_D07_RULER_TYPE_DEMAND_CLEAR_TIMES_TOTAL,                // ÐèÁ¿ÇåÁã×Ü´ÎÊý    
-    E_D07_RULER_TYPE_DEMAND_CLEAR_RECORD_T,                    // ÉÏ(t)´ÎÐèÁ¿ÇåÁã¼ÇÂ¼
+    E_D07_RULER_TYPE_DEMAND_CLEAR_TIMES_TOTAL,                // éœ€é‡æ¸…é›¶æ€»æ¬¡æ•°    
+    E_D07_RULER_TYPE_DEMAND_CLEAR_RECORD_T,                    // ä¸Š(t)æ¬¡éœ€é‡æ¸…é›¶è®°å½•
     
-    E_D07_RULER_TYPE_EVENT_CLEAR_TIMES_TOTAL,                // ÊÂ¼þÇåÁã×Ü´ÎÊý    
-    E_D07_RULER_TYPE_EVENT_CLEAR_RECORD_T,                    // ÉÏ(t)´ÎÊÂ¼þÇåÁã¼ÇÂ¼
+    E_D07_RULER_TYPE_EVENT_CLEAR_TIMES_TOTAL,                // äº‹ä»¶æ¸…é›¶æ€»æ¬¡æ•°    
+    E_D07_RULER_TYPE_EVENT_CLEAR_RECORD_T,                    // ä¸Š(t)æ¬¡äº‹ä»¶æ¸…é›¶è®°å½•
     
-    E_D07_RULER_TYPE_ADJUST_TIME_TIMES_TOTAL,                // Ð£Ê±×Ü´ÎÊý    
-    E_D07_RULER_TYPE_ADJUST_TIME_RECORD_T,                    // ÉÏ(t)´ÎÐ£Ê±¼ÇÂ¼
+    E_D07_RULER_TYPE_ADJUST_TIME_TIMES_TOTAL,                // æ ¡æ—¶æ€»æ¬¡æ•°    
+    E_D07_RULER_TYPE_ADJUST_TIME_RECORD_T,                    // ä¸Š(t)æ¬¡æ ¡æ—¶è®°å½•
     
-    E_D07_RULER_TYPE_TIME_PART_PROG_TIMES_TOTAL,            // Ê±¶Î±í±à³Ì×Ü´ÎÊý    
-    E_D07_RULER_TYPE_TIME_PART_PROG_RECORD_T,                // ÉÏ(t)´ÎÊ±¶Î±í±à³Ì¼ÇÂ¼
+    E_D07_RULER_TYPE_TIME_PART_PROG_TIMES_TOTAL,            // æ—¶æ®µè¡¨ç¼–ç¨‹æ€»æ¬¡æ•°    
+    E_D07_RULER_TYPE_TIME_PART_PROG_RECORD_T,                // ä¸Š(t)æ¬¡æ—¶æ®µè¡¨ç¼–ç¨‹è®°å½•
     
-    E_D07_RULER_TYPE_TIME_ZONE_PROG_TIMES_TOTAL,            // Ê±Çø±í±à³Ì×Ü´ÎÊý    
-    E_D07_RULER_TYPE_TIME_ZONE_PROG_RECORD_T,                // ÉÏ(t)´ÎÊ±Çø±í±à³Ì¼ÇÂ¼
+    E_D07_RULER_TYPE_TIME_ZONE_PROG_TIMES_TOTAL,            // æ—¶åŒºè¡¨ç¼–ç¨‹æ€»æ¬¡æ•°    
+    E_D07_RULER_TYPE_TIME_ZONE_PROG_RECORD_T,                // ä¸Š(t)æ¬¡æ—¶åŒºè¡¨ç¼–ç¨‹è®°å½•
     
-    E_D07_RULER_TYPE_WEEKDAY_PROG_TIMES_TOTAL,                // ÖÜÐÝÈÕ±à³Ì×Ü´ÎÊý    
-    E_D07_RULER_TYPE_WEEKDAY_PROG_RECORD_T,                    // ÉÏ(t)´ÎÖÜÐÝÈÕ±à³Ì¼ÇÂ¼
+    E_D07_RULER_TYPE_WEEKDAY_PROG_TIMES_TOTAL,                // å‘¨ä¼‘æ—¥ç¼–ç¨‹æ€»æ¬¡æ•°    
+    E_D07_RULER_TYPE_WEEKDAY_PROG_RECORD_T,                    // ä¸Š(t)æ¬¡å‘¨ä¼‘æ—¥ç¼–ç¨‹è®°å½•
     
-    E_D07_RULER_TYPE_HOLIDAY_PROG_TIMES_TOTAL,                // ½Ú¼ÙÈÕ±à³Ì×Ü´ÎÊý    
-    E_D07_RULER_TYPE_HOLIDAY_PROG_RECORD_T,                    // ÉÏ(t)´Î½Ú¼ÙÈÕ±à³Ì¼ÇÂ¼
+    E_D07_RULER_TYPE_HOLIDAY_PROG_TIMES_TOTAL,                // èŠ‚å‡æ—¥ç¼–ç¨‹æ€»æ¬¡æ•°    
+    E_D07_RULER_TYPE_HOLIDAY_PROG_RECORD_T,                    // ä¸Š(t)æ¬¡èŠ‚å‡æ—¥ç¼–ç¨‹è®°å½•
     
-    E_D07_RULER_TYPE_HAVE_COMB_PROG_TIMES_TOTAL,            // ÓÐ¹¦×éºÏ·½Ê½±à³Ì×Ü´ÎÊý    
-    E_D07_RULER_TYPE_HAVE_COMB_PROG_RECORD_T,                // ÉÏ(t)´ÎÓÐ¹¦×éºÏ·½Ê½±à³Ì¼ÇÂ¼
+    E_D07_RULER_TYPE_HAVE_COMB_PROG_TIMES_TOTAL,            // æœ‰åŠŸç»„åˆæ–¹å¼ç¼–ç¨‹æ€»æ¬¡æ•°    
+    E_D07_RULER_TYPE_HAVE_COMB_PROG_RECORD_T,                // ä¸Š(t)æ¬¡æœ‰åŠŸç»„åˆæ–¹å¼ç¼–ç¨‹è®°å½•
     
-    E_D07_RULER_TYPE_NONE_COMB_1_PROG_TIMES_TOTAL,            // ÎÞ¹¦×éºÏ·½Ê½1±à³Ì×Ü´ÎÊý    
-    E_D07_RULER_TYPE_NONE_COMB_1_PROG_RECORD_T,                // ÉÏ(t)´ÎÎÞ¹¦×éºÏ·½Ê½1±à³Ì¼ÇÂ¼
+    E_D07_RULER_TYPE_NONE_COMB_1_PROG_TIMES_TOTAL,            // æ— åŠŸç»„åˆæ–¹å¼1ç¼–ç¨‹æ€»æ¬¡æ•°    
+    E_D07_RULER_TYPE_NONE_COMB_1_PROG_RECORD_T,                // ä¸Š(t)æ¬¡æ— åŠŸç»„åˆæ–¹å¼1ç¼–ç¨‹è®°å½•
     
-    E_D07_RULER_TYPE_NONE_COMB_2_PROG_TIMES_TOTAL,            // ÎÞ¹¦×éºÏ·½Ê½2±à³Ì×Ü´ÎÊý    
-    E_D07_RULER_TYPE_NONE_COMB_2_PROG_RECORD_T,                // ÉÏ(t)´ÎÎÞ¹¦×éºÏ·½Ê½2±à³Ì¼ÇÂ¼
+    E_D07_RULER_TYPE_NONE_COMB_2_PROG_TIMES_TOTAL,            // æ— åŠŸç»„åˆæ–¹å¼2ç¼–ç¨‹æ€»æ¬¡æ•°    
+    E_D07_RULER_TYPE_NONE_COMB_2_PROG_RECORD_T,                // ä¸Š(t)æ¬¡æ— åŠŸç»„åˆæ–¹å¼2ç¼–ç¨‹è®°å½•
     
-    E_D07_RULER_TYPE_PAYOFF_DAY_PROG_TIMES_TOTAL,            // ½áËãÈÕ±à³Ì×Ü´ÎÊý    
-    E_D07_RULER_TYPE_PAYOFF_DAY_PROG_RECORD_T,                // ÉÏ(t)´Î½áËãÈÕ±à³Ì¼ÇÂ¼
+    E_D07_RULER_TYPE_PAYOFF_DAY_PROG_TIMES_TOTAL,            // ç»“ç®—æ—¥ç¼–ç¨‹æ€»æ¬¡æ•°    
+    E_D07_RULER_TYPE_PAYOFF_DAY_PROG_RECORD_T,                // ä¸Š(t)æ¬¡ç»“ç®—æ—¥ç¼–ç¨‹è®°å½•
     
-    E_D07_RULER_TYPE_OPEN_METER_CAP_TIMES_TOTAL,            // ¿ª±í¸Ç×Ü´ÎÊý    
-    E_D07_RULER_TYPE_OPEN_METER_CAP_RECORD_T,                // ÉÏ(t)´Î¿ª±í¸Ç¼ÇÂ¼
+    E_D07_RULER_TYPE_OPEN_METER_CAP_TIMES_TOTAL,            // å¼€è¡¨ç›–æ€»æ¬¡æ•°    
+    E_D07_RULER_TYPE_OPEN_METER_CAP_RECORD_T,                // ä¸Š(t)æ¬¡å¼€è¡¨ç›–è®°å½•
     
-    E_D07_RULER_TYPE_OPEN_BTN_BOX_TIMES_TOTAL,                // ¿ª¶ËÅ¥ºÐ×Ü´ÎÊý    
-    E_D07_RULER_TYPE_OPEN_BTN_BOX_RECORD_T,                    // ÉÏ(t)´Î¿ª¶ËÅ¥ºÐ¼ÇÂ¼
+    E_D07_RULER_TYPE_OPEN_BTN_BOX_TIMES_TOTAL,                // å¼€ç«¯é’®ç›’æ€»æ¬¡æ•°    
+    E_D07_RULER_TYPE_OPEN_BTN_BOX_RECORD_T,                    // ä¸Š(t)æ¬¡å¼€ç«¯é’®ç›’è®°å½•
     
-    E_D07_RULER_TYPE_A4_MAX = E_D07_RULER_TYPE_OPEN_BTN_BOX_RECORD_T, /* ±í A.4 ¹æÔ¼×î´óÖµ */
+    E_D07_RULER_TYPE_A4_MAX = E_D07_RULER_TYPE_OPEN_BTN_BOX_RECORD_T, /* è¡¨ A.4 è§„çº¦æœ€å¤§å€¼ */
     
-    /* ¶ÔÓ¦±í A.5 ²Î±äÁ¿Êý¾Ý±êÊ¶±àÂë±í */
-    E_D07_RULER_TYPE_A5_MIN,                                /* ±í A.5 ¹æÔ¼×îÐ¡Öµ */
-    E_D07_RULER_TYPE_DATE = E_D07_RULER_TYPE_A5_MIN,        // ÈÕÆÚ¼°ÐÇÆÚ£¨ÆäÖÐ0´ú±íÐÇÆÚÌì£©
-    E_D07_RULER_TYPE_TIME,                                    // Ê±¼ä
-    E_D07_RULER_TYPE_DEMAND_PERIOD,                            // ×î´óÐèÁ¿ÖÜÆÚ
-    E_D07_RULER_TYPE_SLIT_TIME,                                // »¬²îÊ±¼ä
-    E_D07_RULER_TYPE_ADJUST_PULSE_WEDTH,                    // Ð£±íÂö³å¿í¶È
-    E_D07_RULER_TYPE_SWITCH_ZONE_TIME,                        // Á½Ì×Ê±Çø±íÇÐ»»Ê±¼ä
-    E_D07_RULER_TYPE_SWITCH_PART_TIME,                        // Á½Ì×ÈÕÊ±¶Î±íÇÐ»»Ê±¼ä
-    E_D07_RULER_TYPE_YEAR_ZONE_P,                            // ÄêÊ±ÇøÊý p <= 14
-    E_D07_RULER_TYPE_DAY_PART_Q,                            // ÈÕÊ±¶Î±íÊý q <= 8
-    E_D07_RULER_TYPE_DAY_PART_M,                            // ÈÕÊ±¶ÎÊý(Ã¿ÈÕÇÐ»»Êý)m <=14
-    E_D07_RULER_TYPE_RATE_K,                                // ·ÑÂÊÊý k <= 63
-    E_D07_RULER_TYPE_HOLIDAY_N,                                // ¹«¹²¼ÙÈÕÊýn <= 254
-    E_D07_RULER_TYPE_HARMONIC_ANALY_TIMES,                    // Ð³²¨·ÖÎö´ÎÊý
-    E_D07_RULER_TYPE_AUTO_DISPLAY_SCREENS,                    // ×Ô¶¯Ñ­»·ÏÔÊ¾ÆÁÊý
-    E_D07_RULER_TYPE_DISPLAY_TIME,                            // Ã¿ÆÁÏÔÊ¾Ê±¼ä
-    E_D07_RULER_TYPE_DISPLAY_POWER_DECIMAL_DIGITS,            // ÏÔÊ¾µçÄÜÐ¡ÊýÎ»Êý
-    E_D07_RULER_TYPE_DISPLAY_DEMAND_DECIMAL_DIGITS,            // ÏÔÊ¾×î´óÐèÁ¿Ð¡ÊýÎ»Êý
-    E_D07_RULER_TYPE_PRESS_DISPLAY_SCREENS,                    // °´¼üÑ­»·ÏÔÊ¾ÆÁÊý
-    E_D07_RULER_TYPE_ADDRESS,                                // Í¨ÐÅµØÖ·
-    E_D07_RULER_TYPE_METER_ID,                                // ±íºÅ
-    E_D07_RULER_TYPE_ASSETS_CODE,                            // ×Ê²ú¹ÜÀí±àÂë
-    E_D07_RULER_TYPE_RATED_VOLT,                            // ¶î¶¨µçÑ¹
-    E_D07_RULER_TYPE_RATED_ELEC,                            // ¶î¶¨µçÁ÷
-    E_D07_RULER_TYPE_MAX_ELEC,                                // ×î´óµçÁ÷
+    /* å¯¹åº”è¡¨ A.5 å‚å˜é‡æ•°æ®æ ‡è¯†ç¼–ç è¡¨ */
+    E_D07_RULER_TYPE_A5_MIN,                                /* è¡¨ A.5 è§„çº¦æœ€å°å€¼ */
+    E_D07_RULER_TYPE_DATE = E_D07_RULER_TYPE_A5_MIN,        // æ—¥æœŸåŠæ˜ŸæœŸï¼ˆå…¶ä¸­0ä»£è¡¨æ˜ŸæœŸå¤©ï¼‰
+    E_D07_RULER_TYPE_TIME,                                    // æ—¶é—´
+    E_D07_RULER_TYPE_DEMAND_PERIOD,                            // æœ€å¤§éœ€é‡å‘¨æœŸ
+    E_D07_RULER_TYPE_SLIT_TIME,                                // æ»‘å·®æ—¶é—´
+    E_D07_RULER_TYPE_ADJUST_PULSE_WEDTH,                    // æ ¡è¡¨è„‰å†²å®½åº¦
+    E_D07_RULER_TYPE_SWITCH_ZONE_TIME,                        // ä¸¤å¥—æ—¶åŒºè¡¨åˆ‡æ¢æ—¶é—´
+    E_D07_RULER_TYPE_SWITCH_PART_TIME,                        // ä¸¤å¥—æ—¥æ—¶æ®µè¡¨åˆ‡æ¢æ—¶é—´
+    E_D07_RULER_TYPE_YEAR_ZONE_P,                            // å¹´æ—¶åŒºæ•° p <= 14
+    E_D07_RULER_TYPE_DAY_PART_Q,                            // æ—¥æ—¶æ®µè¡¨æ•° q <= 8
+    E_D07_RULER_TYPE_DAY_PART_M,                            // æ—¥æ—¶æ®µæ•°(æ¯æ—¥åˆ‡æ¢æ•°)m <=14
+    E_D07_RULER_TYPE_RATE_K,                                // è´¹çŽ‡æ•° k <= 63
+    E_D07_RULER_TYPE_HOLIDAY_N,                                // å…¬å…±å‡æ—¥æ•°n <= 254
+    E_D07_RULER_TYPE_HARMONIC_ANALY_TIMES,                    // è°æ³¢åˆ†æžæ¬¡æ•°
+    E_D07_RULER_TYPE_AUTO_DISPLAY_SCREENS,                    // è‡ªåŠ¨å¾ªçŽ¯æ˜¾ç¤ºå±æ•°
+    E_D07_RULER_TYPE_DISPLAY_TIME,                            // æ¯å±æ˜¾ç¤ºæ—¶é—´
+    E_D07_RULER_TYPE_DISPLAY_POWER_DECIMAL_DIGITS,            // æ˜¾ç¤ºç”µèƒ½å°æ•°ä½æ•°
+    E_D07_RULER_TYPE_DISPLAY_DEMAND_DECIMAL_DIGITS,            // æ˜¾ç¤ºæœ€å¤§éœ€é‡å°æ•°ä½æ•°
+    E_D07_RULER_TYPE_PRESS_DISPLAY_SCREENS,                    // æŒ‰é”®å¾ªçŽ¯æ˜¾ç¤ºå±æ•°
+    E_D07_RULER_TYPE_ADDRESS,                                // é€šä¿¡åœ°å€
+    E_D07_RULER_TYPE_METER_ID,                                // è¡¨å·
+    E_D07_RULER_TYPE_ASSETS_CODE,                            // èµ„äº§ç®¡ç†ç¼–ç 
+    E_D07_RULER_TYPE_RATED_VOLT,                            // é¢å®šç”µåŽ‹
+    E_D07_RULER_TYPE_RATED_ELEC,                            // é¢å®šç”µæµ
+    E_D07_RULER_TYPE_MAX_ELEC,                                // æœ€å¤§ç”µæµ
 
-    E_D07_RULER_TYPE_HAVE_ACCURACY_CLASS,                    // ÓÐ¹¦×¼È·¶ÈµÈ¼¶
-    E_D07_RULER_TYPE_NONE_ACCURACY_CLASS,                    // ÎÞ¹¦×¼È·¶ÈµÈ¼¶
+    E_D07_RULER_TYPE_HAVE_ACCURACY_CLASS,                    // æœ‰åŠŸå‡†ç¡®åº¦ç­‰çº§
+    E_D07_RULER_TYPE_NONE_ACCURACY_CLASS,                    // æ— åŠŸå‡†ç¡®åº¦ç­‰çº§
         
-    E_D07_RULER_TYPE_METER_HAVE_CONSTANT,                    // µç±íÓÐ¹¦³£Êý
-    E_D07_RULER_TYPE_METER_NONE_CONSTANT,                    // µç±íÎÞ¹¦³£Êý
+    E_D07_RULER_TYPE_METER_HAVE_CONSTANT,                    // ç”µè¡¨æœ‰åŠŸå¸¸æ•°
+    E_D07_RULER_TYPE_METER_NONE_CONSTANT,                    // ç”µè¡¨æ— åŠŸå¸¸æ•°
     
-    E_D07_RULER_TYPE_METER_MODEL_NUM,                        // µç±íÐÍºÅ
-    E_D07_RULER_TYPE_METER_PROD_DATE,                        // Éú²úÈÕÆÚ
-    E_D07_RULER_TYPE_METER_RULER_VERSION,                    // Ð­Òé°æ±¾ºÅ
+    E_D07_RULER_TYPE_METER_MODEL_NUM,                        // ç”µè¡¨åž‹å·
+    E_D07_RULER_TYPE_METER_PROD_DATE,                        // ç”Ÿäº§æ—¥æœŸ
+    E_D07_RULER_TYPE_METER_RULER_VERSION,                    // åè®®ç‰ˆæœ¬å·
     
-    E_D07_RULER_TYPE_METER_RUN_STWD_1,                        // µç±íÔËÐÐ×´Ì¬×Ö 1
-    E_D07_RULER_TYPE_METER_RUN_STWD_2,                        // µç±íÔËÐÐ×´Ì¬×Ö 2
-    E_D07_RULER_TYPE_METER_RUN_STWD_3,                        // µç±íÔËÐÐ×´Ì¬×Ö 3
-    E_D07_RULER_TYPE_METER_RUN_STWD_4,                        // µç±íÔËÐÐ×´Ì¬×Ö 4
-    E_D07_RULER_TYPE_METER_RUN_STWD_5,                        // µç±íÔËÐÐ×´Ì¬×Ö 5
-    E_D07_RULER_TYPE_METER_RUN_STWD_6,                        // µç±íÔËÐÐ×´Ì¬×Ö 6
-    E_D07_RULER_TYPE_METER_RUN_STWD_7,                        // µç±íÔËÐÐ×´Ì¬×Ö 7
-    E_D07_RULER_TYPE_METER_RUN_STWD_BLOCK,                    // µç±íÔËÐÐ×´Ì¬×ÖÊý¾Ý¿é
-    E_D07_RULER_TYPE_HAVE_COMB_STWD,                        // ÓÐ¹¦×éºÏ·½Ê½ÌØÕ÷×Ö
-    E_D07_RULER_TYPE_NONE_COMB_1_STWD,                        // ÎÞ¹¦×éºÏ·½Ê½1ÌØÕ÷×Ö
-    E_D07_RULER_TYPE_NONE_COMB_2_STWD,                        // ÎÞ¹¦×éºÏ·½Ê½2ÌØÕ÷×Ö
+    E_D07_RULER_TYPE_METER_RUN_STWD_1,                        // ç”µè¡¨è¿è¡ŒçŠ¶æ€å­— 1
+    E_D07_RULER_TYPE_METER_RUN_STWD_2,                        // ç”µè¡¨è¿è¡ŒçŠ¶æ€å­— 2
+    E_D07_RULER_TYPE_METER_RUN_STWD_3,                        // ç”µè¡¨è¿è¡ŒçŠ¶æ€å­— 3
+    E_D07_RULER_TYPE_METER_RUN_STWD_4,                        // ç”µè¡¨è¿è¡ŒçŠ¶æ€å­— 4
+    E_D07_RULER_TYPE_METER_RUN_STWD_5,                        // ç”µè¡¨è¿è¡ŒçŠ¶æ€å­— 5
+    E_D07_RULER_TYPE_METER_RUN_STWD_6,                        // ç”µè¡¨è¿è¡ŒçŠ¶æ€å­— 6
+    E_D07_RULER_TYPE_METER_RUN_STWD_7,                        // ç”µè¡¨è¿è¡ŒçŠ¶æ€å­— 7
+    E_D07_RULER_TYPE_METER_RUN_STWD_BLOCK,                    // ç”µè¡¨è¿è¡ŒçŠ¶æ€å­—æ•°æ®å—
+    E_D07_RULER_TYPE_HAVE_COMB_STWD,                        // æœ‰åŠŸç»„åˆæ–¹å¼ç‰¹å¾å­—
+    E_D07_RULER_TYPE_NONE_COMB_1_STWD,                        // æ— åŠŸç»„åˆæ–¹å¼1ç‰¹å¾å­—
+    E_D07_RULER_TYPE_NONE_COMB_2_STWD,                        // æ— åŠŸç»„åˆæ–¹å¼2ç‰¹å¾å­—
     
-    E_D07_RULER_TYPE_MODEM_IRDA_RATE_STWD,                    // µ÷ÖÆÐÍºìÍâ¹â¿ÚÍ¨ÐÅËÙÂÊÌØÕ÷×Ö
-    E_D07_RULER_TYPE_TOUCH_IRDA_RATE_STWD,                    // ½Ó´¥Ê½ºìÍâ¹â¿ÚÍ¨ÐÅËÙÂÊÌØÕ÷×Ö
-    E_D07_RULER_TYPE_PART_1_RATE_STWD,                        // Í¨ÐÅ¿Ú 1 Í¨ÐÅËÙÂÊÌØÕ÷×Ö    
-    E_D07_RULER_TYPE_PART_2_RATE_STWD,                        // Í¨ÐÅ¿Ú 2 Í¨ÐÅËÙÂÊÌØÕ÷×Ö    
-    E_D07_RULER_TYPE_PART_3_RATE_STWD,                        // Í¨ÐÅ¿Ú 3 Í¨ÐÅËÙÂÊÌØÕ÷×Ö    
+    E_D07_RULER_TYPE_MODEM_IRDA_RATE_STWD,                    // è°ƒåˆ¶åž‹çº¢å¤–å…‰å£é€šä¿¡é€ŸçŽ‡ç‰¹å¾å­—
+    E_D07_RULER_TYPE_TOUCH_IRDA_RATE_STWD,                    // æŽ¥è§¦å¼çº¢å¤–å…‰å£é€šä¿¡é€ŸçŽ‡ç‰¹å¾å­—
+    E_D07_RULER_TYPE_PART_1_RATE_STWD,                        // é€šä¿¡å£ 1 é€šä¿¡é€ŸçŽ‡ç‰¹å¾å­—    
+    E_D07_RULER_TYPE_PART_2_RATE_STWD,                        // é€šä¿¡å£ 2 é€šä¿¡é€ŸçŽ‡ç‰¹å¾å­—    
+    E_D07_RULER_TYPE_PART_3_RATE_STWD,                        // é€šä¿¡å£ 3 é€šä¿¡é€ŸçŽ‡ç‰¹å¾å­—    
     
-    E_D07_RULER_TYPE_WEEKDAY_STWD,                            // ÖÜÐÝÈÕÌØÕ÷×Ö
-    E_D07_RULER_TYPE_WEEKDAY_TBL,                            // ÖÜÐÝÈÕ²ÉÓÃµÄÈÕÊ±¶Î±íºÅ
-    E_D07_RULER_TYPE_OVERLOAD_MODEL_STWD,                    // ¸ººÉ¼ÇÂ¼Ä£Ê½×Ö
-    E_D07_RULER_TYPE_FREEZE_MODEL_STWD,                        // ¶³½áÊý¾ÝÄ£Ê½×Ö
-    E_D07_RULER_TYPE_OVERLOAD_START_TIME,                    // ¸ººÉ¼ÇÂ¼ÆðÊ¼Ê±¼ä
-    E_D07_RULER_TYPE_OVERLOAD_INTRV_TIME_1,                    // µÚ 1 Àà¸ººÉ¼ÇÂ¼¼ä¸ôÊ±¼ä
-    E_D07_RULER_TYPE_OVERLOAD_INTRV_TIME_2,                    // µÚ 2 Àà¸ººÉ¼ÇÂ¼¼ä¸ôÊ±¼ä
-    E_D07_RULER_TYPE_OVERLOAD_INTRV_TIME_3,                    // µÚ 3 Àà¸ººÉ¼ÇÂ¼¼ä¸ôÊ±¼ä
-    E_D07_RULER_TYPE_OVERLOAD_INTRV_TIME_4,                    // µÚ 4 Àà¸ººÉ¼ÇÂ¼¼ä¸ôÊ±¼ä
-    E_D07_RULER_TYPE_OVERLOAD_INTRV_TIME_5,                    // µÚ 5 Àà¸ººÉ¼ÇÂ¼¼ä¸ôÊ±¼ä
-    E_D07_RULER_TYPE_OVERLOAD_INTRV_TIME_6,                    // µÚ 6 Àà¸ººÉ¼ÇÂ¼¼ä¸ôÊ±¼ä
-    E_D07_RULER_TYPE_PAYOFF_DAY_1,                            // Ã¿ÔÂµÚ 1 ½áËãÈÕ
-    E_D07_RULER_TYPE_PAYOFF_DAY_2,                            // Ã¿ÔÂµÚ 2 ½áËãÈÕ
-    E_D07_RULER_TYPE_PAYOFF_DAY_3,                            // Ã¿ÔÂµÚ 3 ½áËãÈÕ
+    E_D07_RULER_TYPE_WEEKDAY_STWD,                            // å‘¨ä¼‘æ—¥ç‰¹å¾å­—
+    E_D07_RULER_TYPE_WEEKDAY_TBL,                            // å‘¨ä¼‘æ—¥é‡‡ç”¨çš„æ—¥æ—¶æ®µè¡¨å·
+    E_D07_RULER_TYPE_OVERLOAD_MODEL_STWD,                    // è´Ÿè·è®°å½•æ¨¡å¼å­—
+    E_D07_RULER_TYPE_FREEZE_MODEL_STWD,                        // å†»ç»“æ•°æ®æ¨¡å¼å­—
+    E_D07_RULER_TYPE_OVERLOAD_START_TIME,                    // è´Ÿè·è®°å½•èµ·å§‹æ—¶é—´
+    E_D07_RULER_TYPE_OVERLOAD_INTRV_TIME_1,                    // ç¬¬ 1 ç±»è´Ÿè·è®°å½•é—´éš”æ—¶é—´
+    E_D07_RULER_TYPE_OVERLOAD_INTRV_TIME_2,                    // ç¬¬ 2 ç±»è´Ÿè·è®°å½•é—´éš”æ—¶é—´
+    E_D07_RULER_TYPE_OVERLOAD_INTRV_TIME_3,                    // ç¬¬ 3 ç±»è´Ÿè·è®°å½•é—´éš”æ—¶é—´
+    E_D07_RULER_TYPE_OVERLOAD_INTRV_TIME_4,                    // ç¬¬ 4 ç±»è´Ÿè·è®°å½•é—´éš”æ—¶é—´
+    E_D07_RULER_TYPE_OVERLOAD_INTRV_TIME_5,                    // ç¬¬ 5 ç±»è´Ÿè·è®°å½•é—´éš”æ—¶é—´
+    E_D07_RULER_TYPE_OVERLOAD_INTRV_TIME_6,                    // ç¬¬ 6 ç±»è´Ÿè·è®°å½•é—´éš”æ—¶é—´
+    E_D07_RULER_TYPE_PAYOFF_DAY_1,                            // æ¯æœˆç¬¬ 1 ç»“ç®—æ—¥
+    E_D07_RULER_TYPE_PAYOFF_DAY_2,                            // æ¯æœˆç¬¬ 2 ç»“ç®—æ—¥
+    E_D07_RULER_TYPE_PAYOFF_DAY_3,                            // æ¯æœˆç¬¬ 3 ç»“ç®—æ—¥
     
-    E_D07_RULER_TYPE_PASSWORD_LV0,                            // 0 ¼¶ÃÜÂë
-    E_D07_RULER_TYPE_PASSWORD_LV1,                            // 1 ¼¶ÃÜÂë
-    E_D07_RULER_TYPE_PASSWORD_LV2,                            // 2 ¼¶ÃÜÂë
-    E_D07_RULER_TYPE_PASSWORD_LV3,                            // 3 ¼¶ÃÜÂë
-    E_D07_RULER_TYPE_PASSWORD_LV4,                            // 4 ¼¶ÃÜÂë
-    E_D07_RULER_TYPE_PASSWORD_LV5,                            // 5 ¼¶ÃÜÂë
-    E_D07_RULER_TYPE_PASSWORD_LV6,                            // 6 ¼¶ÃÜÂë
-    E_D07_RULER_TYPE_PASSWORD_LV7,                            // 7 ¼¶ÃÜÂë
-    E_D07_RULER_TYPE_PASSWORD_LV8,                            // 8 ¼¶ÃÜÂë
-    E_D07_RULER_TYPE_PASSWORD_LV9,                            // 9 ¼¶ÃÜÂë
+    E_D07_RULER_TYPE_PASSWORD_LV0,                            // 0 çº§å¯†ç 
+    E_D07_RULER_TYPE_PASSWORD_LV1,                            // 1 çº§å¯†ç 
+    E_D07_RULER_TYPE_PASSWORD_LV2,                            // 2 çº§å¯†ç 
+    E_D07_RULER_TYPE_PASSWORD_LV3,                            // 3 çº§å¯†ç 
+    E_D07_RULER_TYPE_PASSWORD_LV4,                            // 4 çº§å¯†ç 
+    E_D07_RULER_TYPE_PASSWORD_LV5,                            // 5 çº§å¯†ç 
+    E_D07_RULER_TYPE_PASSWORD_LV6,                            // 6 çº§å¯†ç 
+    E_D07_RULER_TYPE_PASSWORD_LV7,                            // 7 çº§å¯†ç 
+    E_D07_RULER_TYPE_PASSWORD_LV8,                            // 8 çº§å¯†ç 
+    E_D07_RULER_TYPE_PASSWORD_LV9,                            // 9 çº§å¯†ç 
     
-    E_D07_RULER_TYPE_PHASE_A_CONDUCT_FACTOR,                // AÏàµçµ¼ÏµÊý
-    E_D07_RULER_TYPE_PHASE_A_SUSCEPT_FACTOR,                // AÏàµçÄÉÏµÊý
-    E_D07_RULER_TYPE_PHASE_A_RESIST_FACTOR,                    // AÏàµç×èÏµÊý
-    E_D07_RULER_TYPE_PHASE_A_REACTANCE_FACTOR,                // AÏàµç¿¹ÏµÊý
+    E_D07_RULER_TYPE_PHASE_A_CONDUCT_FACTOR,                // Aç›¸ç”µå¯¼ç³»æ•°
+    E_D07_RULER_TYPE_PHASE_A_SUSCEPT_FACTOR,                // Aç›¸ç”µçº³ç³»æ•°
+    E_D07_RULER_TYPE_PHASE_A_RESIST_FACTOR,                    // Aç›¸ç”µé˜»ç³»æ•°
+    E_D07_RULER_TYPE_PHASE_A_REACTANCE_FACTOR,                // Aç›¸ç”µæŠ—ç³»æ•°
     
-    E_D07_RULER_TYPE_PHASE_B_CONDUCT_FACTOR,                // BÏàµçµ¼ÏµÊý
-    E_D07_RULER_TYPE_PHASE_B_SUSCEPT_FACTOR,                // BÏàµçÄÉÏµÊý
-    E_D07_RULER_TYPE_PHASE_B_RESIST_FACTOR,                    // BÏàµç×èÏµÊý
-    E_D07_RULER_TYPE_PHASE_B_REACTANCE_FACTOR,                // BÏàµç¿¹ÏµÊý
+    E_D07_RULER_TYPE_PHASE_B_CONDUCT_FACTOR,                // Bç›¸ç”µå¯¼ç³»æ•°
+    E_D07_RULER_TYPE_PHASE_B_SUSCEPT_FACTOR,                // Bç›¸ç”µçº³ç³»æ•°
+    E_D07_RULER_TYPE_PHASE_B_RESIST_FACTOR,                    // Bç›¸ç”µé˜»ç³»æ•°
+    E_D07_RULER_TYPE_PHASE_B_REACTANCE_FACTOR,                // Bç›¸ç”µæŠ—ç³»æ•°
     
-    E_D07_RULER_TYPE_PHASE_C_CONDUCT_FACTOR,                // CÏàµçµ¼ÏµÊý
-    E_D07_RULER_TYPE_PHASE_C_SUSCEPT_FACTOR,                // CÏàµçÄÉÏµÊý
-    E_D07_RULER_TYPE_PHASE_C_RESIST_FACTOR,                    // CÏàµç×èÏµÊý
-    E_D07_RULER_TYPE_PHASE_C_REACTANCE_FACTOR,                // CÏàµç¿¹ÏµÊý
+    E_D07_RULER_TYPE_PHASE_C_CONDUCT_FACTOR,                // Cç›¸ç”µå¯¼ç³»æ•°
+    E_D07_RULER_TYPE_PHASE_C_SUSCEPT_FACTOR,                // Cç›¸ç”µçº³ç³»æ•°
+    E_D07_RULER_TYPE_PHASE_C_RESIST_FACTOR,                    // Cç›¸ç”µé˜»ç³»æ•°
+    E_D07_RULER_TYPE_PHASE_C_REACTANCE_FACTOR,                // Cç›¸ç”µæŠ—ç³»æ•°
     
-    E_D07_RULER_TYPE_FORTH_HAVE_POWER_MAX,                    // ÕýÏòÓÐ¹¦¹¦ÂÊÉÏÏÞÖµ
-    E_D07_RULER_TYPE_BACK_HAVE_POWER_MAX,                    // ·´ÏòÓÐ¹¦¹¦ÂÊÉÏÏÞÖµ
+    E_D07_RULER_TYPE_FORTH_HAVE_POWER_MAX,                    // æ­£å‘æœ‰åŠŸåŠŸçŽ‡ä¸Šé™å€¼
+    E_D07_RULER_TYPE_BACK_HAVE_POWER_MAX,                    // åå‘æœ‰åŠŸåŠŸçŽ‡ä¸Šé™å€¼
     
-    E_D07_RULER_TYPE_VOLT_MAX,                                // µçÑ¹ÉÏÏÞÖµ
-    E_D07_RULER_TYPE_VOLT_MIN,                                // µçÑ¹ÏÂÏÞÖµ
+    E_D07_RULER_TYPE_VOLT_MAX,                                // ç”µåŽ‹ä¸Šé™å€¼
+    E_D07_RULER_TYPE_VOLT_MIN,                                // ç”µåŽ‹ä¸‹é™å€¼
     
-    E_D07_RULER_TYPE_DAY_PART_DATA_1,                        // µÚÒ»Ì×Ê±Çø±íÊý¾Ý    
-    E_D07_RULER_TYPE_DAY_PART_DATA_1_T,                        // µÚÒ»Ì×µÚ(t)ÈÕÊ±¶Î±íÊý¾Ý t(1~8)
-    E_D07_RULER_TYPE_DAY_PART_DATA_2,                        // µÚ¶þÌ×Ê±Çø±íÊý¾Ý    
-    E_D07_RULER_TYPE_DAY_PART_DATA_2_T,                        // µÚ¶þÌ×µÚ(t)ÈÕÊ±¶Î±íÊý¾Ý t(1~8)
+    E_D07_RULER_TYPE_DAY_PART_DATA_1,                        // ç¬¬ä¸€å¥—æ—¶åŒºè¡¨æ•°æ®    
+    E_D07_RULER_TYPE_DAY_PART_DATA_1_T,                        // ç¬¬ä¸€å¥—ç¬¬(t)æ—¥æ—¶æ®µè¡¨æ•°æ® t(1~8)
+    E_D07_RULER_TYPE_DAY_PART_DATA_2,                        // ç¬¬äºŒå¥—æ—¶åŒºè¡¨æ•°æ®    
+    E_D07_RULER_TYPE_DAY_PART_DATA_2_T,                        // ç¬¬äºŒå¥—ç¬¬(t)æ—¥æ—¶æ®µè¡¨æ•°æ® t(1~8)
     
-    E_D07_RULER_TYPE_HOLIDAY_DATE_T,                        // µÚ (t)¹«¹²¼ÙÈÕÈÕÆÚ¼°ÈÕÊ±¶Î±íºÅ t(1~254)
+    E_D07_RULER_TYPE_HOLIDAY_DATE_T,                        // ç¬¬ (t)å…¬å…±å‡æ—¥æ—¥æœŸåŠæ—¥æ—¶æ®µè¡¨å· t(1~254)
 
-    E_D07_RULER_TYPE_AUTO_DISPLAY_SCREEN_T,                    // ×Ô¶¯Ñ­»·ÏÔÊ¾µÚ(t)ÆÁÏÔÊ¾Êý¾ÝÏî t(1~254)
-    E_D07_RULER_TYPE_PREES_DISPLAY_SCREEN_T,                // °´¼üÑ­»·ÏÔÊ¾µÚ(t)ÆÁÏÔÊ¾Êý¾ÝÏî t(1~254)
-    E_D07_RULER_TYPE_FACTORY_SOFTWARE_VERSION,                // ³§¼ÒÈí¼þ°æ±¾ºÅ
-    E_D07_RULER_TYPE_FACTORY_HARDWARE_VERSION,                // ³§¼ÒÓ²¼þ°æ±¾ºÅ
-    E_D07_RULER_TYPE_FACTORY_SERIAL_NUM,                    // ³§¼Ò±àºÅ
-    E_D07_RULER_TYPE_A5_MAX = E_D07_RULER_TYPE_FACTORY_SERIAL_NUM,/* ±í A.5 ¹æÔ¼×î´óÖµ */
+    E_D07_RULER_TYPE_AUTO_DISPLAY_SCREEN_T,                    // è‡ªåŠ¨å¾ªçŽ¯æ˜¾ç¤ºç¬¬(t)å±æ˜¾ç¤ºæ•°æ®é¡¹ t(1~254)
+    E_D07_RULER_TYPE_PREES_DISPLAY_SCREEN_T,                // æŒ‰é”®å¾ªçŽ¯æ˜¾ç¤ºç¬¬(t)å±æ˜¾ç¤ºæ•°æ®é¡¹ t(1~254)
+    E_D07_RULER_TYPE_FACTORY_SOFTWARE_VERSION,                // åŽ‚å®¶è½¯ä»¶ç‰ˆæœ¬å·
+    E_D07_RULER_TYPE_FACTORY_HARDWARE_VERSION,                // åŽ‚å®¶ç¡¬ä»¶ç‰ˆæœ¬å·
+    E_D07_RULER_TYPE_FACTORY_SERIAL_NUM,                    // åŽ‚å®¶ç¼–å·
+    E_D07_RULER_TYPE_A5_MAX = E_D07_RULER_TYPE_FACTORY_SERIAL_NUM,/* è¡¨ A.5 è§„çº¦æœ€å¤§å€¼ */
     
-    /* ¶ÔÓ¦±í A.6 ¶³½áÊý¾Ý±êÊ¶±àÂë±í */
+    /* å¯¹åº”è¡¨ A.6 å†»ç»“æ•°æ®æ ‡è¯†ç¼–ç è¡¨ */
     /* t(1~12)*/
-    E_D07_RULER_TYPE_A6_MIN,                                /* ±í A.6 ¹æÔ¼×îÐ¡Öµ */    
-    E_D07_RULER_TYPE_FIX_FREZ_TIME_T = E_D07_RULER_TYPE_A6_MIN,    // ÉÏ(t)´Î¶¨Ê±¶³½áÊ±¼ä
-    E_D07_RULER_TYPE_FIX_FREZ_FORTH_HAVE_POWER_T,            // ÉÏ(t)´Î¶¨Ê±¶³½áÕýÏòÓÐ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_FIX_FREZ_BACK_HAVE_POWER_T,            // ÉÏ(t)´Î¶¨Ê±¶³½á·´ÏòÓÐ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_FIX_FREZ_COMB_1_NONE_POWER_T,            // ÉÏ(t)´Î¶¨Ê±¶³½á×éºÏÎÞ¹¦1µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_FIX_FREZ_COMB_2_NONE_POWER_T,            // ÉÏ(t)´Î¶¨Ê±¶³½á×éºÏÎÞ¹¦2µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_FIX_FREZ_PHASE_1_NONE_POWER_T,            // ÉÏ(t)´Î¶¨Ê±¶³½áµÚÒ»ÏóÏÞÎÞ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_FIX_FREZ_PHASE_2_NONE_POWER_T,            // ÉÏ(t)´Î¶¨Ê±¶³½áµÚ¶þÏóÏÞÎÞ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_FIX_FREZ_PHASE_3_NONE_POWER_T,            // ÉÏ(t)´Î¶¨Ê±¶³½áµÚÈýÏóÏÞÎÞ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_FIX_FREZ_PHASE_4_NONE_POWER_T,            // ÉÏ(t)´Î¶¨Ê±¶³½áµÚËÄÏóÏÞÎÞ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_FIX_FREZ_FORTH_HAVE_DEMAND_T,            // ÉÏ(t)´Î¶¨Ê±¶³½áÕýÏòÓÐ¹¦×î´óÐèÁ¿Êý¾Ý¼°·¢ÉúÊ±¼äÊý¾Ý
-    E_D07_RULER_TYPE_FIX_FREZ_BACK_HAVE_DEMAND_T,            // ÉÏ(t)´Î¶¨Ê±¶³½á·´ÏòÓÐ¹¦×î´óÐèÁ¿Êý¾Ý¼°·¢ÉúÊ±¼äÊý¾Ý
-    E_D07_RULER_TYPE_FIX_FREZ_VAR_T,                        // ÉÏ(t)´Î¶¨Ê±¶³½á±äÁ¿Êý¾Ý
-    E_D07_RULER_TYPE_FIX_FREZ_BLOCK_T,                        // ÉÏ(t)´Î¶¨Ê±¶³½áÊý¾Ý¿é
+    E_D07_RULER_TYPE_A6_MIN,                                /* è¡¨ A.6 è§„çº¦æœ€å°å€¼ */    
+    E_D07_RULER_TYPE_FIX_FREZ_TIME_T = E_D07_RULER_TYPE_A6_MIN,    // ä¸Š(t)æ¬¡å®šæ—¶å†»ç»“æ—¶é—´
+    E_D07_RULER_TYPE_FIX_FREZ_FORTH_HAVE_POWER_T,            // ä¸Š(t)æ¬¡å®šæ—¶å†»ç»“æ­£å‘æœ‰åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_FIX_FREZ_BACK_HAVE_POWER_T,            // ä¸Š(t)æ¬¡å®šæ—¶å†»ç»“åå‘æœ‰åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_FIX_FREZ_COMB_1_NONE_POWER_T,            // ä¸Š(t)æ¬¡å®šæ—¶å†»ç»“ç»„åˆæ— åŠŸ1ç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_FIX_FREZ_COMB_2_NONE_POWER_T,            // ä¸Š(t)æ¬¡å®šæ—¶å†»ç»“ç»„åˆæ— åŠŸ2ç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_FIX_FREZ_PHASE_1_NONE_POWER_T,            // ä¸Š(t)æ¬¡å®šæ—¶å†»ç»“ç¬¬ä¸€è±¡é™æ— åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_FIX_FREZ_PHASE_2_NONE_POWER_T,            // ä¸Š(t)æ¬¡å®šæ—¶å†»ç»“ç¬¬äºŒè±¡é™æ— åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_FIX_FREZ_PHASE_3_NONE_POWER_T,            // ä¸Š(t)æ¬¡å®šæ—¶å†»ç»“ç¬¬ä¸‰è±¡é™æ— åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_FIX_FREZ_PHASE_4_NONE_POWER_T,            // ä¸Š(t)æ¬¡å®šæ—¶å†»ç»“ç¬¬å››è±¡é™æ— åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_FIX_FREZ_FORTH_HAVE_DEMAND_T,            // ä¸Š(t)æ¬¡å®šæ—¶å†»ç»“æ­£å‘æœ‰åŠŸæœ€å¤§éœ€é‡æ•°æ®åŠå‘ç”Ÿæ—¶é—´æ•°æ®
+    E_D07_RULER_TYPE_FIX_FREZ_BACK_HAVE_DEMAND_T,            // ä¸Š(t)æ¬¡å®šæ—¶å†»ç»“åå‘æœ‰åŠŸæœ€å¤§éœ€é‡æ•°æ®åŠå‘ç”Ÿæ—¶é—´æ•°æ®
+    E_D07_RULER_TYPE_FIX_FREZ_VAR_T,                        // ä¸Š(t)æ¬¡å®šæ—¶å†»ç»“å˜é‡æ•°æ®
+    E_D07_RULER_TYPE_FIX_FREZ_BLOCK_T,                        // ä¸Š(t)æ¬¡å®šæ—¶å†»ç»“æ•°æ®å—
     
     /* t (1~3)*/
-    E_D07_RULER_TYPE_INST_FREZ_TIME_T,                        // ÉÏ(t)´ÎË²Ê±¶³½áÊ±¼ä
-    E_D07_RULER_TYPE_INST_FREZ_FORTH_HAVE_POWER_T,            // ÉÏ(t)´ÎË²Ê±¶³½áÕýÏòÓÐ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_INST_FREZ_BACK_HAVE_POWER_T,            // ÉÏ(t)´ÎË²Ê±¶³½á·´ÏòÓÐ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_INST_FREZ_COMB_1_NONE_POWER_T,            // ÉÏ(t)´ÎË²Ê±¶³½á×éºÏÎÞ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_INST_FREZ_COMB_2_NONE_POWER_T,            // ÉÏ(t)´ÎË²Ê±¶³½á×éºÏÎÞ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_INST_FREZ_PHASE_1_NONE_POWER_T,        // ÉÏ(t)´ÎË²Ê±¶³½áµÚÒ»ÏóÏÞÎÞ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_INST_FREZ_PHASE_2_NONE_POWER_T,        // ÉÏ(t)´ÎË²Ê±¶³½áµÚ¶þÏóÏÞÎÞ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_INST_FREZ_PHASE_3_NONE_POWER_T,        // ÉÏ(t)´ÎË²Ê±¶³½áµÚÈýÏóÏÞÎÞ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_INST_FREZ_PHASE_4_NONE_POWER_T,        // ÉÏ(t)´ÎË²Ê±¶³½áµÚËÄÏóÏÞÎÞ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_INST_FREZ_FORTH_HAVE_DEMAND_T,            // ÉÏ(t)´ÎË²Ê±¶³½áÕýÏòÓÐ¹¦×î´óÐèÁ¿Êý¾Ý¼°·¢ÉúÊ±¼äÊý¾Ý
-    E_D07_RULER_TYPE_INST_FREZ_BACK_HAVE_DEMAND_T,            // ÉÏ(t)´ÎË²Ê±¶³½á·´ÏòÓÐ¹¦×î´óÐèÁ¿Êý¾Ý¼°·¢ÉúÊ±¼äÊý¾Ý
-    E_D07_RULER_TYPE_INST_FREZ_BLOCK_T,                        // ÉÏ(t)´ÎË²Ê±¶³½áÊý¾Ý¿é
+    E_D07_RULER_TYPE_INST_FREZ_TIME_T,                        // ä¸Š(t)æ¬¡çž¬æ—¶å†»ç»“æ—¶é—´
+    E_D07_RULER_TYPE_INST_FREZ_FORTH_HAVE_POWER_T,            // ä¸Š(t)æ¬¡çž¬æ—¶å†»ç»“æ­£å‘æœ‰åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_INST_FREZ_BACK_HAVE_POWER_T,            // ä¸Š(t)æ¬¡çž¬æ—¶å†»ç»“åå‘æœ‰åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_INST_FREZ_COMB_1_NONE_POWER_T,            // ä¸Š(t)æ¬¡çž¬æ—¶å†»ç»“ç»„åˆæ— åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_INST_FREZ_COMB_2_NONE_POWER_T,            // ä¸Š(t)æ¬¡çž¬æ—¶å†»ç»“ç»„åˆæ— åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_INST_FREZ_PHASE_1_NONE_POWER_T,        // ä¸Š(t)æ¬¡çž¬æ—¶å†»ç»“ç¬¬ä¸€è±¡é™æ— åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_INST_FREZ_PHASE_2_NONE_POWER_T,        // ä¸Š(t)æ¬¡çž¬æ—¶å†»ç»“ç¬¬äºŒè±¡é™æ— åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_INST_FREZ_PHASE_3_NONE_POWER_T,        // ä¸Š(t)æ¬¡çž¬æ—¶å†»ç»“ç¬¬ä¸‰è±¡é™æ— åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_INST_FREZ_PHASE_4_NONE_POWER_T,        // ä¸Š(t)æ¬¡çž¬æ—¶å†»ç»“ç¬¬å››è±¡é™æ— åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_INST_FREZ_FORTH_HAVE_DEMAND_T,            // ä¸Š(t)æ¬¡çž¬æ—¶å†»ç»“æ­£å‘æœ‰åŠŸæœ€å¤§éœ€é‡æ•°æ®åŠå‘ç”Ÿæ—¶é—´æ•°æ®
+    E_D07_RULER_TYPE_INST_FREZ_BACK_HAVE_DEMAND_T,            // ä¸Š(t)æ¬¡çž¬æ—¶å†»ç»“åå‘æœ‰åŠŸæœ€å¤§éœ€é‡æ•°æ®åŠå‘ç”Ÿæ—¶é—´æ•°æ®
+    E_D07_RULER_TYPE_INST_FREZ_BLOCK_T,                        // ä¸Š(t)æ¬¡çž¬æ—¶å†»ç»“æ•°æ®å—
 
     /* t (1~2) */
-    E_D07_RULER_TYPE_SWITCH_ZONE_TIME_T,                    // ÉÏ(t)´Î Á½Ì×Ê±Çø±íÇÐ»»Ê±¼ä
-    E_D07_RULER_TYPE_SWITCH_ZONE_FORTH_HAVE_POWER_T,        // ÉÏ(t)´Î Á½Ì×Ê±Çø±íÇÐ»»ÕýÏòÓÐ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_SWITCH_ZONE_BACK_HAVE_POWER_T,            // ÉÏ(t)´Î Á½Ì×Ê±Çø±íÇÐ»»·´ÏòÓÐ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_SWITCH_ZONE_COMB_1_NONE_POWER_T,        // ÉÏ(t)´Î Á½Ì×Ê±Çø±íÇÐ»»×éºÏÎÞ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_SWITCH_ZONE_COMB_2_NONE_POWER_T,        // ÉÏ(t)´Î Á½Ì×Ê±Çø±íÇÐ»»×éºÏÎÞ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_SWITCH_ZONE_QUAD_1_NONE_POWER_T,        // ÉÏ(t)´Î Á½Ì×Ê±Çø±íÇÐ»»µÚÒ»ÏóÏÞÎÞ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_SWITCH_ZONE_QUAD_2_NONE_POWER_T,        // ÉÏ(t)´Î Á½Ì×Ê±Çø±íÇÐ»»µÚ¶þÏóÏÞÎÞ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_SWITCH_ZONE_QUAD_3_NONE_POWER_T,        // ÉÏ(t)´Î Á½Ì×Ê±Çø±íÇÐ»»µÚÈýÏóÏÞÎÞ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_SWITCH_ZONE_QUAD_4_NONE_POWER_T,        // ÉÏ(t)´Î Á½Ì×Ê±Çø±íÇÐ»»µÚËÄÏóÏÞÎÞ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_SWITCH_ZONE_FORTH_HAVE_DEMAND_T,        // ÉÏ(t)´Î Á½Ì×Ê±Çø±íÇÐ»»ÕýÏòÓÐ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼äÊý¾Ý
-    E_D07_RULER_TYPE_SWITCH_ZONE_BACK_HAVE_DEMAND_T,           // ÉÏ(t)´Î Á½Ì×Ê±Çø±íÇÐ»»·´ÏòÓÐ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼äÊý¾Ý
-    E_D07_RULER_TYPE_SWITCH_ZONE_VAR_DATA_T,                   // ÉÏ(t)´Î Á½Ì×Ê±Çø±íÇÐ»»±äÁ¿Êý¾Ý
-    E_D07_RULER_TYPE_SWITCH_ZONE_BLOCK_T,                       // ÉÏ(t)´Î Á½Ì×Ê±Çø±íÇÐ»»Êý¾Ý¿é
+    E_D07_RULER_TYPE_SWITCH_ZONE_TIME_T,                    // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¶åŒºè¡¨åˆ‡æ¢æ—¶é—´
+    E_D07_RULER_TYPE_SWITCH_ZONE_FORTH_HAVE_POWER_T,        // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¶åŒºè¡¨åˆ‡æ¢æ­£å‘æœ‰åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_SWITCH_ZONE_BACK_HAVE_POWER_T,            // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¶åŒºè¡¨åˆ‡æ¢åå‘æœ‰åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_SWITCH_ZONE_COMB_1_NONE_POWER_T,        // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¶åŒºè¡¨åˆ‡æ¢ç»„åˆæ— åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_SWITCH_ZONE_COMB_2_NONE_POWER_T,        // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¶åŒºè¡¨åˆ‡æ¢ç»„åˆæ— åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_SWITCH_ZONE_QUAD_1_NONE_POWER_T,        // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¶åŒºè¡¨åˆ‡æ¢ç¬¬ä¸€è±¡é™æ— åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_SWITCH_ZONE_QUAD_2_NONE_POWER_T,        // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¶åŒºè¡¨åˆ‡æ¢ç¬¬äºŒè±¡é™æ— åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_SWITCH_ZONE_QUAD_3_NONE_POWER_T,        // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¶åŒºè¡¨åˆ‡æ¢ç¬¬ä¸‰è±¡é™æ— åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_SWITCH_ZONE_QUAD_4_NONE_POWER_T,        // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¶åŒºè¡¨åˆ‡æ¢ç¬¬å››è±¡é™æ— åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_SWITCH_ZONE_FORTH_HAVE_DEMAND_T,        // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¶åŒºè¡¨åˆ‡æ¢æ­£å‘æœ‰åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´æ•°æ®
+    E_D07_RULER_TYPE_SWITCH_ZONE_BACK_HAVE_DEMAND_T,           // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¶åŒºè¡¨åˆ‡æ¢åå‘æœ‰åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´æ•°æ®
+    E_D07_RULER_TYPE_SWITCH_ZONE_VAR_DATA_T,                   // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¶åŒºè¡¨åˆ‡æ¢å˜é‡æ•°æ®
+    E_D07_RULER_TYPE_SWITCH_ZONE_BLOCK_T,                       // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¶åŒºè¡¨åˆ‡æ¢æ•°æ®å—
     
     /* t (1~2) */
-    E_D07_RULER_TYPE_SWITCH_PART_TIME_T,                    // ÉÏ(t)´Î Á½Ì×ÈÕÊ±¶Î±íÇÐ»»Ê±¼ä
-    E_D07_RULER_TYPE_SWITCH_PART_FORTH_HAVE_POWER_T,        // ÉÏ(t)´Î Á½Ì×ÈÕÊ±¶Î±íÇÐ»»ÕýÏòÓÐ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_SWITCH_PART_BACK_HAVE_POWER_T,            // ÉÏ(t)´Î Á½Ì×ÈÕÊ±¶Î±íÇÐ»»·´ÏòÓÐ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_SWITCH_PART_COMB_1_NONE_POWER_T,        // ÉÏ(t)´Î Á½Ì×ÈÕÊ±¶Î±íÇÐ»»×éºÏÎÞ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_SWITCH_PART_COMB_2_NONE_POWER_T,        // ÉÏ(t)´Î Á½Ì×ÈÕÊ±¶Î±íÇÐ»»×éºÏÎÞ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_SWITCH_PART_QUAD_1_NONE_POWER_T,        // ÉÏ(t)´Î Á½Ì×ÈÕÊ±¶Î±íÇÐ»»µÚÒ»ÏóÏÞÎÞ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_SWITCH_PART_QUAD_2_NONE_POWER_T,        // ÉÏ(t)´Î Á½Ì×ÈÕÊ±¶Î±íÇÐ»»µÚ¶þÏóÏÞÎÞ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_SWITCH_PART_QUAD_3_NONE_POWER_T,        // ÉÏ(t)´Î Á½Ì×ÈÕÊ±¶Î±íÇÐ»»µÚÈýÏóÏÞÎÞ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_SWITCH_PART_QUAD_4_NONE_POWER_T,        // ÉÏ(t)´Î Á½Ì×ÈÕÊ±¶Î±íÇÐ»»µÚËÄÏóÏÞÎÞ¹¦µçÄÜÊý¾Ý
-    E_D07_RULER_TYPE_SWITCH_PART_FORTH_HAVE_DEMAND_T,        // ÉÏ(t)´Î Á½Ì×ÈÕÊ±¶Î±íÇÐ»»ÕýÏòÓÐ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼äÊý¾Ý
-    E_D07_RULER_TYPE_SWITCH_PART_BACK_HAVE_DEMAND_T,           // ÉÏ(t)´Î Á½Ì×ÈÕÊ±¶Î±íÇÐ»»·´ÏòÓÐ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼äÊý¾Ý
-    E_D07_RULER_TYPE_SWITCH_PART_VAR_DATA_T,                   // ÉÏ(t)´Î Á½Ì×ÈÕÊ±¶Î±íÇÐ»»±äÁ¿Êý¾Ý
-    E_D07_RULER_TYPE_SWITCH_PART_BLOCK_T,                       // ÉÏ(t)´Î Á½Ì×ÈÕÊ±¶Î±íÇÐ»»Êý¾Ý¿é
+    E_D07_RULER_TYPE_SWITCH_PART_TIME_T,                    // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¥æ—¶æ®µè¡¨åˆ‡æ¢æ—¶é—´
+    E_D07_RULER_TYPE_SWITCH_PART_FORTH_HAVE_POWER_T,        // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¥æ—¶æ®µè¡¨åˆ‡æ¢æ­£å‘æœ‰åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_SWITCH_PART_BACK_HAVE_POWER_T,            // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¥æ—¶æ®µè¡¨åˆ‡æ¢åå‘æœ‰åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_SWITCH_PART_COMB_1_NONE_POWER_T,        // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¥æ—¶æ®µè¡¨åˆ‡æ¢ç»„åˆæ— åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_SWITCH_PART_COMB_2_NONE_POWER_T,        // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¥æ—¶æ®µè¡¨åˆ‡æ¢ç»„åˆæ— åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_SWITCH_PART_QUAD_1_NONE_POWER_T,        // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¥æ—¶æ®µè¡¨åˆ‡æ¢ç¬¬ä¸€è±¡é™æ— åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_SWITCH_PART_QUAD_2_NONE_POWER_T,        // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¥æ—¶æ®µè¡¨åˆ‡æ¢ç¬¬äºŒè±¡é™æ— åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_SWITCH_PART_QUAD_3_NONE_POWER_T,        // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¥æ—¶æ®µè¡¨åˆ‡æ¢ç¬¬ä¸‰è±¡é™æ— åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_SWITCH_PART_QUAD_4_NONE_POWER_T,        // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¥æ—¶æ®µè¡¨åˆ‡æ¢ç¬¬å››è±¡é™æ— åŠŸç”µèƒ½æ•°æ®
+    E_D07_RULER_TYPE_SWITCH_PART_FORTH_HAVE_DEMAND_T,        // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¥æ—¶æ®µè¡¨åˆ‡æ¢æ­£å‘æœ‰åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´æ•°æ®
+    E_D07_RULER_TYPE_SWITCH_PART_BACK_HAVE_DEMAND_T,           // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¥æ—¶æ®µè¡¨åˆ‡æ¢åå‘æœ‰åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´æ•°æ®
+    E_D07_RULER_TYPE_SWITCH_PART_VAR_DATA_T,                   // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¥æ—¶æ®µè¡¨åˆ‡æ¢å˜é‡æ•°æ®
+    E_D07_RULER_TYPE_SWITCH_PART_BLOCK_T,                       // ä¸Š(t)æ¬¡ ä¸¤å¥—æ—¥æ—¶æ®µè¡¨åˆ‡æ¢æ•°æ®å—
 
-    E_D07_RULER_TYPE_A6_MAX = E_D07_RULER_TYPE_SWITCH_PART_BLOCK_T,    /* ±í A.6 ¹æÔ¼×î´óÖµ */    
+    E_D07_RULER_TYPE_A6_MAX = E_D07_RULER_TYPE_SWITCH_PART_BLOCK_T,    /* è¡¨ A.6 è§„çº¦æœ€å¤§å€¼ */    
     
-    /* ¶ÔÓ¦±í A.7 ¸ººÉ¼ÇÂ¼Êý¾Ý±àÂë±í */
-    E_D07_RULER_TYPE_A7_MIN,                                /* ±í A.7 ¹æÔ¼×îÐ¡Öµ */    
-    E_D07_RULER_TYPE_EARLY_OVERLOAD_RECORD = E_D07_RULER_TYPE_A7_MIN,    // ×îÔç¼ÇÂ¼¿é
-    E_D07_RULER_TYPE_GIVEN_OVERLOAD_RECORD,                    // ¸ø¶¨Ê±¼ä¼ÇÂ¼¿é
-    E_D07_RULER_TYPE_RECNT_OVERLOAD_RECORD,                    // ×î½üÒ»¸ö¼ÇÂ¼¿é
+    /* å¯¹åº”è¡¨ A.7 è´Ÿè·è®°å½•æ•°æ®ç¼–ç è¡¨ */
+    E_D07_RULER_TYPE_A7_MIN,                                /* è¡¨ A.7 è§„çº¦æœ€å°å€¼ */    
+    E_D07_RULER_TYPE_EARLY_OVERLOAD_RECORD = E_D07_RULER_TYPE_A7_MIN,    // æœ€æ—©è®°å½•å—
+    E_D07_RULER_TYPE_GIVEN_OVERLOAD_RECORD,                    // ç»™å®šæ—¶é—´è®°å½•å—
+    E_D07_RULER_TYPE_RECNT_OVERLOAD_RECORD,                    // æœ€è¿‘ä¸€ä¸ªè®°å½•å—
     
-    E_D07_RULER_TYPE_EARLY_OVERLOAD_RECORD_1,                // µÚÒ»Àà¸ººÉ ×îÔç¼ÇÂ¼¿é
-    E_D07_RULER_TYPE_GIVEN_OVERLOAD_RECORD_1,                // µÚÒ»Àà¸ººÉ ¸ø¶¨Ê±¼ä¼ÇÂ¼¿é
-    E_D07_RULER_TYPE_RECNT_OVERLOAD_RECORD_1,                // µÚÒ»Àà¸ººÉ ×î½üÒ»¸ö¼ÇÂ¼¿é
+    E_D07_RULER_TYPE_EARLY_OVERLOAD_RECORD_1,                // ç¬¬ä¸€ç±»è´Ÿè· æœ€æ—©è®°å½•å—
+    E_D07_RULER_TYPE_GIVEN_OVERLOAD_RECORD_1,                // ç¬¬ä¸€ç±»è´Ÿè· ç»™å®šæ—¶é—´è®°å½•å—
+    E_D07_RULER_TYPE_RECNT_OVERLOAD_RECORD_1,                // ç¬¬ä¸€ç±»è´Ÿè· æœ€è¿‘ä¸€ä¸ªè®°å½•å—
 
-    E_D07_RULER_TYPE_EARLY_OVERLOAD_RECORD_2,                // µÚ¶þÀà¸ººÉ ×îÔç¼ÇÂ¼¿é
-    E_D07_RULER_TYPE_GIVEN_OVERLOAD_RECORD_2,                // µÚ¶þÀà¸ººÉ ¸ø¶¨Ê±¼ä¼ÇÂ¼¿é
-    E_D07_RULER_TYPE_RECNT_OVERLOAD_RECORD_2,                // µÚ¶þÀà¸ººÉ ×î½üÒ»¸ö¼ÇÂ¼¿é
+    E_D07_RULER_TYPE_EARLY_OVERLOAD_RECORD_2,                // ç¬¬äºŒç±»è´Ÿè· æœ€æ—©è®°å½•å—
+    E_D07_RULER_TYPE_GIVEN_OVERLOAD_RECORD_2,                // ç¬¬äºŒç±»è´Ÿè· ç»™å®šæ—¶é—´è®°å½•å—
+    E_D07_RULER_TYPE_RECNT_OVERLOAD_RECORD_2,                // ç¬¬äºŒç±»è´Ÿè· æœ€è¿‘ä¸€ä¸ªè®°å½•å—
 
-    E_D07_RULER_TYPE_EARLY_OVERLOAD_RECORD_3,                // µÚÈýÀà¸ººÉ ×îÔç¼ÇÂ¼¿é
-    E_D07_RULER_TYPE_GIVEN_OVERLOAD_RECORD_3,                // µÚÈýÀà¸ººÉ ¸ø¶¨Ê±¼ä¼ÇÂ¼¿é
-    E_D07_RULER_TYPE_RECNT_OVERLOAD_RECORD_3,                // µÚÈýÀà¸ººÉ ×î½üÒ»¸ö¼ÇÂ¼¿é
+    E_D07_RULER_TYPE_EARLY_OVERLOAD_RECORD_3,                // ç¬¬ä¸‰ç±»è´Ÿè· æœ€æ—©è®°å½•å—
+    E_D07_RULER_TYPE_GIVEN_OVERLOAD_RECORD_3,                // ç¬¬ä¸‰ç±»è´Ÿè· ç»™å®šæ—¶é—´è®°å½•å—
+    E_D07_RULER_TYPE_RECNT_OVERLOAD_RECORD_3,                // ç¬¬ä¸‰ç±»è´Ÿè· æœ€è¿‘ä¸€ä¸ªè®°å½•å—
 
-    E_D07_RULER_TYPE_EARLY_OVERLOAD_RECORD_4,                // µÚËÄÀà¸ººÉ ×îÔç¼ÇÂ¼¿é
-    E_D07_RULER_TYPE_GIVEN_OVERLOAD_RECORD_4,                // µÚËÄÀà¸ººÉ ¸ø¶¨Ê±¼ä¼ÇÂ¼¿é
-    E_D07_RULER_TYPE_RECNT_OVERLOAD_RECORD_4,                // µÚËÄÀà¸ººÉ ×î½üÒ»¸ö¼ÇÂ¼¿é
+    E_D07_RULER_TYPE_EARLY_OVERLOAD_RECORD_4,                // ç¬¬å››ç±»è´Ÿè· æœ€æ—©è®°å½•å—
+    E_D07_RULER_TYPE_GIVEN_OVERLOAD_RECORD_4,                // ç¬¬å››ç±»è´Ÿè· ç»™å®šæ—¶é—´è®°å½•å—
+    E_D07_RULER_TYPE_RECNT_OVERLOAD_RECORD_4,                // ç¬¬å››ç±»è´Ÿè· æœ€è¿‘ä¸€ä¸ªè®°å½•å—
 
-    E_D07_RULER_TYPE_EARLY_OVERLOAD_RECORD_5,                // µÚÎåÀà¸ººÉ ×îÔç¼ÇÂ¼¿é
-    E_D07_RULER_TYPE_GIVEN_OVERLOAD_RECORD_5,                // µÚÎåÀà¸ººÉ ¸ø¶¨Ê±¼ä¼ÇÂ¼¿é
-    E_D07_RULER_TYPE_RECNT_OVERLOAD_RECORD_5,                // µÚÎåÀà¸ººÉ ×î½üÒ»¸ö¼ÇÂ¼¿é
+    E_D07_RULER_TYPE_EARLY_OVERLOAD_RECORD_5,                // ç¬¬äº”ç±»è´Ÿè· æœ€æ—©è®°å½•å—
+    E_D07_RULER_TYPE_GIVEN_OVERLOAD_RECORD_5,                // ç¬¬äº”ç±»è´Ÿè· ç»™å®šæ—¶é—´è®°å½•å—
+    E_D07_RULER_TYPE_RECNT_OVERLOAD_RECORD_5,                // ç¬¬äº”ç±»è´Ÿè· æœ€è¿‘ä¸€ä¸ªè®°å½•å—
 
-    E_D07_RULER_TYPE_EARLY_OVERLOAD_RECORD_6,                // µÚÁùÀà¸ººÉ ×îÔç¼ÇÂ¼¿é
-    E_D07_RULER_TYPE_GIVEN_OVERLOAD_RECORD_6,                // µÚÁùÀà¸ººÉ ¸ø¶¨Ê±¼ä¼ÇÂ¼¿é
-    E_D07_RULER_TYPE_RECNT_OVERLOAD_RECORD_6,                // µÚÁùÀà¸ººÉ ×î½üÒ»¸ö¼ÇÂ¼¿é
-    E_D07_RULER_TYPE_A7_MAX = E_D07_RULER_TYPE_RECNT_OVERLOAD_RECORD_6,    /* ±í A.7 ¹æÔ¼×î´óÖµ */
+    E_D07_RULER_TYPE_EARLY_OVERLOAD_RECORD_6,                // ç¬¬å…­ç±»è´Ÿè· æœ€æ—©è®°å½•å—
+    E_D07_RULER_TYPE_GIVEN_OVERLOAD_RECORD_6,                // ç¬¬å…­ç±»è´Ÿè· ç»™å®šæ—¶é—´è®°å½•å—
+    E_D07_RULER_TYPE_RECNT_OVERLOAD_RECORD_6,                // ç¬¬å…­ç±»è´Ÿè· æœ€è¿‘ä¸€ä¸ªè®°å½•å—
+    E_D07_RULER_TYPE_A7_MAX = E_D07_RULER_TYPE_RECNT_OVERLOAD_RECORD_6,    /* è¡¨ A.7 è§„çº¦æœ€å¤§å€¼ */
     
 
-    /* ÓÃ»§À©Õ¹ */
+    /* ç”¨æˆ·æ‰©å±• */
     
 
 
@@ -813,167 +813,167 @@ typedef enum
 
 
 }E_D07_RULER_TYPE;
-/** dlt645 2007¹æÔ¼ÀàÐÍ */
+/** dlt645 2007è§„çº¦ç±»åž‹ */
 
 
 
 
-/* DLT645 2007°æ ¹æÔ¼±àÂë±íÀàÐÍ */
+/* DLT645 2007ç‰ˆ è§„çº¦ç¼–ç è¡¨ç±»åž‹ */
 typedef enum
 {
-    E_DLT64507_RULER_TABEL_POWER,          /* ¶ÔÓ¦±íA.1 µçÄÜÁ¿Êý¾Ý±êÊ¶±àÂë±í */
-    E_DLT64507_RULER_TABEL_DEMAND,      /* ¶ÔÓ¦±íA.2 ×î´óÐèÁ¿¼°·¢ÉúÊ±¼äÊý¾Ý±êÊ¶±àÂë±í */
-    E_DLT64507_RULER_TABEL_VAR,            /* ¶ÔÓ¦±íA.3 ±äÁ¿Êý¾Ý±êÊ¶±àÂë±í */
-    E_DLT64507_RULER_TABEL_EVENT,        /* ¶ÔÓ¦±íA.4 ÊÂ¼þ¼ÇÂ¼Êý¾Ý±êÊ¶±àÂë±í */
-    E_DLT64507_RULER_TABEL_PARA,         /* ¶ÔÓ¦±íA.5 ²Î±äÁ¿Êý¾Ý±êÊ¶±àÂë±í */
-    E_DLT64507_RULER_TABEL_FREEZE,      /* ¶ÔÓ¦±íA.6 ¶³½áÊý¾Ý±êÊ¶±àÂë±í */
-    E_DLT64507_RULER_TABEL_LOAD,        /* ¶ÔÓ¦±íA.7 ¸ººÉ¼ÇÂ¼Êý¾Ý±êÊ¶±àÂë±í */
-    E_DLT64507_RULER_TABEL_EXT,            /* ¶ÔÓ¦±íA.8 ÓÃ»§×Ô¶¨ÒåÊý¾Ý±êÊ¶±àÂë±í */
+    E_DLT64507_RULER_TABEL_POWER,          /* å¯¹åº”è¡¨A.1 ç”µèƒ½é‡æ•°æ®æ ‡è¯†ç¼–ç è¡¨ */
+    E_DLT64507_RULER_TABEL_DEMAND,      /* å¯¹åº”è¡¨A.2 æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´æ•°æ®æ ‡è¯†ç¼–ç è¡¨ */
+    E_DLT64507_RULER_TABEL_VAR,            /* å¯¹åº”è¡¨A.3 å˜é‡æ•°æ®æ ‡è¯†ç¼–ç è¡¨ */
+    E_DLT64507_RULER_TABEL_EVENT,        /* å¯¹åº”è¡¨A.4 äº‹ä»¶è®°å½•æ•°æ®æ ‡è¯†ç¼–ç è¡¨ */
+    E_DLT64507_RULER_TABEL_PARA,         /* å¯¹åº”è¡¨A.5 å‚å˜é‡æ•°æ®æ ‡è¯†ç¼–ç è¡¨ */
+    E_DLT64507_RULER_TABEL_FREEZE,      /* å¯¹åº”è¡¨A.6 å†»ç»“æ•°æ®æ ‡è¯†ç¼–ç è¡¨ */
+    E_DLT64507_RULER_TABEL_LOAD,        /* å¯¹åº”è¡¨A.7 è´Ÿè·è®°å½•æ•°æ®æ ‡è¯†ç¼–ç è¡¨ */
+    E_DLT64507_RULER_TABEL_EXT,            /* å¯¹åº”è¡¨A.8 ç”¨æˆ·è‡ªå®šä¹‰æ•°æ®æ ‡è¯†ç¼–ç è¡¨ */
 
 }E_DLT645_07_RULER_TABEL_TYPE;
 
 
 
-/* ½áËãÈÕÀàÐÍ */
+/* ç»“ç®—æ—¥ç±»åž‹ */
 typedef enum
 {
-    E_D07_PAYOFF_NULL,      // ²»¹ØÐÄ¸Ã²ÎÊý
-    E_D07_PAYOFF_CURRENT, /* µ±Ç° */
-    E_D07_PAYOFF_PRE_1,      /* ÉÏ 1 ½áËãÈÕ */
-    E_D07_PAYOFF_PRE_2,      /* ÉÏ 2 ½áËãÈÕ */
-    E_D07_PAYOFF_PRE_3,      /* ÉÏ 3 ½áËãÈÕ */
-    E_D07_PAYOFF_PRE_4,      /* ÉÏ 4 ½áËãÈÕ */
-    E_D07_PAYOFF_PRE_5,      /* ÉÏ 5 ½áËãÈÕ */
-    E_D07_PAYOFF_PRE_6,      /* ÉÏ 6 ½áËãÈÕ */
-    E_D07_PAYOFF_PRE_7,      /* ÉÏ 7 ½áËãÈÕ */
-    E_D07_PAYOFF_PRE_8,      /* ÉÏ 8 ½áËãÈÕ */
-    E_D07_PAYOFF_PRE_9,      /* ÉÏ 9 ½áËãÈÕ */
-    E_D07_PAYOFF_PRE_10,  /* ÉÏ 10 ½áËãÈÕ */
-    E_D07_PAYOFF_PRE_11,  /* ÉÏ 11 ½áËãÈÕ */
-    E_D07_PAYOFF_PRE_12,  /* ÉÏ 12 ½áËãÈÕ */
+    E_D07_PAYOFF_NULL,      // ä¸å…³å¿ƒè¯¥å‚æ•°
+    E_D07_PAYOFF_CURRENT, /* å½“å‰ */
+    E_D07_PAYOFF_PRE_1,      /* ä¸Š 1 ç»“ç®—æ—¥ */
+    E_D07_PAYOFF_PRE_2,      /* ä¸Š 2 ç»“ç®—æ—¥ */
+    E_D07_PAYOFF_PRE_3,      /* ä¸Š 3 ç»“ç®—æ—¥ */
+    E_D07_PAYOFF_PRE_4,      /* ä¸Š 4 ç»“ç®—æ—¥ */
+    E_D07_PAYOFF_PRE_5,      /* ä¸Š 5 ç»“ç®—æ—¥ */
+    E_D07_PAYOFF_PRE_6,      /* ä¸Š 6 ç»“ç®—æ—¥ */
+    E_D07_PAYOFF_PRE_7,      /* ä¸Š 7 ç»“ç®—æ—¥ */
+    E_D07_PAYOFF_PRE_8,      /* ä¸Š 8 ç»“ç®—æ—¥ */
+    E_D07_PAYOFF_PRE_9,      /* ä¸Š 9 ç»“ç®—æ—¥ */
+    E_D07_PAYOFF_PRE_10,  /* ä¸Š 10 ç»“ç®—æ—¥ */
+    E_D07_PAYOFF_PRE_11,  /* ä¸Š 11 ç»“ç®—æ—¥ */
+    E_D07_PAYOFF_PRE_12,  /* ä¸Š 12 ç»“ç®—æ—¥ */
      
 }E_D07_PARA_PAYOFF;
 
 
-/* ²ÎÊý Ð³²¨´ÎÊý */
+/* å‚æ•° è°æ³¢æ¬¡æ•° */
 typedef enum
 {
 
-    E_D07_HARM_NULL,        // ²»¹ØÐÄÐ³²¨´ÎÊý
-    E_D07_HARM_1,            // 1´ÎÐ³²¨
-    E_D07_HARM_2,            // 2´ÎÐ³²¨
-    E_D07_HARM_3,            // 3´ÎÐ³²¨
-    E_D07_HARM_4,            // 4´ÎÐ³²¨
-    E_D07_HARM_5,            // 5´ÎÐ³²¨
-    E_D07_HARM_6,            // 6´ÎÐ³²¨
-    E_D07_HARM_7,            // 7´ÎÐ³²¨
-    E_D07_HARM_8,            // 8´ÎÐ³²¨
-    E_D07_HARM_9,            // 9´ÎÐ³²¨
-    E_D07_HARM_10,            // 10´ÎÐ³²¨
-    E_D07_HARM_11,            // 11´ÎÐ³²¨
-    E_D07_HARM_12,            // 12´ÎÐ³²¨
-    E_D07_HARM_13,            // 13´ÎÐ³²¨
-    E_D07_HARM_14,            // 14´ÎÐ³²¨
-    E_D07_HARM_15,            // 15´ÎÐ³²¨
-    E_D07_HARM_16,            // 16´ÎÐ³²¨
-    E_D07_HARM_17,            // 17´ÎÐ³²¨
-    E_D07_HARM_18,            // 18´ÎÐ³²¨
-    E_D07_HARM_19,            // 19´ÎÐ³²¨
-    E_D07_HARM_20,            // 20´ÎÐ³²¨
-    E_D07_HARM_21,            // 21´ÎÐ³²¨
+    E_D07_HARM_NULL,        // ä¸å…³å¿ƒè°æ³¢æ¬¡æ•°
+    E_D07_HARM_1,            // 1æ¬¡è°æ³¢
+    E_D07_HARM_2,            // 2æ¬¡è°æ³¢
+    E_D07_HARM_3,            // 3æ¬¡è°æ³¢
+    E_D07_HARM_4,            // 4æ¬¡è°æ³¢
+    E_D07_HARM_5,            // 5æ¬¡è°æ³¢
+    E_D07_HARM_6,            // 6æ¬¡è°æ³¢
+    E_D07_HARM_7,            // 7æ¬¡è°æ³¢
+    E_D07_HARM_8,            // 8æ¬¡è°æ³¢
+    E_D07_HARM_9,            // 9æ¬¡è°æ³¢
+    E_D07_HARM_10,            // 10æ¬¡è°æ³¢
+    E_D07_HARM_11,            // 11æ¬¡è°æ³¢
+    E_D07_HARM_12,            // 12æ¬¡è°æ³¢
+    E_D07_HARM_13,            // 13æ¬¡è°æ³¢
+    E_D07_HARM_14,            // 14æ¬¡è°æ³¢
+    E_D07_HARM_15,            // 15æ¬¡è°æ³¢
+    E_D07_HARM_16,            // 16æ¬¡è°æ³¢
+    E_D07_HARM_17,            // 17æ¬¡è°æ³¢
+    E_D07_HARM_18,            // 18æ¬¡è°æ³¢
+    E_D07_HARM_19,            // 19æ¬¡è°æ³¢
+    E_D07_HARM_20,            // 20æ¬¡è°æ³¢
+    E_D07_HARM_21,            // 21æ¬¡è°æ³¢
 
 }E_D07_PARA_HARM;
 
-/* ²ÎÊýÉÏN´ÎÊý */
+/* å‚æ•°ä¸ŠNæ¬¡æ•° */
 typedef enum
 {
-    E_D07_LAST_NULL,        // ÉÏ²»¹Ø´ÎÊý
-    E_D07_LAST_1,            // ÉÏ1´Î
-    E_D07_LAST_2,            // ÉÏ2´Î
-    E_D07_LAST_3,            // ÉÏ3´Î
-    E_D07_LAST_4,            // ÉÏ4´Î
-    E_D07_LAST_5,            // ÉÏ5´Î
-    E_D07_LAST_6,            // ÉÏ6´Î
-    E_D07_LAST_7,            // ÉÏ7´Î
-    E_D07_LAST_8,            // ÉÏ8´Î
-    E_D07_LAST_9,            // ÉÏ9´Î
-    E_D07_LAST_10,            // ÉÏ10´Î    
-    E_D07_LAST_11,            // ÉÏ11´Î
-    E_D07_LAST_12,            // ÉÏ12´Î    
+    E_D07_LAST_NULL,        // ä¸Šä¸å…³æ¬¡æ•°
+    E_D07_LAST_1,            // ä¸Š1æ¬¡
+    E_D07_LAST_2,            // ä¸Š2æ¬¡
+    E_D07_LAST_3,            // ä¸Š3æ¬¡
+    E_D07_LAST_4,            // ä¸Š4æ¬¡
+    E_D07_LAST_5,            // ä¸Š5æ¬¡
+    E_D07_LAST_6,            // ä¸Š6æ¬¡
+    E_D07_LAST_7,            // ä¸Š7æ¬¡
+    E_D07_LAST_8,            // ä¸Š8æ¬¡
+    E_D07_LAST_9,            // ä¸Š9æ¬¡
+    E_D07_LAST_10,            // ä¸Š10æ¬¡    
+    E_D07_LAST_11,            // ä¸Š11æ¬¡
+    E_D07_LAST_12,            // ä¸Š12æ¬¡    
 }E_D07_PARA_LAST;
 
-/* ¹æÔ¼²ÎÊý·ÑÂÊ */
+/* è§„çº¦å‚æ•°è´¹çŽ‡ */
 typedef enum
 {
-    E_D07_RATE_NULL,        // ²»¹ØÐÄ·ÑÂÊ²ÎÊý
-    E_D07_RATE_1,            // ·ÑÂÊ
-    E_D07_RATE_2,            // ·ÑÂÊ2
-    E_D07_RATE_3,            // ·ÑÂÊ3
-    E_D07_RATE_4,            // ·ÑÂÊ4
-    E_D07_RATE_5,            // ·ÑÂÊ5
-    E_D07_RATE_6,            // ·ÑÂÊ6
-    E_D07_RATE_7,            // ·ÑÂÊ7
-    E_D07_RATE_8,            // ·ÑÂÊ8
-    E_D07_RATE_9,            // ·ÑÂÊ9
-    E_D07_RATE_10,            // ·ÑÂÊ10
-    E_D07_RATE_11,            // ·ÑÂÊ11
-    E_D07_RATE_12,            // ·ÑÂÊ12
-    E_D07_RATE_13,            // ·ÑÂÊ13
-    E_D07_RATE_14,            // ·ÑÂÊ14
-    E_D07_RATE_15,            // ·ÑÂÊ15
-    E_D07_RATE_16,            // ·ÑÂÊ16
-    E_D07_RATE_17,            // ·ÑÂÊ17
-    E_D07_RATE_18,            // ·ÑÂÊ18
-    E_D07_RATE_19,            // ·ÑÂÊ19
-    E_D07_RATE_20,            // ·ÑÂÊ20
-    E_D07_RATE_21,            // ·ÑÂÊ21
-    E_D07_RATE_22,            // ·ÑÂÊ22
-    E_D07_RATE_23,            // ·ÑÂÊ23
-    E_D07_RATE_24,            // ·ÑÂÊ24
-    E_D07_RATE_25,            // ·ÑÂÊ25
-    E_D07_RATE_26,            // ·ÑÂÊ26
-    E_D07_RATE_27,            // ·ÑÂÊ27
-    E_D07_RATE_28,            // ·ÑÂÊ28
-    E_D07_RATE_29,            // ·ÑÂÊ29
-    E_D07_RATE_30,            // ·ÑÂÊ30
-    E_D07_RATE_31,            // ·ÑÂÊ31
-    E_D07_RATE_32,            // ·ÑÂÊ32
-    E_D07_RATE_33,            // ·ÑÂÊ33
-    E_D07_RATE_34,            // ·ÑÂÊ34
-    E_D07_RATE_35,            // ·ÑÂÊ35
-    E_D07_RATE_36,            // ·ÑÂÊ36
-    E_D07_RATE_37,            // ·ÑÂÊ37
-    E_D07_RATE_38,            // ·ÑÂÊ38
-    E_D07_RATE_39,            // ·ÑÂÊ39
-    E_D07_RATE_40,            // ·ÑÂÊ40
-    E_D07_RATE_41,            // ·ÑÂÊ41
-    E_D07_RATE_42,            // ·ÑÂÊ42
-    E_D07_RATE_43,            // ·ÑÂÊ43
-    E_D07_RATE_44,            // ·ÑÂÊ44
-    E_D07_RATE_45,            // ·ÑÂÊ45
-    E_D07_RATE_46,            // ·ÑÂÊ46
-    E_D07_RATE_47,            // ·ÑÂÊ47
-    E_D07_RATE_48,            // ·ÑÂÊ48
-    E_D07_RATE_49,            // ·ÑÂÊ49
-    E_D07_RATE_50,            // ·ÑÂÊ50
-    E_D07_RATE_51,            // ·ÑÂÊ51
-    E_D07_RATE_52,            // ·ÑÂÊ52
-    E_D07_RATE_53,            // ·ÑÂÊ53
-    E_D07_RATE_54,            // ·ÑÂÊ54
-    E_D07_RATE_55,            // ·ÑÂÊ55
-    E_D07_RATE_56,            // ·ÑÂÊ56
-    E_D07_RATE_57,            // ·ÑÂÊ57
-    E_D07_RATE_58,            // ·ÑÂÊ58
-    E_D07_RATE_59,            // ·ÑÂÊ59
-    E_D07_RATE_60,            // ·ÑÂÊ60
-    E_D07_RATE_61,            // ·ÑÂÊ61
-    E_D07_RATE_62,            // ·ÑÂÊ62
-    E_D07_RATE_63,            // ·ÑÂÊ63
-    E_D07_RATE_64,            // ·ÑÂÊ64
+    E_D07_RATE_NULL,        // ä¸å…³å¿ƒè´¹çŽ‡å‚æ•°
+    E_D07_RATE_1,            // è´¹çŽ‡
+    E_D07_RATE_2,            // è´¹çŽ‡2
+    E_D07_RATE_3,            // è´¹çŽ‡3
+    E_D07_RATE_4,            // è´¹çŽ‡4
+    E_D07_RATE_5,            // è´¹çŽ‡5
+    E_D07_RATE_6,            // è´¹çŽ‡6
+    E_D07_RATE_7,            // è´¹çŽ‡7
+    E_D07_RATE_8,            // è´¹çŽ‡8
+    E_D07_RATE_9,            // è´¹çŽ‡9
+    E_D07_RATE_10,            // è´¹çŽ‡10
+    E_D07_RATE_11,            // è´¹çŽ‡11
+    E_D07_RATE_12,            // è´¹çŽ‡12
+    E_D07_RATE_13,            // è´¹çŽ‡13
+    E_D07_RATE_14,            // è´¹çŽ‡14
+    E_D07_RATE_15,            // è´¹çŽ‡15
+    E_D07_RATE_16,            // è´¹çŽ‡16
+    E_D07_RATE_17,            // è´¹çŽ‡17
+    E_D07_RATE_18,            // è´¹çŽ‡18
+    E_D07_RATE_19,            // è´¹çŽ‡19
+    E_D07_RATE_20,            // è´¹çŽ‡20
+    E_D07_RATE_21,            // è´¹çŽ‡21
+    E_D07_RATE_22,            // è´¹çŽ‡22
+    E_D07_RATE_23,            // è´¹çŽ‡23
+    E_D07_RATE_24,            // è´¹çŽ‡24
+    E_D07_RATE_25,            // è´¹çŽ‡25
+    E_D07_RATE_26,            // è´¹çŽ‡26
+    E_D07_RATE_27,            // è´¹çŽ‡27
+    E_D07_RATE_28,            // è´¹çŽ‡28
+    E_D07_RATE_29,            // è´¹çŽ‡29
+    E_D07_RATE_30,            // è´¹çŽ‡30
+    E_D07_RATE_31,            // è´¹çŽ‡31
+    E_D07_RATE_32,            // è´¹çŽ‡32
+    E_D07_RATE_33,            // è´¹çŽ‡33
+    E_D07_RATE_34,            // è´¹çŽ‡34
+    E_D07_RATE_35,            // è´¹çŽ‡35
+    E_D07_RATE_36,            // è´¹çŽ‡36
+    E_D07_RATE_37,            // è´¹çŽ‡37
+    E_D07_RATE_38,            // è´¹çŽ‡38
+    E_D07_RATE_39,            // è´¹çŽ‡39
+    E_D07_RATE_40,            // è´¹çŽ‡40
+    E_D07_RATE_41,            // è´¹çŽ‡41
+    E_D07_RATE_42,            // è´¹çŽ‡42
+    E_D07_RATE_43,            // è´¹çŽ‡43
+    E_D07_RATE_44,            // è´¹çŽ‡44
+    E_D07_RATE_45,            // è´¹çŽ‡45
+    E_D07_RATE_46,            // è´¹çŽ‡46
+    E_D07_RATE_47,            // è´¹çŽ‡47
+    E_D07_RATE_48,            // è´¹çŽ‡48
+    E_D07_RATE_49,            // è´¹çŽ‡49
+    E_D07_RATE_50,            // è´¹çŽ‡50
+    E_D07_RATE_51,            // è´¹çŽ‡51
+    E_D07_RATE_52,            // è´¹çŽ‡52
+    E_D07_RATE_53,            // è´¹çŽ‡53
+    E_D07_RATE_54,            // è´¹çŽ‡54
+    E_D07_RATE_55,            // è´¹çŽ‡55
+    E_D07_RATE_56,            // è´¹çŽ‡56
+    E_D07_RATE_57,            // è´¹çŽ‡57
+    E_D07_RATE_58,            // è´¹çŽ‡58
+    E_D07_RATE_59,            // è´¹çŽ‡59
+    E_D07_RATE_60,            // è´¹çŽ‡60
+    E_D07_RATE_61,            // è´¹çŽ‡61
+    E_D07_RATE_62,            // è´¹çŽ‡62
+    E_D07_RATE_63,            // è´¹çŽ‡63
+    E_D07_RATE_64,            // è´¹çŽ‡64
 }E_D07_PARA_RATE;
 
 
-/* ½á¹¹ */
+/* ç»“æž„ */
 
 
 
@@ -986,29 +986,29 @@ typedef enum
 
 
 
-/* Êý¾Ý×ª»»·½Ïò */
+/* æ•°æ®è½¬æ¢æ–¹å‘ */
 typedef enum
 {
-    E_D07_TRANS_U2F,    // Êý¾Ý¸ñÊ½´ÓÓÃ»§²à×ª»»µ½Ö¡²à
-    E_D07_TRANS_F2U,    // Êý¾Ý¸ñÊ½´ÓÖ¡²à×ª»»µ½ÓÃ»§²à
+    E_D07_TRANS_U2F,    // æ•°æ®æ ¼å¼ä»Žç”¨æˆ·ä¾§è½¬æ¢åˆ°å¸§ä¾§
+    E_D07_TRANS_F2U,    // æ•°æ®æ ¼å¼ä»Žå¸§ä¾§è½¬æ¢åˆ°ç”¨æˆ·ä¾§
     
 }E_D07_TRANS_FLG;
 
 typedef eD07Err (*F_D07_RULER_TRANS)(E_D07_TRANS_FLG, char*, char*);
 
-/* ¹æÔ¼µÄ¸ñÊ½ÀàÐÍ */
+/* è§„çº¦çš„æ ¼å¼ç±»åž‹ */
 typedef enum
 {    
-    E_D07_FMT_UNKOWN,                // Î´Öª 
+    E_D07_FMT_UNKOWN,                // æœªçŸ¥ 
     E_D07_FMT_XXXX,                    // XXXX
     E_D07_FMT_XX_2 = E_D07_FMT_XXXX,// XXXX
     E_D07_FMT_XXXXXX,                // XXXXXX
     E_D07_FMT_XX_3 = E_D07_FMT_XXXXXX,
-    E_D07_FMT_XX_4,                    // XX ÖØ¸´4´Î
-    E_D07_FMT_XX_6,                    // XX ÖØ¸´6´Î
-    E_D07_FMT_XX_8,                    // XX ÖØ¸´8´Î
-    E_D07_FMT_XX_10,                // XX ÖØ¸´10´Î
-    E_D07_FMT_XX_16,                // XX ÖØ¸´16´Î
+    E_D07_FMT_XX_4,                    // XX é‡å¤4æ¬¡
+    E_D07_FMT_XX_6,                    // XX é‡å¤6æ¬¡
+    E_D07_FMT_XX_8,                    // XX é‡å¤8æ¬¡
+    E_D07_FMT_XX_10,                // XX é‡å¤10æ¬¡
+    E_D07_FMT_XX_16,                // XX é‡å¤16æ¬¡
     E_D07_FMT_X_XXX,                // X.XXX
     E_D07_FMT_XX_XX,                // XX.XX
     E_D07_FMT_XX_XXXX,                // XX.XXXX
@@ -1017,8 +1017,8 @@ typedef enum
     E_D07_FMT_XXX_XXX,                // XXX.XXX
     E_D07_FMT_XXXXXX_XX,            // XXXXXX.XX
     E_D07_FMT_XXXXXXXX,                // XXXXXXXX
-    E_D07_FMT_XXXXXX_2,                // XXXXXX ÖØ¸´2´Î
-    E_D07_FMT_XXXXXX_6,                // XXXXXX ÖØ¸´6´Î
+    E_D07_FMT_XXXXXX_2,                // XXXXXX é‡å¤2æ¬¡
+    E_D07_FMT_XXXXXX_6,                // XXXXXX é‡å¤6æ¬¡
     E_D07_FMT_NN,                     // NN 
     E_D07_FMT_NNNN,                 // NNNN 
     E_D07_FMT_NN_4,                 // NN 
@@ -1029,8 +1029,8 @@ typedef enum
     E_D07_FMT_NNN_N,                 // NNN.N 
     E_D07_FMT_hhmmss,                // hhmmss 
     E_D07_FMT_MMDDhhmm,                // MMDDhhmm
-    E_D07_FMT_MMDDNN_14,            // MMDDNN ÖØ¸´14´Î
-    E_D07_FMT_hhmmNN_14,            // hhmmNN ÖØ¸´14´Î
+    E_D07_FMT_MMDDNN_14,            // MMDDNN é‡å¤14æ¬¡
+    E_D07_FMT_hhmmNN_14,            // hhmmNN é‡å¤14æ¬¡
     E_D07_FMT_DDhh,                    // DDhh
     E_D07_FMT_YYMMDDWW,                // YYMMDDWW 
     E_D07_FMT_YYMMDDNN,                // YYMMDDWW 
@@ -1045,19 +1045,19 @@ typedef enum
                                                         XXX.XXXX
                                                         YYMMDDhhmmss */
 
-    // ¸´ÔÓ½áºÏÊý¾Ý¸ñÊ½ÀàÐÍ
-    E_D07_FMT_RECD_LOSS_LESS_VOLT,        // Ê§Ñ¹ Ç·Ñ¹Êý¾Ý¸ñÊ½    
-    E_D07_FMT_RECD_ANTI_PHASE,    // ÄæÏàÐòÊý¾Ý¸ñÊ½
-    E_D07_FMT_RECD_UN_BALANCE,    // ²»Æ½ºâÊý¾Ý¸ñÊ½    
-    E_D07_FMT_RECD_LESS_MORE_LOSS_ELEC,        // LESS MORE LOSS Ê§Á÷¡¢¹ýÁ÷¡¢¶ÏÁ÷Êý¾Ý¼ÇÂ¼¸ñÊ½
-    E_D07_FMT_RECD_VOLT_PASS_PERCENT,        // µçÑ¹ºÏ¸ñÂÊÊý¾ÝÍ³¼Æ
-    E_D07_FMT_RECD_METER_PROG,        // µçÑ¹ºÏ¸ñÂÊÊý¾ÝÍ³¼Æ
-    E_D07_FMT_RECD_METER_CLEAR,        // µçÑ¹ºÏ¸ñÂÊÊý¾ÝÍ³¼Æ
-    E_D07_FMT_RECD_DEAMD_CLEAR,        // µçÑ¹ºÏ¸ñÂÊÊý¾ÝÍ³¼Æ
-    E_D07_FMT_RECD_EVENT_CLEAR,        // µçÑ¹ºÏ¸ñÂÊÊý¾ÝÍ³¼Æ
-    E_D07_FMT_RECD_ADJUST_TIME,        // µçÑ¹ºÏ¸ñÂÊÊý¾ÝÍ³¼Æ
-    E_D07_FMT_RECD_PART_PROG,        // Ê±¶Î±í±à³Ì¼ÇÂ¼
-    E_D07_FMT_RECD_ZONE_PROG,        // Ê±Çø±í±à³Ì¼ÇÂ¼
+    // å¤æ‚ç»“åˆæ•°æ®æ ¼å¼ç±»åž‹
+    E_D07_FMT_RECD_LOSS_LESS_VOLT,        // å¤±åŽ‹ æ¬ åŽ‹æ•°æ®æ ¼å¼    
+    E_D07_FMT_RECD_ANTI_PHASE,    // é€†ç›¸åºæ•°æ®æ ¼å¼
+    E_D07_FMT_RECD_UN_BALANCE,    // ä¸å¹³è¡¡æ•°æ®æ ¼å¼    
+    E_D07_FMT_RECD_LESS_MORE_LOSS_ELEC,        // LESS MORE LOSS å¤±æµã€è¿‡æµã€æ–­æµæ•°æ®è®°å½•æ ¼å¼
+    E_D07_FMT_RECD_VOLT_PASS_PERCENT,        // ç”µåŽ‹åˆæ ¼çŽ‡æ•°æ®ç»Ÿè®¡
+    E_D07_FMT_RECD_METER_PROG,        // ç”µåŽ‹åˆæ ¼çŽ‡æ•°æ®ç»Ÿè®¡
+    E_D07_FMT_RECD_METER_CLEAR,        // ç”µåŽ‹åˆæ ¼çŽ‡æ•°æ®ç»Ÿè®¡
+    E_D07_FMT_RECD_DEAMD_CLEAR,        // ç”µåŽ‹åˆæ ¼çŽ‡æ•°æ®ç»Ÿè®¡
+    E_D07_FMT_RECD_EVENT_CLEAR,        // ç”µåŽ‹åˆæ ¼çŽ‡æ•°æ®ç»Ÿè®¡
+    E_D07_FMT_RECD_ADJUST_TIME,        // ç”µåŽ‹åˆæ ¼çŽ‡æ•°æ®ç»Ÿè®¡
+    E_D07_FMT_RECD_PART_PROG,        // æ—¶æ®µè¡¨ç¼–ç¨‹è®°å½•
+    E_D07_FMT_RECD_ZONE_PROG,        // æ—¶åŒºè¡¨ç¼–ç¨‹è®°å½•
     E_D07_FMT_RECD_WEEKDAY_PROG,
     E_D07_FMT_RECD_HOLIDAY_PROG,
     E_D07_FMT_RECD_POWER_PROG,
@@ -1066,36 +1066,36 @@ typedef enum
     E_D07_FMT_RECD_OPEN_BTN_BOX,
 }E_D07_RULER_FORMAT;
 
-/* ¹æÔ¼¶ÁÐ´ÀàÐÍ */
+/* è§„çº¦è¯»å†™ç±»åž‹ */
 typedef enum
 {
-    E_D07_RDWR_READ_ONLY,        /* Ö»¶Á */
-    E_D07_RDWR_WRITE_ONLY,        /* Ö»Ð´ */
-    E_D07_RDWR_READ_WRITE,        /* ¶ÁÐ´ */
+    E_D07_RDWR_READ_ONLY,        /* åªè¯» */
+    E_D07_RDWR_WRITE_ONLY,        /* åªå†™ */
+    E_D07_RDWR_READ_WRITE,        /* è¯»å†™ */
 
 }E_D07_RULER_RDWR;
 
 
-/*Êý¾Ý½á¹¹*/
+/*æ•°æ®ç»“æž„*/
 
 
 typedef struct
 {
-    E_D07_PARA_PAYOFF   payoff;        // ½áËãÈÕ(²»¹ØÐÄ£¬µ±Ç°£¬ÉÏ(1-12)½áËãÈÕ)
-    E_D07_PARA_RATE      rate;         // ·ÑÂÊ(²»¹ØÐÄ£¬1~63)
-    E_D07_PARA_HARM      harm;         // Ð³²¨´Î(²»¹ØÐÄ£¬1~21)
-    E_D07_PARA_LAST      last;         // ÉÏ(n)´Î¼ÇÂ¼(²»¹ØÐÄ£¬1-10)
+    E_D07_PARA_PAYOFF   payoff;        // ç»“ç®—æ—¥(ä¸å…³å¿ƒï¼Œå½“å‰ï¼Œä¸Š(1-12)ç»“ç®—æ—¥)
+    E_D07_PARA_RATE      rate;         // è´¹çŽ‡(ä¸å…³å¿ƒï¼Œ1~63)
+    E_D07_PARA_HARM      harm;         // è°æ³¢æ¬¡(ä¸å…³å¿ƒï¼Œ1~21)
+    E_D07_PARA_LAST      last;         // ä¸Š(n)æ¬¡è®°å½•(ä¸å…³å¿ƒï¼Œ1-10)
     
 }S_D07_RULER_PARA;
 typedef struct
 {
-    E_D07_RULER_TYPE     type;            // ¹æÔ¼ÀàÐÍ
-    E_D07_RULER_RDWR    rdwr;            // ¹æÔ¼Êý¾ÝµÄ¶ÁÐ´ÊôÐÔ
-    E_D07_RULER_FORMAT     format;            // ¹æÔ¼Êý¾ÝµÄ¸ñÊ½
-    F_D07_RULER_TRANS    func;            // Êý¾ÝÓò×ª»»º¯ÊýÖ¸Õë
-    S_D07_RULER_PARA     para;            // ¹æÔ¼ÀàÐÍµÄ¶îÍâÊý¾Ý
-    int                 len;            // Êý¾ÝÓò×Ö½Ú³¤¶È 
-    char         name[NAME_LEN];        // ¸ÃÌõ¹æÔ¼Êý¾ÝÏîÃû³Æ
+    E_D07_RULER_TYPE     type;            // è§„çº¦ç±»åž‹
+    E_D07_RULER_RDWR    rdwr;            // è§„çº¦æ•°æ®çš„è¯»å†™å±žæ€§
+    E_D07_RULER_FORMAT     format;            // è§„çº¦æ•°æ®çš„æ ¼å¼
+    F_D07_RULER_TRANS    func;            // æ•°æ®åŸŸè½¬æ¢å‡½æ•°æŒ‡é’ˆ
+    S_D07_RULER_PARA     para;            // è§„çº¦ç±»åž‹çš„é¢å¤–æ•°æ®
+    int                 len;            // æ•°æ®åŸŸå­—èŠ‚é•¿åº¦ 
+    char         name[NAME_LEN];        // è¯¥æ¡è§„çº¦æ•°æ®é¡¹åç§°
 
 }S_D07_RULER_INFO;
 
@@ -1103,75 +1103,75 @@ typedef struct
 
 typedef struct
 {
-    UINT32 ruler_id;     /* ¹æÔ¼±êÇ©·û C0 C1  ÐÍÈç 0x40E3 */
-    UINT8  ctrl_code;    /* ¿ØÖÆÂë */
-    UINT8  data_len;     /* Êý¾ÝÓò×Ö½ÚÊý °üÀ¨¹æÔ¼ºÍÆäËüÊý¾Ý */
-    char   address[13];  /* µØÖ· */
-    char* data;          /* Êý¾Ý */
+    UINT32 ruler_id;     /* è§„çº¦æ ‡ç­¾ç¬¦ C0 C1  åž‹å¦‚ 0x40E3 */
+    UINT8  ctrl_code;    /* æŽ§åˆ¶ç  */
+    UINT8  data_len;     /* æ•°æ®åŸŸå­—èŠ‚æ•° åŒ…æ‹¬è§„çº¦å’Œå…¶å®ƒæ•°æ® */
+    char   address[13];  /* åœ°å€ */
+    char* data;          /* æ•°æ® */
 
 }S_D07_PACK_FRAME;
 
-/* ¿ØÖÆÂëÓò C Ö¡´«ËÍ·½Ïò */
+/* æŽ§åˆ¶ç åŸŸ C å¸§ä¼ é€æ–¹å‘ */
 typedef enum
 {
-    E_D07_CTRL_DIR_M2S, // Ö÷Õ¾µ½´ÓÕ¾
-    E_D07_CTRL_DIR_S2M, // ´ÓÕ¾µ½Ö÷Õ¾
+    E_D07_CTRL_DIR_M2S, // ä¸»ç«™åˆ°ä»Žç«™
+    E_D07_CTRL_DIR_S2M, // ä»Žç«™åˆ°ä¸»ç«™
     
 }E_D07_CTRL_DIR;
 
-/* ´ÓÕ¾Òì³£±êÖ¾ */
+/* ä»Žç«™å¼‚å¸¸æ ‡å¿— */
 typedef enum
 {
-    E_D07_CTRL_SR_OK, // ´ÓÕ¾Õý³£Ó¦´ð
-    E_D07_CTRL_SR_NO, // ´ÓÕ¾Òì³£Ó¦´ð
+    E_D07_CTRL_SR_OK, // ä»Žç«™æ­£å¸¸åº”ç­”
+    E_D07_CTRL_SR_NO, // ä»Žç«™å¼‚å¸¸åº”ç­”
     
 }E_D07_CTRL_SR;
 
-/* ÓÐÎÞºóÐøÖ¡±êÖ¾ */
+/* æœ‰æ— åŽç»­å¸§æ ‡å¿— */
 typedef enum
 {
-    E_D07_CTRL_FLW_NONE, //ÎÞºóÐø
-    E_D07_CTRL_FLW_HAVE, //ÓÐºóÐø
+    E_D07_CTRL_FLW_NONE, //æ— åŽç»­
+    E_D07_CTRL_FLW_HAVE, //æœ‰åŽç»­
     
 }E_D07_CTRL_FLW;
-/*  ½âÎö°üÊý¾ÝÓòµÄ½á¹û±êÖ¾ */
+/*  è§£æžåŒ…æ•°æ®åŸŸçš„ç»“æžœæ ‡å¿— */
 typedef enum
 {
-    E_D07_UNPD_FLG_OK,          /* ½âÎöÕýÈ· Êý¾Ý¿ÉÓÃ ÇÒÊý¾ÝÊÇÕý³£µÄ´ð¸´ */
-    E_D07_UNPD_FLG_ERROR_OK,    /* ½âÎöÕýÈ· Êý¾Ý¿ÉÓÃ ÇÒÊý¾ÝÊÇÒì³£µÄ´ð¸´ */
-    E_D07_UNPD_FLG_NONE_DATA,   /* Ã»ÓÐ¶ÔÓ¦³ý¹æÔ¼ Êý¾Ý */
-    E_D07_UNPD_FLG_FUNC_NULL,   /* Ã»ÓÐ½âÎöº¯Êý */
-    E_D07_UNPD_FLG_FUNC_ERROR,  /* ÓÐ½âÎöº¯Êý£¬µ«½âÎö¹ý³Ì³ö´í */
-    E_D07_UNPD_FLG_NONE_STRUCT, /* Ã»ÓÐ½âÎö¸ÃÀàÐÍµÄÓÃ»§²àÊý¾Ý½á¹¹ */
+    E_D07_UNPD_FLG_OK,          /* è§£æžæ­£ç¡® æ•°æ®å¯ç”¨ ä¸”æ•°æ®æ˜¯æ­£å¸¸çš„ç­”å¤ */
+    E_D07_UNPD_FLG_ERROR_OK,    /* è§£æžæ­£ç¡® æ•°æ®å¯ç”¨ ä¸”æ•°æ®æ˜¯å¼‚å¸¸çš„ç­”å¤ */
+    E_D07_UNPD_FLG_NONE_DATA,   /* æ²¡æœ‰å¯¹åº”é™¤è§„çº¦ æ•°æ® */
+    E_D07_UNPD_FLG_FUNC_NULL,   /* æ²¡æœ‰è§£æžå‡½æ•° */
+    E_D07_UNPD_FLG_FUNC_ERROR,  /* æœ‰è§£æžå‡½æ•°ï¼Œä½†è§£æžè¿‡ç¨‹å‡ºé”™ */
+    E_D07_UNPD_FLG_NONE_STRUCT, /* æ²¡æœ‰è§£æžè¯¥ç±»åž‹çš„ç”¨æˆ·ä¾§æ•°æ®ç»“æž„ */
 
 }E_D07_UNPD_FLG;
 
-/* ¿ØÖÆÓòC ¹¦ÄÜÂë */
+/* æŽ§åˆ¶åŸŸC åŠŸèƒ½ç  */
 typedef enum
 {
-    E_D07_CTRL_RESV                  = 0x00,// ±£Áô
-    E_D07_CTRL_SYNC_TIME          = 0x08,// ¹ã²¥Ð£Ê±
-    E_D07_CTRL_READ_DATA          = 0x11,// ¶ÁÊý¾Ý
-    E_D07_CTRL_READ_AFTERDATA      = 0x12,// ¶ÁºóÐøÊý¾Ý
-    E_D07_CTRL_READ_ADDR          = 0x13,// ¶ÁÍ¨ÐÅµØÖ·
-    E_D07_CTRL_WRITE_DATA          = 0x14,// Ð´Êý¾Ý
-    E_D07_CTRL_WRITE_ADDR          = 0x15,// Ð´Í¨ÐÅµØÖ·
-    E_D07_CTRL_FREEZ_COMM          = 0x16,// ¶³½áÃüÁî
-    E_D07_CTRL_MODIFY_BAUD          = 0x17,// ÐÞ¸ÄÍ¨ÐÅËÙÂÊ
-    E_D07_CTRL_MODIFY_PASSWORD      = 0x18,// ÐÞ¸ÄÃÜÂë
-    E_D07_CTRL_CLEAR_MAXDEMAND      = 0x19,// ×î´óÐèÁ¿ÇåÁã
-    E_D07_CTRL_CLEAR_METER          = 0x1A,// µç±íÇåÁã
-    E_D07_CTRL_CLEAR_EVENT          = 0x1B,// ÊÂ¼þÇåÁã
-    E_D07_CTRL_COMM                  = 0x1C // ¿ØÖÆÃüÁî
+    E_D07_CTRL_RESV                  = 0x00,// ä¿ç•™
+    E_D07_CTRL_SYNC_TIME          = 0x08,// å¹¿æ’­æ ¡æ—¶
+    E_D07_CTRL_READ_DATA          = 0x11,// è¯»æ•°æ®
+    E_D07_CTRL_READ_AFTERDATA      = 0x12,// è¯»åŽç»­æ•°æ®
+    E_D07_CTRL_READ_ADDR          = 0x13,// è¯»é€šä¿¡åœ°å€
+    E_D07_CTRL_WRITE_DATA          = 0x14,// å†™æ•°æ®
+    E_D07_CTRL_WRITE_ADDR          = 0x15,// å†™é€šä¿¡åœ°å€
+    E_D07_CTRL_FREEZ_COMM          = 0x16,// å†»ç»“å‘½ä»¤
+    E_D07_CTRL_MODIFY_BAUD          = 0x17,// ä¿®æ”¹é€šä¿¡é€ŸçŽ‡
+    E_D07_CTRL_MODIFY_PASSWORD      = 0x18,// ä¿®æ”¹å¯†ç 
+    E_D07_CTRL_CLEAR_MAXDEMAND      = 0x19,// æœ€å¤§éœ€é‡æ¸…é›¶
+    E_D07_CTRL_CLEAR_METER          = 0x1A,// ç”µè¡¨æ¸…é›¶
+    E_D07_CTRL_CLEAR_EVENT          = 0x1B,// äº‹ä»¶æ¸…é›¶
+    E_D07_CTRL_COMM                  = 0x1C // æŽ§åˆ¶å‘½ä»¤
     
 }E_D07_CTRL_FNC;
-/* ¿ØÖÆÓòC ½á¹¹¶¨Òå */
+/* æŽ§åˆ¶åŸŸC ç»“æž„å®šä¹‰ */
 typedef struct
 {
-    E_D07_CTRL_DIR direct;    // Ö¡´«ËÍ·½Ïò 
-    E_D07_CTRL_SR  reply;      // ´ÓÕ¾Ó¦´ðÒì³£±êÖ¾
-    E_D07_CTRL_FLW follow;      // ÓÐÎÞºóÐøÖ¡
-    E_D07_CTRL_FNC funcode;      // ¹¦ÄÜÂë
+    E_D07_CTRL_DIR direct;    // å¸§ä¼ é€æ–¹å‘ 
+    E_D07_CTRL_SR  reply;      // ä»Žç«™åº”ç­”å¼‚å¸¸æ ‡å¿—
+    E_D07_CTRL_FLW follow;      // æœ‰æ— åŽç»­å¸§
+    E_D07_CTRL_FNC funcode;      // åŠŸèƒ½ç 
     
 }S_D07_CTRL_CODE;
 
@@ -1209,14 +1209,16 @@ typedef struct
 
 
 typedef struct
-{
+{
+
     UINT32 ulTimes;   // XXXXXX
     UINT32 ulMinutes; // XXXXXX
 }S_D07_XXXXXX_2;
 
 
 typedef struct
-{
+{
+
     float fXX_XXXXX[8];
 }S_D07_XX_XXXX_8;
 
@@ -1228,7 +1230,8 @@ typedef struct
 }S_D07_hhmmss;
 
 typedef struct
-{
+{
+
     UINT8 hh;
     UINT8 mm;
     UINT8 NN;
@@ -1244,7 +1247,8 @@ typedef struct
 
 
 typedef struct
-{
+{
+
     UINT8 YY;   // year
     UINT8 MM;    // month
     UINT8 DD;    // day
@@ -1255,13 +1259,15 @@ typedef struct
 }S_D07_YYMMDDhhmmss;
 
 typedef struct
-{
+{
+
     S_D07_YYMMDDhhmmss sBegin;
     S_D07_YYMMDDhhmmss sEnd;
 }S_D07_YYMMDDhhmmss_2;
 
 typedef struct
-{
+{
+
     UINT8 YY;   // year
     UINT8 MM;    // month
     UINT8 DD;    // day
@@ -1272,15 +1278,15 @@ typedef struct
 
 typedef struct
 {
-    S_D07_YYMMDDhhmmss            sBgnTime;      // ¿ªÊ¼Ê±¿Ì         6 * 1
-    S_D07_YYMMDDhhmmss            sEndTime;      // ½áÊøÊ±¿Ì         6 * 1 
-    S_D07_XX_XXXX_YYMMDDhhmm   sDemand;        // ×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä 
+    S_D07_YYMMDDhhmmss            sBgnTime;      // å¼€å§‹æ—¶åˆ»         6 * 1
+    S_D07_YYMMDDhhmmss            sEndTime;      // ç»“æŸæ—¶åˆ»         6 * 1 
+    S_D07_XX_XXXX_YYMMDDhhmm   sDemand;        // æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´ 
 }S_D07_YYMMDDhhmmss_2_XX_XXXX_YYMMDDhhmm;
 
 typedef struct
 {
-    S_D07_YYMMDDhhmmss            sBgnTime;      // ¿ªÊ¼Ê±¿Ì         6 * 1
-    S_D07_YYMMDDhhmmss            sEndTime;      // ½áÊøÊ±¿Ì         6 * 1 
+    S_D07_YYMMDDhhmmss            sBgnTime;      // å¼€å§‹æ—¶åˆ»         6 * 1
+    S_D07_YYMMDDhhmmss            sEndTime;      // ç»“æŸæ—¶åˆ»         6 * 1 
     float fXXX_XXX;
 }S_D07_YYMMDDhhmmss_XX_XXXX_YYMMDDhhmmss;
 
@@ -1290,171 +1296,173 @@ typedef struct
 
 typedef struct
 {
-    double dForthHavePowerIcr;     // ÊÂ¼þ·¢ÉúÆÚ¼äÄ³Ïà ÕýÏòÓÐ¹¦µçÄÜÔöÁ¿     XXXXXX.XX
-    double dBackHavePowerIcr;   // ÊÂ¼þ·¢ÉúÆÚ¼äÄ³Ïà ·´ÏòÓÐ¹¦µçÄÜÔöÁ¿      XXXXXX.XX
-    double dCombNone1PowerIcr;    // ÊÂ¼þ·¢ÉúÆÚ¼äÄ³Ïà ×éºÏÎÞ¹¦1µçÄÜÔöÁ¿     XXXXXX.XX
-    double dCombNone2PowerIcr;    // ÊÂ¼þ·¢ÉúÆÚ¼äÄ³Ïà ×éºÏÎÞ¹¦2µçÄÜÔöÁ¿     XXXXXX.XX
+    double dForthHavePowerIcr;     // äº‹ä»¶å‘ç”ŸæœŸé—´æŸç›¸ æ­£å‘æœ‰åŠŸç”µèƒ½å¢žé‡     XXXXXX.XX
+    double dBackHavePowerIcr;   // äº‹ä»¶å‘ç”ŸæœŸé—´æŸç›¸ åå‘æœ‰åŠŸç”µèƒ½å¢žé‡      XXXXXX.XX
+    double dCombNone1PowerIcr;    // äº‹ä»¶å‘ç”ŸæœŸé—´æŸç›¸ ç»„åˆæ— åŠŸ1ç”µèƒ½å¢žé‡     XXXXXX.XX
+    double dCombNone2PowerIcr;    // äº‹ä»¶å‘ç”ŸæœŸé—´æŸç›¸ ç»„åˆæ— åŠŸ2ç”µèƒ½å¢žé‡     XXXXXX.XX
     
 }S_D07_EventRecordVoltPhase;
 
 typedef struct
 {
-    float fVolt;                // ÊÂ¼þ·¢ÉúÆÚ¼äÄ³Ïà µçÑ¹ ÐÎÈç XXX.X
-    float fElec;                // ÊÂ¼þ·¢ÉúÆÚ¼äÄ³Ïà    µçÁ÷      XXX.XXX
-    float fHavePowerRate;        // ÊÂ¼þ·¢ÉúÆÚ¼äÄ³Ïà ÓÐ¹¦¹¦ÂÊ  XX.XXXX
-    float fNonePowerRate;        // ÊÂ¼þ·¢ÉúÆÚ¼äÄ³Ïà ÎÞ¹¦¹¦ÂÊ  XX.XXXX    
-    float fPowerRateFactor;        // ÊÂ¼þ·¢ÉúÆÚ¼äÄ³Ïà ¹¦ÂÊÒòÊý  X.XXX
+    float fVolt;                // äº‹ä»¶å‘ç”ŸæœŸé—´æŸç›¸ ç”µåŽ‹ å½¢å¦‚ XXX.X
+    float fElec;                // äº‹ä»¶å‘ç”ŸæœŸé—´æŸç›¸    ç”µæµ      XXX.XXX
+    float fHavePowerRate;        // äº‹ä»¶å‘ç”ŸæœŸé—´æŸç›¸ æœ‰åŠŸåŠŸçŽ‡  XX.XXXX
+    float fNonePowerRate;        // äº‹ä»¶å‘ç”ŸæœŸé—´æŸç›¸ æ— åŠŸåŠŸçŽ‡  XX.XXXX    
+    float fPowerRateFactor;        // äº‹ä»¶å‘ç”ŸæœŸé—´æŸç›¸ åŠŸçŽ‡å› æ•°  X.XXX
 }S_D07_EventRecordFactor;
 
 
 typedef struct
 {
-    double    dAtimeTotal;        // ÊÂ¼þ·¢ÉúÆÚ¼ä ×Ü°²Ê±Êý    XXXXXX.XX
-    double    dAtimePhaseA;        // ÊÂ¼þ·¢ÉúÆÚ¼ä AÏà°²Ê±Êý   XXXXXX.XX
-    double    dAtimePhaseB;        // ÊÂ¼þ·¢ÉúÆÚ¼ä BÏà°²Ê±Êý   XXXXXX.XX
-    double    dAtimePhaseC;        // ÊÂ¼þ·¢ÉúÆÚ¼ä CÏà°²Ê±Êý   XXXXXX.XX
-}S_D07_EventRecordAtime; // °²Ê±Êý
+    double    dAtimeTotal;        // äº‹ä»¶å‘ç”ŸæœŸé—´ æ€»å®‰æ—¶æ•°    XXXXXX.XX
+    double    dAtimePhaseA;        // äº‹ä»¶å‘ç”ŸæœŸé—´ Aç›¸å®‰æ—¶æ•°   XXXXXX.XX
+    double    dAtimePhaseB;        // äº‹ä»¶å‘ç”ŸæœŸé—´ Bç›¸å®‰æ—¶æ•°   XXXXXX.XX
+    double    dAtimePhaseC;        // äº‹ä»¶å‘ç”ŸæœŸé—´ Cç›¸å®‰æ—¶æ•°   XXXXXX.XX
+}S_D07_EventRecordAtime; // å®‰æ—¶æ•°
 
 typedef struct
 {
-    S_D07_YYMMDDhhmmss            sBgnTime;      // ¿ªÊ¼Ê±¿Ì         6 * 1
-    S_D07_YYMMDDhhmmss            sEndTime;      // ½áÊøÊ±¿Ì         6 * 1
-    S_D07_EventRecordVoltPhase sPowerTotal; // ×ÜµçÄÜÔöÁ¿       4 * 8
-    S_D07_EventRecordVoltPhase sPowerA;         // AÏàµçÄÜÔöÁ¿         4 * 8
-    S_D07_EventRecordFactor       sFactorA;    // AÏàÒòÊý            5 * 4
-    S_D07_EventRecordVoltPhase sPowerB;         // BÏàµçÄÜÔöÁ¿        4 * 8 
-    S_D07_EventRecordFactor       sFactorB;    // BÏàÒòÊý             5 * 4
-    S_D07_EventRecordVoltPhase sPowerC;     // CÏàµçÄÜÔöÁ¿         4 * 8
-    S_D07_EventRecordFactor    sFactorC;    // CÏàÒòÊý            5 * 4
-    S_D07_EventRecordAtime     sAtime;      // °²Ê±Êý              4 * 8
+    S_D07_YYMMDDhhmmss            sBgnTime;      // å¼€å§‹æ—¶åˆ»         6 * 1
+    S_D07_YYMMDDhhmmss            sEndTime;      // ç»“æŸæ—¶åˆ»         6 * 1
+    S_D07_EventRecordVoltPhase sPowerTotal; // æ€»ç”µèƒ½å¢žé‡       4 * 8
+    S_D07_EventRecordVoltPhase sPowerA;         // Aç›¸ç”µèƒ½å¢žé‡         4 * 8
+    S_D07_EventRecordFactor       sFactorA;    // Aç›¸å› æ•°            5 * 4
+    S_D07_EventRecordVoltPhase sPowerB;         // Bç›¸ç”µèƒ½å¢žé‡        4 * 8 
+    S_D07_EventRecordFactor       sFactorB;    // Bç›¸å› æ•°             5 * 4
+    S_D07_EventRecordVoltPhase sPowerC;     // Cç›¸ç”µèƒ½å¢žé‡         4 * 8
+    S_D07_EventRecordFactor    sFactorC;    // Cç›¸å› æ•°            5 * 4
+    S_D07_EventRecordAtime     sAtime;      // å®‰æ—¶æ•°              4 * 8
     
-}S_D07_LESS_LOSS_VOLT;// Ê§Ñ¹Ç·Ñ¹¹ýÑ¹£¬¶ÏÏàÊÂ¼þ·¢Éú¼ÇÂ¼Êý¾Ý  35 * 4 + 12 = 152×Ö½Ú
+}S_D07_LESS_LOSS_VOLT;// å¤±åŽ‹æ¬ åŽ‹è¿‡åŽ‹ï¼Œæ–­ç›¸äº‹ä»¶å‘ç”Ÿè®°å½•æ•°æ®  35 * 4 + 12 = 152å­—èŠ‚
 
 
 
 typedef struct
 {
-    S_D07_YYMMDDhhmmss            sBgnTime;       // ¿ªÊ¼Ê±¿Ì    6 * 1    
-    S_D07_YYMMDDhhmmss            sEndTime;       // ½áÊøÊ±¿Ì    6 * 1
-    S_D07_EventRecordVoltPhase sPowerTotal;    // ×ÜµçÄÜÔöÁ¿  4 * 8
-    S_D07_EventRecordVoltPhase sPowerA;           // AÏàµçÄÜÔöÁ¿ 4 * 8
-    S_D07_EventRecordVoltPhase sPowerB;           // BÏàµçÄÜÔöÁ¿ 4 * 8
-    S_D07_EventRecordVoltPhase sPowerC;        // CÏàµçÄÜÔöÁ¿ 4 * 8
+    S_D07_YYMMDDhhmmss            sBgnTime;       // å¼€å§‹æ—¶åˆ»    6 * 1    
+    S_D07_YYMMDDhhmmss            sEndTime;       // ç»“æŸæ—¶åˆ»    6 * 1
+    S_D07_EventRecordVoltPhase sPowerTotal;    // æ€»ç”µèƒ½å¢žé‡  4 * 8
+    S_D07_EventRecordVoltPhase sPowerA;           // Aç›¸ç”µèƒ½å¢žé‡ 4 * 8
+    S_D07_EventRecordVoltPhase sPowerB;           // Bç›¸ç”µèƒ½å¢žé‡ 4 * 8
+    S_D07_EventRecordVoltPhase sPowerC;        // Cç›¸ç”µèƒ½å¢žé‡ 4 * 8
     
-}S_D07_EventRevPhase; // µçÑ¹ µçÁ÷ÄæÏà    ¹²(140)×Ö½Ú
+}S_D07_EventRevPhase; // ç”µåŽ‹ ç”µæµé€†ç›¸    å…±(140)å­—èŠ‚
 
 typedef struct
 {
-    S_D07_YYMMDDhhmmss            sBgnTime;              // ¿ªÊ¼Ê±¿Ì
-    S_D07_YYMMDDhhmmss            sEndTime;              // ½áÊøÊ±¿Ì
-    float                        fMaxUnbalanceFator;     // ×î´ó²»Æ½ºâÂÊ
-    S_D07_EventRecordVoltPhase sPowerTotal;          // ×ÜµçÄÜÔöÁ¿  4 * 8
-    S_D07_EventRecordVoltPhase sPowerA;                   // AÏàµçÄÜÔöÁ¿ 4 * 8
-    S_D07_EventRecordVoltPhase sPowerB;                   // BÏàµçÄÜÔöÁ¿ 4 * 8
-    S_D07_EventRecordVoltPhase sPowerC;               // CÏàµçÄÜÔöÁ¿ 4 * 8
+    S_D07_YYMMDDhhmmss            sBgnTime;              // å¼€å§‹æ—¶åˆ»
+    S_D07_YYMMDDhhmmss            sEndTime;              // ç»“æŸæ—¶åˆ»
+    float                        fMaxUnbalanceFator;     // æœ€å¤§ä¸å¹³è¡¡çŽ‡
+    S_D07_EventRecordVoltPhase sPowerTotal;          // æ€»ç”µèƒ½å¢žé‡  4 * 8
+    S_D07_EventRecordVoltPhase sPowerA;                   // Aç›¸ç”µèƒ½å¢žé‡ 4 * 8
+    S_D07_EventRecordVoltPhase sPowerB;                   // Bç›¸ç”µèƒ½å¢žé‡ 4 * 8
+    S_D07_EventRecordVoltPhase sPowerC;               // Cç›¸ç”µèƒ½å¢žé‡ 4 * 8
     
-}S_D07_EventUnBalance; //²»Æ½ºâÊÂ¼þ¼ÇÂ¼
+}S_D07_EventUnBalance; //ä¸å¹³è¡¡äº‹ä»¶è®°å½•
 
 
 typedef struct
 {
-    S_D07_YYMMDDhhmmss            sBgnTime;      // ¿ªÊ¼Ê±¿Ì         6 * 1
-    S_D07_YYMMDDhhmmss            sEndTime;      // ½áÊøÊ±¿Ì         6 * 1
-    S_D07_EventRecordVoltPhase sPowerTotal; // ×ÜµçÄÜÔöÁ¿       4 * 8
-    S_D07_EventRecordVoltPhase sPowerA;         // AÏàµçÄÜÔöÁ¿         4 * 8
-    S_D07_EventRecordFactor       sFactorA;    // AÏàÒòÊý            5 * 4
-    S_D07_EventRecordVoltPhase sPowerB;         // BÏàµçÄÜÔöÁ¿        4 * 8 
-    S_D07_EventRecordFactor       sFactorB;    // BÏàÒòÊý             5 * 4
-    S_D07_EventRecordVoltPhase sPowerC;     // CÏàµçÄÜÔöÁ¿         4 * 8
-    S_D07_EventRecordFactor    sFactorC;    // CÏàÒòÊý            5 * 4
-    //S_D07_EventRecordAtime     sAtime;      // °²Ê±Êý              4 * 8
+    S_D07_YYMMDDhhmmss            sBgnTime;      // å¼€å§‹æ—¶åˆ»         6 * 1
+    S_D07_YYMMDDhhmmss            sEndTime;      // ç»“æŸæ—¶åˆ»         6 * 1
+    S_D07_EventRecordVoltPhase sPowerTotal; // æ€»ç”µèƒ½å¢žé‡       4 * 8
+    S_D07_EventRecordVoltPhase sPowerA;         // Aç›¸ç”µèƒ½å¢žé‡         4 * 8
+    S_D07_EventRecordFactor       sFactorA;    // Aç›¸å› æ•°            5 * 4
+    S_D07_EventRecordVoltPhase sPowerB;         // Bç›¸ç”µèƒ½å¢žé‡        4 * 8 
+    S_D07_EventRecordFactor       sFactorB;    // Bç›¸å› æ•°             5 * 4
+    S_D07_EventRecordVoltPhase sPowerC;     // Cç›¸ç”µèƒ½å¢žé‡         4 * 8
+    S_D07_EventRecordFactor    sFactorC;    // Cç›¸å› æ•°            5 * 4
+    //S_D07_EventRecordAtime     sAtime;      // å®‰æ—¶æ•°              4 * 8
     
-}S_D07_LESS_MORE_LOSS_ELET;// Ê§Á÷£¬¶ÏÁ÷£¬¹ýÁ÷ÊÂ¼þ·¢Éú¼ÇÂ¼Êý¾Ý  35 * 4 + 12 = 152×Ö½Ú
+}S_D07_LESS_MORE_LOSS_ELET;// å¤±æµï¼Œæ–­æµï¼Œè¿‡æµäº‹ä»¶å‘ç”Ÿè®°å½•æ•°æ®  35 * 4 + 12 = 152å­—èŠ‚
 
 
 typedef struct
 {
-    UINT32 ulMonitorVoltMinutes;  // ¼à²âÊ±¼ä µ¥Î»·Ö
-    float fVoltPassPercent;      // µçÑ¹ºÏ¸ñÂÊ
-    float fVoltOverLimitPercent; // µçÑ¹³¬ÏÞÂÊ
-    UINT32 ulVoltOverUpperLimitMinutes;  // µçÑ¹³¬ÉÏÏÞÊ±¼ä
-    UINT32 ulVoltOverLowerLimitMinutes;  // µçÑ¹³¬ÏÂÏÞÊ±¼ä
-    float fVoltValueMax;                // µçÑ¹×î´óÖµ
-    float fVoltValueMin;                // µçÑ¹×îÐ¡Öµ
-    S_D07_MMDDhhmm sTimeVoltValueMax;       // ×î¸ßµçÑ¹·¢ÉúÊ±¼ä      
-    S_D07_MMDDhhmm sTimeVoltValueMin;         // ×îµÍµçÑ¹·¢ÉúÊ±¼ä
-}S_D07_EventPassPercent; // ºÏ¸ñÂÊÊÂ¼þÊý¾Ý
+    UINT32 ulMonitorVoltMinutes;  // ç›‘æµ‹æ—¶é—´ å•ä½åˆ†
+    float fVoltPassPercent;      // ç”µåŽ‹åˆæ ¼çŽ‡
+    float fVoltOverLimitPercent; // ç”µåŽ‹è¶…é™çŽ‡
+    UINT32 ulVoltOverUpperLimitMinutes;  // ç”µåŽ‹è¶…ä¸Šé™æ—¶é—´
+    UINT32 ulVoltOverLowerLimitMinutes;  // ç”µåŽ‹è¶…ä¸‹é™æ—¶é—´
+    float fVoltValueMax;                // ç”µåŽ‹æœ€å¤§å€¼
+    float fVoltValueMin;                // ç”µåŽ‹æœ€å°å€¼
+    S_D07_MMDDhhmm sTimeVoltValueMax;       // æœ€é«˜ç”µåŽ‹å‘ç”Ÿæ—¶é—´      
+    S_D07_MMDDhhmm sTimeVoltValueMin;         // æœ€ä½Žç”µåŽ‹å‘ç”Ÿæ—¶é—´
+}S_D07_EventPassPercent; // åˆæ ¼çŽ‡äº‹ä»¶æ•°æ®
 
 
 
 typedef struct
 {
-    S_D07_YYMMDDhhmmss sProgTime;         // ÊÂ¼þ·¢ÉúÊ±¿Ì
-    UINT8              programer[4];      // ±à³ÌÕß±êÊ¶ 4×Ö½Ú
-    UINT32               ulRulerID[10];     // ±à³ÌµÄÇ°Ê®¸öÊý¾Ý±êÊ¶Âë£¬ÐÍÈç 0xFFFFFFFF ²»×ãÓÃ0xFFFFFFFF²¹×ã
-}S_D07_EventMeterProgram; // ±à³ÌÊÂ¼þ¼ÇÂ¼ 
+    S_D07_YYMMDDhhmmss sProgTime;         // äº‹ä»¶å‘ç”Ÿæ—¶åˆ»
+    UINT8              programer[4];      // ç¼–ç¨‹è€…æ ‡è¯† 4å­—èŠ‚
+    UINT32               ulRulerID[10];     // ç¼–ç¨‹çš„å‰åä¸ªæ•°æ®æ ‡è¯†ç ï¼Œåž‹å¦‚ 0xFFFFFFFF ä¸è¶³ç”¨0xFFFFFFFFè¡¥è¶³
+}S_D07_EventMeterProgram; // ç¼–ç¨‹äº‹ä»¶è®°å½• 
 
 
 typedef struct
 {    
-    double dForthHavePower; // XXXXXX.XX ÕýÏò ÓÐ¹¦×ÜµçÄÜ
-    double dBackHavePower;  // XXXXXX.XX ·´Ïò ÓÐ¹¦×ÜµçÄÜ
-    double dNonePowerQuad1; // XXXXXX.XX ÊÂ¼þ·¢ÉúÊ±µÚ 1 ÏóÏÞÎÞ¹¦µçÄÜ
-    double dNonePowerQuad2; // XXXXXX.XX ÊÂ¼þ·¢ÉúÊ±µÚ 2 ÏóÏÞÎÞ¹¦µçÄÜ
-    double dNonePowerQuad3; // XXXXXX.XX ÊÂ¼þ·¢ÉúÊ±µÚ 3 ÏóÏÞÎÞ¹¦µçÄÜ
-    double dNonePowerQuad4; // XXXXXX.XX ÊÂ¼þ·¢ÉúÊ±µÚ 4 ÏóÏÞÎÞ¹¦µçÄÜ
+    double dForthHavePower; // XXXXXX.XX æ­£å‘ æœ‰åŠŸæ€»ç”µèƒ½
+    double dBackHavePower;  // XXXXXX.XX åå‘ æœ‰åŠŸæ€»ç”µèƒ½
+    double dNonePowerQuad1; // XXXXXX.XX äº‹ä»¶å‘ç”Ÿæ—¶ç¬¬ 1 è±¡é™æ— åŠŸç”µèƒ½
+    double dNonePowerQuad2; // XXXXXX.XX äº‹ä»¶å‘ç”Ÿæ—¶ç¬¬ 2 è±¡é™æ— åŠŸç”µèƒ½
+    double dNonePowerQuad3; // XXXXXX.XX äº‹ä»¶å‘ç”Ÿæ—¶ç¬¬ 3 è±¡é™æ— åŠŸç”µèƒ½
+    double dNonePowerQuad4; // XXXXXX.XX äº‹ä»¶å‘ç”Ÿæ—¶ç¬¬ 4 è±¡é™æ— åŠŸç”µèƒ½
 }S_D07_EventPower;
 
 typedef struct
-{
-    S_D07_XX_XXXX_YYMMDDhhmm sFortHaveDemand;   // ÕýÏòÓÐ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä     XX.XXXX YYMMDDhhmm
-    S_D07_XX_XXXX_YYMMDDhhmm sBackHaveDemand;   // ÕýÏòÓÐ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä    XX.XXXX    YYMMDDhhmm
-    S_D07_XX_XXXX_YYMMDDhhmm sNoneDemandQuad1;  // ÕýÏòÓÐ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä    XX.XXXX    YYMMDDhhmm
-    S_D07_XX_XXXX_YYMMDDhhmm sNoneDemandQuad2;  // ÕýÏòÓÐ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä    XX.XXXX    YYMMDDhhmm
-    S_D07_XX_XXXX_YYMMDDhhmm sNoneDemandQuad3;  // ÕýÏòÓÐ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä    XX.XXXX    YYMMDDhhmm
-    S_D07_XX_XXXX_YYMMDDhhmm sNoneDemandQuad4;  // ÕýÏòÓÐ¹¦×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä    XX.XXXX    YYMMDDhhmm
+{
 
-}S_D07_EventDemand; //×î´óÐèÁ¿ÇåÁãÊÂ¼þÄ³Ïî×î´óÐèÁ¿¼°·¢ÉúÊ±¼ä
+    S_D07_XX_XXXX_YYMMDDhhmm sFortHaveDemand;   // æ­£å‘æœ‰åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´     XX.XXXX YYMMDDhhmm
+    S_D07_XX_XXXX_YYMMDDhhmm sBackHaveDemand;   // æ­£å‘æœ‰åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´    XX.XXXX    YYMMDDhhmm
+    S_D07_XX_XXXX_YYMMDDhhmm sNoneDemandQuad1;  // æ­£å‘æœ‰åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´    XX.XXXX    YYMMDDhhmm
+    S_D07_XX_XXXX_YYMMDDhhmm sNoneDemandQuad2;  // æ­£å‘æœ‰åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´    XX.XXXX    YYMMDDhhmm
+    S_D07_XX_XXXX_YYMMDDhhmm sNoneDemandQuad3;  // æ­£å‘æœ‰åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´    XX.XXXX    YYMMDDhhmm
+    S_D07_XX_XXXX_YYMMDDhhmm sNoneDemandQuad4;  // æ­£å‘æœ‰åŠŸæœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´    XX.XXXX    YYMMDDhhmm
+
+}S_D07_EventDemand; //æœ€å¤§éœ€é‡æ¸…é›¶äº‹ä»¶æŸé¡¹æœ€å¤§éœ€é‡åŠå‘ç”Ÿæ—¶é—´
 
 typedef struct
-{
-    S_D07_YYMMDDhhmmss sOccurTime;       // ÊÂ¼þ·¢ÉúÊ±¿Ì
-    UINT8              operator[4];      // ²Ù×÷Õß±êÊ¶ 4×Ö½Ú
+{
 
-    S_D07_EventDemand    sTotal;             // µç±íÇåÁãÇ° ×Ü ÐèÁ¿Êý¾Ý
-    S_D07_EventDemand    sPhaseA;         // µç±íÇåÁãÇ° AÏàÐèÁ¿Êý¾Ý
-    S_D07_EventDemand    sPhaseB;         // µç±íÇåÁãÇ° BÏàÐèÁ¿Êý¾Ý
-    S_D07_EventDemand    sPhaseC;         // µç±íÇåÁãÇ° CÏàÐèÁ¿Êý¾Ý
+    S_D07_YYMMDDhhmmss sOccurTime;       // äº‹ä»¶å‘ç”Ÿæ—¶åˆ»
+    UINT8              operator[4];      // æ“ä½œè€…æ ‡è¯† 4å­—èŠ‚
+
+    S_D07_EventDemand    sTotal;             // ç”µè¡¨æ¸…é›¶å‰ æ€» éœ€é‡æ•°æ®
+    S_D07_EventDemand    sPhaseA;         // ç”µè¡¨æ¸…é›¶å‰ Aç›¸éœ€é‡æ•°æ®
+    S_D07_EventDemand    sPhaseB;         // ç”µè¡¨æ¸…é›¶å‰ Bç›¸éœ€é‡æ•°æ®
+    S_D07_EventDemand    sPhaseC;         // ç”µè¡¨æ¸…é›¶å‰ Cç›¸éœ€é‡æ•°æ®
 }S_D07_EventDemandClear;
 
 typedef struct
 {
-    S_D07_YYMMDDhhmmss sOccurTime;       // ÊÂ¼þ·¢ÉúÊ±¿Ì
-    UINT8              operator[4];      // ²Ù×÷Õß±êÊ¶ 4×Ö½Ú
+    S_D07_YYMMDDhhmmss sOccurTime;       // äº‹ä»¶å‘ç”Ÿæ—¶åˆ»
+    UINT8              operator[4];      // æ“ä½œè€…æ ‡è¯† 4å­—èŠ‚
 
-    S_D07_EventPower    sTotal;             // µç±íÇåÁãÇ° ×Ü µçÄÜÊý¾Ý
-    S_D07_EventPower    sPhaseA;         // µç±íÇåÁãÇ° AÏàµçÄÜÊý¾Ý
-    S_D07_EventPower    sPhaseB;         // µç±íÇåÁãÇ° BÏàµçÄÜÊý¾Ý
-    S_D07_EventPower    sPhaseC;         // µç±íÇåÁãÇ° CÏàµçÄÜÊý¾Ý
+    S_D07_EventPower    sTotal;             // ç”µè¡¨æ¸…é›¶å‰ æ€» ç”µèƒ½æ•°æ®
+    S_D07_EventPower    sPhaseA;         // ç”µè¡¨æ¸…é›¶å‰ Aç›¸ç”µèƒ½æ•°æ®
+    S_D07_EventPower    sPhaseB;         // ç”µè¡¨æ¸…é›¶å‰ Bç›¸ç”µèƒ½æ•°æ®
+    S_D07_EventPower    sPhaseC;         // ç”µè¡¨æ¸…é›¶å‰ Cç›¸ç”µèƒ½æ•°æ®
 
-}S_D07_EventMeterClear; // µç±íÇå0ÊÂ¼þ¼ÇÂ¼
-
-
-typedef struct
-{
-    S_D07_YYMMDDhhmmss sOccurTime;       // ÊÂ¼þ·¢ÉúÊ±¿Ì
-    UINT8              operator[4];      // ²Ù×÷Õß±êÊ¶ 4×Ö½Ú
-    UINT32               ulEventID;         // ÇåÁãÊÂ¼þ±ê¼Ç
-}S_D07_EventClear;         // ÊÂ¼þÇåÁã¼ÇÂ¼
+}S_D07_EventMeterClear; // ç”µè¡¨æ¸…0äº‹ä»¶è®°å½•
 
 
 typedef struct
 {
-    UINT8              operator[4]; // ²Ù×÷Õß±êÊ¶ 4×Ö½Ú
-    S_D07_YYMMDDhhmmss sBefTime;    // Ð£Ê±Ç°Ê±¼ä     
-    S_D07_YYMMDDhhmmss sAftTime;     // Ð£Ê±ºóÊ±¼ä
+    S_D07_YYMMDDhhmmss sOccurTime;       // äº‹ä»¶å‘ç”Ÿæ—¶åˆ»
+    UINT8              operator[4];      // æ“ä½œè€…æ ‡è¯† 4å­—èŠ‚
+    UINT32               ulEventID;         // æ¸…é›¶äº‹ä»¶æ ‡è®°
+}S_D07_EventClear;         // äº‹ä»¶æ¸…é›¶è®°å½•
+
+
+typedef struct
+{
+    UINT8              operator[4]; // æ“ä½œè€…æ ‡è¯† 4å­—èŠ‚
+    S_D07_YYMMDDhhmmss sBefTime;    // æ ¡æ—¶å‰æ—¶é—´     
+    S_D07_YYMMDDhhmmss sAftTime;     // æ ¡æ—¶åŽæ—¶é—´
     
-}S_D07_EventTiming;        // Ð£Ê±ÊÂ¼þ¼ÇÂ¼
+}S_D07_EventTiming;        // æ ¡æ—¶äº‹ä»¶è®°å½•
 
 typedef struct
 {
@@ -1465,18 +1473,18 @@ typedef struct
 
 typedef struct
 {
-    S_D07_YYMMDDhhmmss sOccurTime;       // ÊÂ¼þ·¢ÉúÊ±¿Ì
-    UINT8              operator[4];      // ²Ù×÷Õß±êÊ¶ 4×Ö½Ú
-    S_D07_MMDDNN       sZoneSet1[14];    // Ê±Çø±í±à³ÌÇ°µÚÒ»Ì×µÚ(1~14)Ê±Çø±íÊý¾Ý
-    S_D07_MMDDNN       sZoneSet2[14];    // Ê±Çø±í±à³ÌÇ°µÚ¶þÌ×µÚ(1~14)Ê±Çø±íÊý¾Ý
-}S_D07_EventZone; // Ê±Çø±í±à³ÌÊÂ¼þ¼ÇÂ¼
+    S_D07_YYMMDDhhmmss sOccurTime;       // äº‹ä»¶å‘ç”Ÿæ—¶åˆ»
+    UINT8              operator[4];      // æ“ä½œè€…æ ‡è¯† 4å­—èŠ‚
+    S_D07_MMDDNN       sZoneSet1[14];    // æ—¶åŒºè¡¨ç¼–ç¨‹å‰ç¬¬ä¸€å¥—ç¬¬(1~14)æ—¶åŒºè¡¨æ•°æ®
+    S_D07_MMDDNN       sZoneSet2[14];    // æ—¶åŒºè¡¨ç¼–ç¨‹å‰ç¬¬äºŒå¥—ç¬¬(1~14)æ—¶åŒºè¡¨æ•°æ®
+}S_D07_EventZone; // æ—¶åŒºè¡¨ç¼–ç¨‹äº‹ä»¶è®°å½•
 
 typedef struct
 {
-    S_D07_YYMMDDhhmmss sOccurTime;       // ÊÂ¼þ·¢ÉúÊ±¿Ì
-    UINT8              operator[4];      // ²Ù×÷Õß±êÊ¶ 4×Ö½Ú
-    UINT8               ucTableNum;         // ÖÜÐÝÊÇ±à³ÌÇ°²ÉÓÃµÄÈÕ¶Î±íºÅ
-}S_D07_EventWeekDay;   // ÖÜÐÝÈÕ±à³Ì¼ÇÂ¼
+    S_D07_YYMMDDhhmmss sOccurTime;       // äº‹ä»¶å‘ç”Ÿæ—¶åˆ»
+    UINT8              operator[4];      // æ“ä½œè€…æ ‡è¯† 4å­—èŠ‚
+    UINT8               ucTableNum;         // å‘¨ä¼‘æ˜¯ç¼–ç¨‹å‰é‡‡ç”¨çš„æ—¥æ®µè¡¨å·
+}S_D07_EventWeekDay;   // å‘¨ä¼‘æ—¥ç¼–ç¨‹è®°å½•
 
 
 typedef struct
@@ -1507,41 +1515,43 @@ typedef struct
 typedef struct
 {
 
-    S_D07_YYMMDDhhmmss sOccurTime;       // ÊÂ¼þ·¢ÉúÊ±¿Ì
-    UINT8              operator[4];      // ²Ù×÷Õß±êÊ¶ 4×Ö½Ú
+    S_D07_YYMMDDhhmmss sOccurTime;       // äº‹ä»¶å‘ç”Ÿæ—¶åˆ»
+    UINT8              operator[4];      // æ“ä½œè€…æ ‡è¯† 4å­—èŠ‚
 
     S_D07_YYMMDDNN  sHoliday[12];        
-    // ÖÐ¹ú·¨¶¨½Ú¼ÙÈÕ11Ìì Ôªµ©Ò»Ìì¡£´º½ÚÈýÌì¡£ÇåÃ÷Ò»Ìì¡£ÎåÒ»Ò»Ìì¡£¶ËÎçÒ»Ìì¡£ÖÐÇïÒ»Ìì¡£¹úÇìÈýÌì¡£
-    // ±à³ÌÇ°µÚN½Ú¼ÙÈÕÊý¾Ý ±ê×¼Ð­ÒéÖ§³Ö254¸ö½Ú¼ÙÈÕ
+    // ä¸­å›½æ³•å®šèŠ‚å‡æ—¥11å¤© å…ƒæ—¦ä¸€å¤©ã€‚æ˜¥èŠ‚ä¸‰å¤©ã€‚æ¸…æ˜Žä¸€å¤©ã€‚äº”ä¸€ä¸€å¤©ã€‚ç«¯åˆä¸€å¤©ã€‚ä¸­ç§‹ä¸€å¤©ã€‚å›½åº†ä¸‰å¤©ã€‚
+    // ç¼–ç¨‹å‰ç¬¬NèŠ‚å‡æ—¥æ•°æ® æ ‡å‡†åè®®æ”¯æŒ254ä¸ªèŠ‚å‡æ—¥
     // 
     
-}S_D07_EventHoliday; // ½Ú¼ÙÈÕ±à³ÌÊÂ¼þ¼ÇÂ¼
+}S_D07_EventHoliday; // èŠ‚å‡æ—¥ç¼–ç¨‹äº‹ä»¶è®°å½•
 
-
-typedef struct
-{
-    S_D07_YYMMDDhhmmss sOccurTime;       // ÊÂ¼þ·¢ÉúÊ±¿Ì
-    UINT8              operator[4];      // ²Ù×÷Õß±êÊ¶ 4×Ö½Ú
-    UINT8               ucWord;             // ¹¦×éºÏ·½Ê½±à³ÌÇ°µÄÓÐ¹¦×éºÏ·½Ê½ÌØÕ÷×Ö
-}S_D07_EventCombPower; // ÓÐ¹¦/ÎÞ¹¦×éºÏ·½Ê½±à³Ì¼ÇÂ¼
 
 typedef struct
 {
-    S_D07_YYMMDDhhmmss sOccurTime;       // ÊÂ¼þ·¢ÉúÊ±¿Ì
-    UINT8              operator[4];      // ²Ù×÷Õß±êÊ¶ 4×Ö½Ú
+
+    S_D07_YYMMDDhhmmss sOccurTime;       // äº‹ä»¶å‘ç”Ÿæ—¶åˆ»
+    UINT8              operator[4];      // æ“ä½œè€…æ ‡è¯† 4å­—èŠ‚
+    UINT8               ucWord;             // åŠŸç»„åˆæ–¹å¼ç¼–ç¨‹å‰çš„æœ‰åŠŸç»„åˆæ–¹å¼ç‰¹å¾å­—
+}S_D07_EventCombPower; // æœ‰åŠŸ/æ— åŠŸç»„åˆæ–¹å¼ç¼–ç¨‹è®°å½•
+
+typedef struct
+{
+    S_D07_YYMMDDhhmmss sOccurTime;       // äº‹ä»¶å‘ç”Ÿæ—¶åˆ»
+    UINT8              operator[4];      // æ“ä½œè€…æ ‡è¯† 4å­—èŠ‚
     S_D07_DDhh         sDay1;
     S_D07_DDhh         sDay2;
     S_D07_DDhh         sDay3;
 }S_D07_EventPayoff;
 
 typedef struct
-{
-    S_D07_YYMMDDhhmmss sBgnTime;       // ¿ªÊ¼Ê±¿Ì
-    S_D07_YYMMDDhhmmss sEndTime;       // ½áÊøÊ±¿Ì 
-    S_D07_EventPower sPowerBeforOpen;  // ¿ª¸ÇÇ°µçÄÜÊý¾Ý
-    S_D07_EventPower sPowerAfterOpen;  // ¿ª¸ÇºóµçÄÜÊý¾Ý
+{
 
-}S_D07_EventOpenCap;        // ¿ª±í¸Ç¼ÇÂ¼
+    S_D07_YYMMDDhhmmss sBgnTime;       // å¼€å§‹æ—¶åˆ»
+    S_D07_YYMMDDhhmmss sEndTime;       // ç»“æŸæ—¶åˆ» 
+    S_D07_EventPower sPowerBeforOpen;  // å¼€ç›–å‰ç”µèƒ½æ•°æ®
+    S_D07_EventPower sPowerAfterOpen;  // å¼€ç›–åŽç”µèƒ½æ•°æ®
+
+}S_D07_EventOpenCap;        // å¼€è¡¨ç›–è®°å½•
 
 typedef struct
 {
@@ -1562,17 +1572,17 @@ typedef struct
 
 typedef struct
 {
-    BOOL bRateErr;  // ·ÑÂÊÊý³¬
-    BOOL bDayErr;   // ÈÕÊ±¶ÎÊý³¬
-    BOOL bYearErr;  // ÄêÊ±ÇøÊý³¬
-    BOOL bCommErr;  // Í¨Ñ¶ËÙÂÊ²»ÄÜ¸ü¸Ä
-    BOOL bPwdErr;   // ÃÜÂë´í»òÎ´ÊÚÈ¨
-    BOOL bNoneReq;  // Ã»ÓÐÇëÇóÊý¾Ý
-    BOOL bOtherErr; // ÆäËü´íÎó
+    BOOL bRateErr;  // è´¹çŽ‡æ•°è¶…
+    BOOL bDayErr;   // æ—¥æ—¶æ®µæ•°è¶…
+    BOOL bYearErr;  // å¹´æ—¶åŒºæ•°è¶…
+    BOOL bCommErr;  // é€šè®¯é€ŸçŽ‡ä¸èƒ½æ›´æ”¹
+    BOOL bPwdErr;   // å¯†ç é”™æˆ–æœªæŽˆæƒ
+    BOOL bNoneReq;  // æ²¡æœ‰è¯·æ±‚æ•°æ®
+    BOOL bOtherErr; // å…¶å®ƒé”™è¯¯
 }S_D07_ERR;
 
 
-/* ÓÃ»§½Ó¿Ú²àÊý¾Ý½á¹¹ */
+/* ç”¨æˆ·æŽ¥å£ä¾§æ•°æ®ç»“æž„ */
 typedef union
 {
 
@@ -1581,66 +1591,66 @@ typedef union
     S_D07_ERR      sError;
 }U_D07_DATA_UNPACK;
 
-/* ½âÎöÖ¡ÐÅÏ¢Êý¾Ý½á¹¹ */
+/* è§£æžå¸§ä¿¡æ¯æ•°æ®ç»“æž„ */
 typedef struct
 {
     
-    UINT8                  ctrl_c;           /* ¿ØÖÆÂë ×Ö½ÚÐÍ */
-    UINT8                  lead_num;         /* Ç°µ¼×Ö·û 0xFEµÄ¸öÊý */
-    UINT32                 ruler_id;         /* ¹æÔ¼ID */
+    UINT8                  ctrl_c;           /* æŽ§åˆ¶ç  å­—èŠ‚åž‹ */
+    UINT8                  lead_num;         /* å‰å¯¼å­—ç¬¦ 0xFEçš„ä¸ªæ•° */
+    UINT32                 ruler_id;         /* è§„çº¦ID */
    
-    unsigned short           data_len;         /* Êý¾ÝÓò³¤ */
-    unsigned short         frame_len;         /* Õû¸öÖ¡³¤*/
+    unsigned short           data_len;         /* æ•°æ®åŸŸé•¿ */
+    unsigned short         frame_len;         /* æ•´ä¸ªå¸§é•¿*/
       
-    E_D07_RULER_TYPE       type;             /* ¹æÔ¼ÀàÐÍ */
-    E_D07_RULER_FORMAT     format;           /* Ö¡ÖÐÊý¾Ý¸ñÊ½ */
-    E_D07_UNPD_FLG         flag;             /* ½âÎöÊý¾Ýµ½ÓÃ»§²àÊý¾ÝµÄ±êÖ¾£¬ËµÃ÷½âÎö×´Ì¬ ¾ö¶¨data_unpack ÊÇ·ñ¿ÉÓÃ */
-    S_D07_CTRL_CODE        ctrl_s;           /* ¿ØÖÆÂë½á¹¹ */
-    S_D07_RULER_PARA       para;             /* ¹æÔ¼ÀàÐÍµÄ¶îÍâÊý¾Ý */ 
-    UINT8                  data_pack[D07_DATA_MAX_NR];   /* Êý¾ÝÓò ²»°üÀ¨¹æÔ¼IDµÄ²¿·Ö Ã»ÓÐ×ö×ª»» */
-    UINT8                  address[D07_ADDR_LEN+1];     //12Î»µØÖ·ÓòÊý¾Ý
-    U_D07_DATA_UNPACK      data_unpack;               /* ×ª»»ÎªÓÃ»§²àµÄÊý¾Ý */ 
+    E_D07_RULER_TYPE       type;             /* è§„çº¦ç±»åž‹ */
+    E_D07_RULER_FORMAT     format;           /* å¸§ä¸­æ•°æ®æ ¼å¼ */
+    E_D07_UNPD_FLG         flag;             /* è§£æžæ•°æ®åˆ°ç”¨æˆ·ä¾§æ•°æ®çš„æ ‡å¿—ï¼Œè¯´æ˜Žè§£æžçŠ¶æ€ å†³å®šdata_unpack æ˜¯å¦å¯ç”¨ */
+    S_D07_CTRL_CODE        ctrl_s;           /* æŽ§åˆ¶ç ç»“æž„ */
+    S_D07_RULER_PARA       para;             /* è§„çº¦ç±»åž‹çš„é¢å¤–æ•°æ® */ 
+    UINT8                  data_pack[D07_DATA_MAX_NR];   /* æ•°æ®åŸŸ ä¸åŒ…æ‹¬è§„çº¦IDçš„éƒ¨åˆ† æ²¡æœ‰åšè½¬æ¢ */
+    UINT8                  address[D07_ADDR_LEN+1];     //12ä½åœ°å€åŸŸæ•°æ®
+    U_D07_DATA_UNPACK      data_unpack;               /* è½¬æ¢ä¸ºç”¨æˆ·ä¾§çš„æ•°æ® */ 
     //UINT8   *pDataUser;
 }S_D07_UNPACK;
 
 
-/* ¹¦ÄÜº¯Êý */
+/* åŠŸèƒ½å‡½æ•° */
 
-/* ¸ù¾Ý¹æÔ¼ID »ñÈ¡¶ÔÓ¦¹æÔ¼µÄÊý¾ÝÀàÐÍÐÅÏ¢ */
+/* æ ¹æ®è§„çº¦ID èŽ·å–å¯¹åº”è§„çº¦çš„æ•°æ®ç±»åž‹ä¿¡æ¯ */
 int get_d07_ruler_info(UINT32 rulerID, S_D07_RULER_INFO *outRulerInfo);
 int get_d07_ruler_id(E_D07_RULER_TYPE type,
                      S_D07_RULER_PARA para,
                      UINT32 *poutRulerID);
-/* Í¨¹ýµØÖ· ¹æÔ¼ID Êý¾ÝÓòÊý¾Ý¼°³¤¶È ·âÖ¡ */
+/* é€šè¿‡åœ°å€ è§„çº¦ID æ•°æ®åŸŸæ•°æ®åŠé•¿åº¦ å°å¸§ */
 int pack_d07_frame_by_data(S_D07_PACK_FRAME *inPara, char *outBuffer, int *outLength); 
 
-//½âÎö dlt645 07Ö¡ 
+//è§£æž dlt645 07å¸§ 
 int unpack_d07_frame(void *inpBuffer, int inBufferLength, S_D07_UNPACK *outpFrame);
 
 
-/* ´ÓÒ»¶ÎÊý¾ÝÖÐÕÒ³öµÚÒ»¸öÓÐÐ§dlt645 2007Ö¡µÄÎ»ÖÃ¼°³¤¶È */
-int get_d07_first_valid_frame(const UINT8 *pBuf,         // Òª½âÎöµÄbuf
-                              UINT16 usLenBuf,           // Òª½âÎöµÄbuf×Ö½ÚÊý
-                              UINT8  **ppFirstPos,       // Êä³öÖ¡buffer
-                              UINT16 *pusLenFrame);      // Êä³öFrame×Ö½ÚÊý
-/* ÅÐ¶ÏÒ»¸öÖ¡ÊÇ·ñÎªÕýÈ·µÄ */
+/* ä»Žä¸€æ®µæ•°æ®ä¸­æ‰¾å‡ºç¬¬ä¸€ä¸ªæœ‰æ•ˆdlt645 2007å¸§çš„ä½ç½®åŠé•¿åº¦ */
+int get_d07_first_valid_frame(const UINT8 *pBuf,         // è¦è§£æžçš„buf
+                              UINT16 usLenBuf,           // è¦è§£æžçš„bufå­—èŠ‚æ•°
+                              UINT8  **ppFirstPos,       // è¾“å‡ºå¸§buffer
+                              UINT16 *pusLenFrame);      // è¾“å‡ºFrameå­—èŠ‚æ•°
+/* åˆ¤æ–­ä¸€ä¸ªå¸§æ˜¯å¦ä¸ºæ­£ç¡®çš„ */
 int is_right_d07_frame(void *inpBuffer, int inBufferLength);
 /* */
 void d07_str2bcd(const char *pstr, UINT8 *pbcd, int len);
 void d07_bcd2str(const char* inBCD, char *outStr, int len);
 double d07_bcd_to_double(UINT8* pBcd, int len,int LeftDigit);
-int d07_remove_dot(int len, char*inArray, char *outArray); // È¥µô×Ö·û´®¸ñÊ½ÖÐÈ¥µÄÐ¡Êýµã
+int d07_remove_dot(int len, char*inArray, char *outArray); // åŽ»æŽ‰å­—ç¬¦ä¸²æ ¼å¼ä¸­åŽ»çš„å°æ•°ç‚¹
 
-int d07_add_dot(int len, char*inArray, char *outArray,  int dotpos); // ¼ÓÉÏÐ¡Êýµã
+int d07_add_dot(int len, char*inArray, char *outArray,  int dotpos); // åŠ ä¸Šå°æ•°ç‚¹
 
-/* ½âÎö¿ØÖÆÂë */
-eD07Err trans_d07ctrl_struct2char(UINT8 *outChar, S_D07_CTRL_CODE *inStruct); //½«½á¹¹·â×°³É×Ö½Ú
-eD07Err trans_d07ctrl_char2struct(UINT8 inChar,  S_D07_CTRL_CODE *outStruct); //½«×Ö½Ú·â×°³É½á¹¹
-
-
+/* è§£æžæŽ§åˆ¶ç  */
+eD07Err trans_d07ctrl_struct2char(UINT8 *outChar, S_D07_CTRL_CODE *inStruct); //å°†ç»“æž„å°è£…æˆå­—èŠ‚
+eD07Err trans_d07ctrl_char2struct(UINT8 inChar,  S_D07_CTRL_CODE *outStruct); //å°†å­—èŠ‚å°è£…æˆç»“æž„
 
 
-/* Êý¾Ý½âÎöº¯Êý */
+
+
+/* æ•°æ®è§£æžå‡½æ•° */
 /*XX*/
 eD07Err trans_d07_data_XX_2(E_D07_TRANS_FLG flag, char *user, char *frame);
 eD07Err trans_d07_data_XX_3(E_D07_TRANS_FLG flag, char *user, char *frame);
@@ -1691,11 +1701,11 @@ eD07Err trans_d07_data_YYMMDDhhmmss_2_XX_XXXX_YYMMDDhhmm(E_D07_TRANS_FLG flag, c
 eD07Err trans_d07_data_YYMMDDhhmmss_XXX_XXX_YYMMDDhhmmss(E_D07_TRANS_FLG flag, char *user, char *frame);
 eD07Err trans_d07_data_MMDDNN_14(E_D07_TRANS_FLG flag, char *user, char *frame);
 eD07Err trans_d07_data_hhmmNN_14(E_D07_TRANS_FLG flag, char *user, char *frame);
-/* ×éºÏÊý¾Ý */
+/* ç»„åˆæ•°æ® */
 eD07Err trans_d07_data_recd_loss_less_volt(E_D07_TRANS_FLG flag, char *user, char *frame);
-eD07Err trans_d07_data_recd_anti_phase(E_D07_TRANS_FLG flag, char *user, char *frame);    // ÄæÏàÐòÊý¾Ý¸ñÊ½
-eD07Err trans_d07_data_recd_un_balance(E_D07_TRANS_FLG flag, char *user, char *frame);    // ²»Æ½ºâÊý¾Ý¸ñÊ½    
-eD07Err trans_d07_data_recd_less_more_loss_elec(E_D07_TRANS_FLG flag, char *user, char *frame);        // less more loss Ê§Á÷¡¢¹ýÁ÷¡¢¶ÏÁ÷Êý¾Ý¼ÇÂ¼¸ñÊ½
+eD07Err trans_d07_data_recd_anti_phase(E_D07_TRANS_FLG flag, char *user, char *frame);    // é€†ç›¸åºæ•°æ®æ ¼å¼
+eD07Err trans_d07_data_recd_un_balance(E_D07_TRANS_FLG flag, char *user, char *frame);    // ä¸å¹³è¡¡æ•°æ®æ ¼å¼    
+eD07Err trans_d07_data_recd_less_more_loss_elec(E_D07_TRANS_FLG flag, char *user, char *frame);        // less more loss å¤±æµã€è¿‡æµã€æ–­æµæ•°æ®è®°å½•æ ¼å¼
 eD07Err trans_d07_data_recd_volt_pass_percent(E_D07_TRANS_FLG flag, char *user, char *frame);
 eD07Err trans_d07_data_recd_meter_prog(E_D07_TRANS_FLG flag, char *user, char *frame);
 eD07Err trans_d07_data_recd_meter_clear(E_D07_TRANS_FLG flag, char *user, char *frame);
@@ -1711,7 +1721,7 @@ eD07Err trans_d07_data_recd_payoff_prog(E_D07_TRANS_FLG flag, char *user, char *
 eD07Err trans_d07_data_recd_open_meter_cap(E_D07_TRANS_FLG flag, char *user, char *frame);
 eD07Err trans_d07_data_recd_open_btn_box(E_D07_TRANS_FLG flag, char *user, char *frame);
 
-//´íÎó×´Ì¬×Ö
+//é”™è¯¯çŠ¶æ€å­—
 eD07Err trans_d07_data_err(E_D07_TRANS_FLG flag, char *user, char *frame);
 
 
