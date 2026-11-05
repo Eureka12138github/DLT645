@@ -8,7 +8,8 @@
 # ---------------------------------------------------------------------------
 # platform dependencies
 # ---------------------------------------------------------------------------
-ifneq ($(strip $(shell gcc -v 2>&1 |grep "cygwin")),)
+# 平台检测用 make 内建函数，不依赖 grep（Windows cmd 环境无 grep）
+ifneq ($(findstring cygwin,$(shell gcc -v 2>&1)),)
 	CYGWIN_BUILD = YES
 endif
 CC	    = gcc
@@ -19,8 +20,10 @@ INSIGHT     = /opt/insight-x86/bin/insight
 # ---------------------------------------------------------------------------
 # project specifics
 # ---------------------------------------------------------------------------
-BUILD_DIR   = build
-CFLAGS	    = -MD -g3 -Wall
+BUILD_DIR   = out
+# -fexec-charset=GBK: 源码已转UTF-8，但Windows控制台默认GBK代码页，
+# 字符串字面量需按GBK字节输出中文才不乱码
+CFLAGS	    = -MD -g3 -Wall -fexec-charset=GBK
 LDFLAGS     =
 ifeq ($(CYGWIN_BUILD),YES)
 else
@@ -51,8 +54,8 @@ $(BUILD_DIR):
 	-mkdir $(BUILD_DIR)
 
 clean:
-	-rm -rf $(BUILD_DIR)
-	-rmdir /s /q $(BUILD_DIR)
+	-rm -f $(DEPS) $(OBJS) $(NOLINK_OBJS) $(BIN)
+	-del /q $(BUILD_DIR)\*.o $(BUILD_DIR)\*.d $(BUILD_DIR)\$(TGT)
 
 # ---------------------------------------------------------------------------
 # rules for code generation
