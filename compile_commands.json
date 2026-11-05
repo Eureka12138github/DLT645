@@ -1,0 +1,34 @@
+[
+  {
+    "directory": "f:/7158/资料/开源代码/dlt645_2007",
+    "file": "src/main.c",
+    "arguments": [
+      "gcc",
+      "-std=gnu11",
+      "-isystem",
+      "D:/MinGW-64/x86_64-15.2.0-release-win32-seh-ucrt-rt_v13-rev0/mingw64/x86_64-w64-mingw32/include",
+      "-isystem",
+      "D:/MinGW-64/x86_64-15.2.0-release-win32-seh-ucrt-rt_v13-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include",
+      "-c",
+      "src/main.c",
+      "-o",
+      "out/main.o"
+    ]
+  },
+  {
+    "directory": "f:/7158/资料/开源代码/dlt645_2007",
+    "file": "src/dlt645_api_07.c",
+    "arguments": [
+      "gcc",
+      "-std=gnu11",
+      "-isystem",
+      "D:/MinGW-64/x86_64-15.2.0-release-win32-seh-ucrt-rt_v13-rev0/mingw64/x86_64-w64-mingw32/include",
+      "-isystem",
+      "D:/MinGW-64/x86_64-15.2.0-release-win32-seh-ucrt-rt_v13-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include",
+      "-c",
+      "src/dlt645_api_07.c",
+      "-o",
+      "out/dlt645_api_07.o"
+    ]
+  }
+]

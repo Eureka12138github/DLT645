@@ -1,0 +1,8 @@
+{
+    "clangd.arguments": [
+        "--query-driver=D:/MinGW-64/x86_64-15.2.0-release-win32-seh-ucrt-rt_v13-rev0/mingw64/bin/gcc.exe"
+    ],
+    "files.associations": {
+        "*.h": "c"
+    }
+}

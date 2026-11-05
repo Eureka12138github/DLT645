@@ -1,0 +1,14 @@
+# clangd 项目配置：使用 MinGW-w64 (GCC 15.2.0) 工具链解析本工程
+# 背景：clangd 默认不知道 MinGW 的 include 路径，会误报
+#   unistd.h not found / struct option 不完整 / getopt_long 未声明 等级联错误
+CompileFlags:
+  Add:
+    - --target=x86_64-w64-windows-gnu
+    - -isystem
+    - D:/MinGW-64/x86_64-15.2.0-release-win32-seh-ucrt-rt_v13-rev0/mingw64/x86_64-w64-mingw32/include
+    - -isystem
+    - D:/MinGW-64/x86_64-15.2.0-release-win32-seh-ucrt-rt_v13-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include
+
+# 注意：本文件只能有一个顶层 CompileFlags 键。重复出现会让 clangd 后者覆盖前者，
+# 导致 --target 丢失、退化为 MSVC 目标并产生大量误报。
+# 头文件的语言由 compile_commands.json 推断为 c-header（见该文件）。
