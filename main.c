@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <unistd.h>
 #include <getopt.h>
 #include "dlt645_api_07.h"
@@ -472,9 +474,9 @@ int show_ruler_info(unsigned long inRulerID)
 						{trans_d07_data_XXXXXX ,"trans_d07_data_XXXXXX"},
 						{trans_d07_data_XX_4,"trans_d07_data_XX_4"},
 						{trans_d07_data_XX_6 ,"trans_d07_data_XX_6"},
-						{trans_d07_data_XX_8,"trans_d07_data_XX_4"},
-						{trans_d07_data_XX_10 ,"trans_d07_data_XX_6"},
-						{trans_d07_data_XX_16 ,"trans_d07_data_XX_6"},
+						{trans_d07_data_XX_8,"trans_d07_data_XX_8"},
+						{trans_d07_data_XX_10 ,"trans_d07_data_XX_10"},
+						{trans_d07_data_XX_16 ,"trans_d07_data_XX_16"},
 						{trans_d07_data_X_XXX ,"trans_d07_data_X_XXX"},
 						{trans_d07_data_XX_XX ,"trans_d07_data_XX_XX"},
 						{trans_d07_data_XX_XXXX,"trans_d07_data_XX_XXXX"},
@@ -519,12 +521,12 @@ int show_ruler_info(unsigned long inRulerID)
 						{trans_d07_data_recd_adjust_time ,"trans_d07_data_recd_adjust_time"},
 						{trans_d07_data_recd_part_prog ,"trans_d07_data_recd_part_prog"},
 						{trans_d07_data_recd_zone_prog ,"trans_d07_data_recd_zone_prog"},
-						{trans_d07_data_recd_weekday_prog ,"trans_d07_data_recd_zone_prog"},
-						{trans_d07_data_recd_holiday_prog ,"trans_d07_data_recd_zone_prog"},
-						{trans_d07_data_recd_power_prog ,"trans_d07_data_recd_zone_prog"},
-						{trans_d07_data_recd_payoff_prog ,"trans_d07_data_recd_zone_prog"},
-						{trans_d07_data_recd_open_meter_cap ,"trans_d07_data_recd_zone_prog"},
-						{trans_d07_data_recd_open_btn_box ,"trans_d07_data_recd_zone_prog"}
+						{trans_d07_data_recd_weekday_prog ,"trans_d07_data_recd_weekday_prog"},
+						{trans_d07_data_recd_holiday_prog ,"trans_d07_data_recd_holiday_prog"},
+						{trans_d07_data_recd_power_prog ,"trans_d07_data_recd_power_prog"},
+						{trans_d07_data_recd_payoff_prog ,"trans_d07_data_recd_payoff_prog"},
+						{trans_d07_data_recd_open_meter_cap ,"trans_d07_data_recd_open_meter_cap"},
+						{trans_d07_data_recd_open_btn_box ,"trans_d07_data_recd_open_btn_box"}
 						};
 
 

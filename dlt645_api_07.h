@@ -23,7 +23,7 @@
 
 /* 调试开关 */
 #define D07_DEBUG_ON
-#undef D07_DEBUG_ON   // 正式版注释掉
+//#undef D07_DEBUG_ON   // 正式版注释掉（学习阶段需启用调试开关，main.c 依赖 g_need_pack_07/g_out_data_07）
 
 
 #ifdef D07_DEBUG_ON
