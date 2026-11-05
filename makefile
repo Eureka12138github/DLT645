@@ -26,7 +26,7 @@ else
 #LDFLAGS     += -lpthread
 endif
 
-TGT         = 1
+TGT         = dlt645_cli.exe
 OTHER_CSRC  = 
 OTHER_ASRC  = 
 CSRC        = dlt645_api_07.c main.c
@@ -47,9 +47,8 @@ $(BIN): $(OBJS) $(NOLINK_OBJS)
 	$(CC) $(LDFLAGS) $(OBJS) $(LDLIBS) -o $@
 
 clean:
-	rm -f $(DEPS)
-	rm -f $(OBJS) $(NOLINK_OBJS)
-	rm -f $(BIN)
+	-rm -f $(DEPS) $(OBJS) $(NOLINK_OBJS) $(BIN)
+	-del /q $(DEPS) $(OBJS) $(NOLINK_OBJS) $(BIN)
 
 # ---------------------------------------------------------------------------
 # rules for code generation
@@ -63,5 +62,5 @@ clean:
 # ---------------------------------------------------------------------------
 #  # compiler generated dependencies
 # ---------------------------------------------------------------------------
--include $(LWOS_DEPS) $(PORT_DEPS) $(APPL_DEPS)
+-include $(DEPS)
 
