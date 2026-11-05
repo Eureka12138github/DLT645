@@ -19,6 +19,7 @@ INSIGHT     = /opt/insight-x86/bin/insight
 # ---------------------------------------------------------------------------
 # project specifics
 # ---------------------------------------------------------------------------
+BUILD_DIR   = build
 CFLAGS	    = -MD -g3 -Wall
 LDFLAGS     =
 ifeq ($(CYGWIN_BUILD),YES)
@@ -29,12 +30,12 @@ endif
 TGT         = dlt645_cli.exe
 OTHER_CSRC  = 
 OTHER_ASRC  = 
-CSRC        = dlt645_api_07.c main.c
+CSRC        = src/dlt645_api_07.c src/main.c
 ASRC        = 
-OBJS        = $(CSRC:.c=.o) $(ASRC:.S=.o)
+OBJS        = $(patsubst src/%.c,$(BUILD_DIR)/%.o,$(CSRC)) $(ASRC:.S=.o)
 NOLINK_OBJS = $(OTHER_CSRC:.c=.o) $(OTHER_ASRC:.S=.o)
 DEPS        = $(OBJS:.o=.d) $(NOLINK_OBJS:.o=.d)
-BIN         = $(TGT)
+BIN         = $(BUILD_DIR)/$(TGT)
 
 .PHONY: clean all
 
@@ -43,17 +44,20 @@ all: $(BIN)
 debug:
 	$(INSIGHT) --se=$(TGT)
 
-$(BIN): $(OBJS) $(NOLINK_OBJS)
+$(BIN): $(OBJS) $(NOLINK_OBJS) | $(BUILD_DIR)
 	$(CC) $(LDFLAGS) $(OBJS) $(LDLIBS) -o $@
 
+$(BUILD_DIR):
+	-mkdir $(BUILD_DIR)
+
 clean:
-	-rm -f $(DEPS) $(OBJS) $(NOLINK_OBJS) $(BIN)
-	-del /q $(DEPS) $(OBJS) $(NOLINK_OBJS) $(BIN)
+	-rm -rf $(BUILD_DIR)
+	-rmdir /s /q $(BUILD_DIR)
 
 # ---------------------------------------------------------------------------
 # rules for code generation
 # ---------------------------------------------------------------------------
-%.o:    %.c
+$(BUILD_DIR)/%.o: src/%.c | $(BUILD_DIR)
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 %.o:    %.S
